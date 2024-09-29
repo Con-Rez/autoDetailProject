@@ -1,0 +1,71 @@
+{% load bootstrap5 %} <!-- Load the bootstrap5 template tag library -->
+{% bootstrap_css %} <!-- Load the Bootstrap CSS img folder -->
+{% bootstrap_javascript %} <!-- Load the Bootstrap JavaScript img folder -->
+{% bootstrap_messages %} <!--Optional: Display django.contrib.messages as Bootstrap alerts -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" 
+  rel="stylesheet">
+</head>
+<body></body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+    <div class="container justify-content-between">
+      <a class="navbar-brand" href="#">S.O.R.T. of Awesome Website</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navigation Buttons-->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'home'%}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">History</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">Recommendations</a>
+          </li>
+        </ul>
+      </div>
+
+      <!--Search Bar-->
+      <form method="POST" action=""> <!--Using form method post to detect if the search is empty-->
+        {% csrf_token %}
+        <div class="input-group">
+          <input type="text" class="form-control" name="searchInput" placeholder="Search..."> <!-- To reference this in views.py, use the name here-->
+          <select class="form-select" name="searchFilter">
+            <option value="title">Title</option>
+            <option value="all">Oscar Nominees and Winners</option>
+            <option value="bestPicture">Oscar Winners for Best Picture</option>
+            <option value="bestActor">Oscar Winners for Best Actor/Actress</option>
+          </select>
+          <input type= "hidden" name="yearArgument" value = "0"/> <!-- Send fixed value for year, year not needed in this instance-->
+          <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+      </form>
+    </div>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+
+<!--Insert Webpage content here-->
+{% block content %}
+{% endblock %}
+
+</html>

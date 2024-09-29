@@ -1,15 +1,74 @@
-{% load bootstrap5 %}
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Example</title>
-    </head>
-    <body>
-        <p>Hello world, this is a HTML file output!.</p>
-    </body>
-    <body>
-        <p>{{today}}</p>
-    </body>
-    <button type="button" class="btn btn-primary btn-lg">Large button</button> <!-- Bootstrap 5 button -->
-</html>
+{% extends 'navbar.html' %}
+
+{% load bootstrap5 %} <!-- Load the bootstrap5 template tag library -->
+{% bootstrap_css %} <!-- Load the Bootstrap CSS img folder -->
+{% bootstrap_javascript %} <!-- Load the Bootstrap JavaScript img folder -->
+{% bootstrap_messages %} <!--Optional: Display django.contrib.messages as Bootstrap alerts -->
+
+{% load static %} <!--Load files stored in static folder in app folder-->
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <img src="{% static 'imgs/professorMarkAinsley.jpg' %}" class="card-img-top" alt="Image of Professor Ainsley.">
+        <div class="card-body">
+          <h5 class="card-title">Professor Mark Ainsley</h5>
+          <p class="card-text">Professor of Computer Science at XYZ University.</p>
+          <a href="https://www.linkedin.com/in/mark-ainsley-7b70921/" class="btn btn-primary">View LinkedIn Profile</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <img src="{% static 'imgs/professorMarkAinsleyCartoonMad.jpg' %}" class="card-img-top" alt="Image of Professor Ainsley but MAD.">
+        <div class="card-body">
+          <h5 class="card-title">Professor Mark Ainsley (Mad)</h5>
+          <p class="card-text">Professor of Computer Science at XYZ University.</p>
+          <a href="https://theuselessweb.com/" class="btn btn-primary">Visit Website</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <img src="https://media.licdn.com/dms/image/v2/D5603AQHv6LsdiUg1kw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1695167344576?e=1733356800&v=beta&t=7G6AbkYLSLbRk_s0kKRQqg36eedxwcbIRKd3_sHHkNA" class="card-img-top" alt="Picture of Bill Gates.">
+        <div class="card-body">
+          <h5 class="card-title">Bill Gates</h5>
+          <p class="card-text">Co-founder of Microsoft.</p>
+          <a href="https://www.linkedin.com/in/williamhgates/" class="btn btn-primary">View LinkedIn Profile</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <div class="card h-100">
+        <img src="https://clipground.com/images/mongodb-png-logo-4.jpg" class="card-img-top" alt="mongoDB Logo">
+        <div class="card-body">
+          <h5 class="card-title">Create MongoDB</h5>
+          <p class="card-text">Create a new document in database.</p>
+          <a href="" class="btn btn-primary">Go to Create Document Page</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="card h-100">
+        <img src="https://www.jadsmkbdatalab.nl/wp-content/uploads/2021/03/OMDB-API_logo.png" class="card-img-top" alt="OMDb Logo">
+        <div class="card-body">
+          <h5 class="card-title">Search OMDb</h5>
+          <p class="card-text">Search for movies by name.</p>
+          <a href="" class="btn btn-primary">Go to Search Page</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-center">Hello World!</h1>
+      <p class="text-center">Today is {{today}}</p>
+    </div>
+  </div>
+</div>
+{% endblock %}
