@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'home', # This is the home app that was created
+    'bootstrap5', # This is the bootstrap5 app that was installed: https://pypi.org/project/django-bootstrap-v5/
 ]
 
 MIDDLEWARE = [
