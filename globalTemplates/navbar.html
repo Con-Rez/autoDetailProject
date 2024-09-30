@@ -13,7 +13,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
     <div class="container justify-content-between">
-      <a class="navbar-brand" href="#">S.O.R.T. of Awesome Website</a>
+      <a class="navbar-brand" href="#">Zeroes and Ones</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -25,38 +25,19 @@
             <a class="nav-link" href="{% url 'home'%}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">About</a>
+            <a class="nav-link" href="{% url 'about'%}">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">Contact</a>
+            <a class="nav-link" href="">Appointments</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">Login</a>
+            <a class="nav-link" href="">Estimates</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">History</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">Recommendations</a>
+            <a class="nav-link" href="">Reviews</a>
           </li>
         </ul>
       </div>
-
-      <!--Search Bar-->
-      <form method="POST" action=""> <!--Using form method post to detect if the search is empty-->
-        {% csrf_token %}
-        <div class="input-group">
-          <input type="text" class="form-control" name="searchInput" placeholder="Search..."> <!-- To reference this in views.py, use the name here-->
-          <select class="form-select" name="searchFilter">
-            <option value="title">Title</option>
-            <option value="all">Oscar Nominees and Winners</option>
-            <option value="bestPicture">Oscar Winners for Best Picture</option>
-            <option value="bestActor">Oscar Winners for Best Actor/Actress</option>
-          </select>
-          <input type= "hidden" name="yearArgument" value = "0"/> <!-- Send fixed value for year, year not needed in this instance-->
-          <button type="submit" class="btn btn-primary">Search</button>
-        </div>
-      </form>
     </div>
   </nav>
 
