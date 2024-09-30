@@ -1,0 +1,87 @@
+{% extends 'navbar.html' %}
+
+{% load bootstrap5 %} <!-- Load the bootstrap5 template tag library -->
+{% bootstrap_css %} <!-- Load the Bootstrap CSS img folder -->
+{% bootstrap_javascript %} <!-- Load the Bootstrap JavaScript img folder -->
+{% bootstrap_messages %} <!--Optional: Display django.contrib.messages as Bootstrap alerts -->
+
+{% load static %} <!--Load files stored in static folder in app folder-->
+
+{% block content %}
+<div class="container"> <!-- Bootstrap container class, allows for automated page scaling. Makes the site mobile friendly! -->
+  <div class="row"> <!-- Bootstrap row class, ensures a layout to the website if it is allowed to via scaling -->
+    
+    <!-- Bootstrap Card, This one is for Jinsong Ouyang-->
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <img src="{% static 'imgs/ouyang.jpg' %}" class="card-img-top" alt="Image of Professor and Department Chair Jinsong Ouyang.">
+        <div class="card-body">
+          <h5 class="card-title">Jinsong Ouyang</h5>
+          <p class="card-text">Professor and Department Chair of Computer Science at Sacramento State University.</p>
+          <a href="https://www.csus.edu/faculty/o/jouyang/" class="btn btn-primary">View Faculty Page</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap Card, This one is for Anna Baynes-->
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <img src="{% static 'imgs/baynes.jpg' %}" class="card-img-top" alt="Image of Computer Science Associate Chair Anna Baynes.">
+        <div class="card-body">
+          <h5 class="card-title">Anna Baynes</h5>
+          <p class="card-text">Associate Chair of Computer Science at Sacramento State University</p>
+          <a href="https://theuselessweb.com/" class="btn btn-primary">Visit an Unrelated Website</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap Card, this one is for Bill Gates-->
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <img src="https://media.licdn.com/dms/image/v2/D5603AQHv6LsdiUg1kw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1695167344576?e=1733356800&v=beta&t=7G6AbkYLSLbRk_s0kKRQqg36eedxwcbIRKd3_sHHkNA" class="card-img-top" alt="Picture of Bill Gates.">
+        <div class="card-body">
+          <h5 class="card-title">Bill Gates</h5>
+          <p class="card-text">Co-founder of Microsoft.</p>
+          <a href="https://www.linkedin.com/in/williamhgates/" class="btn btn-primary">View LinkedIn Profile</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap Row, second row of content cards-->
+  <div class="row">
+
+    <!--Bootstrap Card, this one is for the about page-->
+    <div class="col-md-6 mb-4">
+      <div class="card h-100">
+        <img src="https://clipground.com/images/mongodb-png-logo-4.jpg" class="card-img-top" alt="mongoDB Logo">
+        <div class="card-body">
+          <h5 class="card-title">Create MongoDB</h5>
+          <p class="card-text">Create a new document in database.</p>
+          <a href="" class="btn btn-primary">Go to Create Document Page</a>
+        </div>
+      </div>
+    </div>
+
+    <!--Bootstrap Card, this one is for the about page-->
+    <div class="col-md-6 mb-4">
+      <div class="card h-100">
+        <img src="https://www.jadsmkbdatalab.nl/wp-content/uploads/2021/03/OMDB-API_logo.png" class="card-img-top" alt="OMDb Logo">
+        <div class="card-body">
+          <h5 class="card-title">Search OMDb</h5>
+          <p class="card-text">Search for movies by name.</p>
+          <a href="" class="btn btn-primary">Go to Search Page</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap Row, third row of content -->
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-center">Hello World!</h1>
+      <p class="text-center">Today is {{todayTag}}</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

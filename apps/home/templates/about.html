@@ -1,0 +1,80 @@
+{% extends 'navbar.html' %}
+
+{% load bootstrap5 %} <!-- Load the bootstrap5 template tag library -->
+{% bootstrap_css %} <!-- Load the Bootstrap CSS img folder -->
+{% bootstrap_javascript %} <!-- Load the Bootstrap JavaScript img folder -->
+{% bootstrap_messages %} <!--Optional: Display django.contrib.messages as Bootstrap alerts -->
+
+{% load static %} <!--Load files stored in static folder in app folder-->
+
+{% block content %}
+<div class="container">
+  <h1 class="text-center mt-5">Zeroes and Ones</h1>
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <p class="lead text-center">Nine students came together for a Senior Project so they could graduate with Bachelors Degrees. Below are the students</p>
+      <p class="lead">To achieve this, we used a combination of MongoDB, Python, Git and GitHub, and Bootstrap. MongoDB proved to be the ideal database management system due to its scalability and flexibility. Python provided us with the versatility and extensive library support we needed to build a robust and user-friendly application.</p>
+      <p class="lead">We used Git and GitHub for version control, enabling us to collaborate effectively as a team and keep track of changes made to the project. Bootstrap allows us to create a responsive and attractive user interface, with pre-designed templates and components that made development faster and easier.</p>
+      <p class="lead">Our app is for our Project Owner AK Auto Detailing, a company looking for an online presence as per the document it signed. We hope we were able to develop something that's fast and highly usable by their clientele.</p>
+      <p class="lead">We had a lot of fun building this project and hope you enjoy using it as much as we enjoyed creating it.</p>
+    </div>
+  </div>
+</div>
+
+<!--PLEASE ADD YOUR NAME HERE TO PROVE YOU CAN GITHUB PROPERLY-->
+<div class="container">
+    <h1 class="text-center mt-5">Contact Us</h1>
+    <p class="lead text-center">Please feel free to reach out to us with any questions or feedback!</p>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Student Name</th>
+          <th scope="col">E-mail</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <td>Connor Puckett</td>
+            <td><a href="mailto:cpuckett@csus.edu">cpuckett@csus.edu</a></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><a href="mailto:"></a></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><a href="mailto:"></a></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><a href="mailto:"></a></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><a href="mailto:"></a></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><a href="mailto:"></a></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><a href="mailto:"></a></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><a href="mailto:"></a></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><a href="mailto:"></a></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><a href="mailto:"></a></td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="text-center">Thank you for your interest!</p>
+  </div>
+{% endblock %}
