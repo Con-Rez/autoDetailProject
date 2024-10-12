@@ -1,0 +1,20 @@
+{% extends 'navbar.html' %}
+
+{% load bootstrap5 %} <!-- Load the bootstrap5 template tag library -->
+{% bootstrap_css %} <!-- Load the Bootstrap CSS img folder -->
+{% bootstrap_javascript %} <!-- Load the Bootstrap JavaScript img folder -->
+{% bootstrap_messages %} <!--Optional: Display django.contrib.messages as Bootstrap alerts -->
+
+{% load static %} <!--Load files stored in static folder in app folder-->
+
+{% block content %}
+<div class="container">
+  <h1 class="text-center mt-5">Zeroes and Ones</h1>
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <p class="lead text-center">schedule appointment page</p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

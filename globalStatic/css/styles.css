@@ -1,0 +1,77 @@
+/* Navbar styling */
+.navbar {
+    /* Set the navbar background to white */
+    background-color: white !important;
+    /* Add padding: 20px top/bottom and 40px left/right */
+    padding: 20px 40px !important;
+    /* Add a light gray bottom border */
+    border-bottom: 1px solid #ddd !important;
+}
+
+/* Logo image inside the navbar */
+.logo img {
+    /* Set the logo height to 80px */
+    height: 80px !important;
+}
+
+/* Navigation list styling */
+.nav-list {
+    /* Remove default list item markers */
+    list-style-type: none !important;
+    /* Remove any default margin */
+    margin: 0 !important;
+    /* Remove default padding */
+    padding: 0 !important;
+    /* Align the navigation items horizontally */
+    display: flex !important;
+    /* Add 40px space between each navigation item */
+    gap: 40px !important;
+}
+
+/* Individual list item styling */
+.nav-list li {
+    /* Ensure each list item is inline */
+    display: inline !important;
+}
+
+/* Link styling inside navigation list */
+.nav-list li a {
+    /* Remove the underline from links */
+    text-decoration: none !important;
+    /* Make the link text bold */
+    font-weight: bold !important;
+    /* Set font to Roboto */
+    font-family: 'Roboto', sans-serif !important;
+    /* Set the text color to black */
+    color: black !important;
+    /* No bottom border initially */
+    border-bottom: 2px solid transparent !important;
+    /* Add 5px vertical padding */
+    padding: 5px 0 !important;
+    /* Set font size to 18px */
+    font-size: 18px !important;
+    /* Add 1px letter spacing */
+    letter-spacing: 1px !important;
+}
+
+/* Hover effect for links */
+.nav-list li a:hover {
+    /* Add a black bottom border on hover */
+    border-bottom: 2px solid black !important;
+}
+
+/* Responsive design for mobile/tablet screens */
+@media (max-width: 768px) {
+    .nav-list {
+        /* Stack navigation items vertically */
+        flex-direction: column !important;
+        /* Center the items when stacked */
+        align-items: center !important;
+    }
+}
+
+/* Body styling */
+body {
+    /* Set the body background to white */
+    background-color: white;
+}
