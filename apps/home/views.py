@@ -16,3 +16,11 @@ def homeView(request):
 # Create a new view for the about page, no arguments needed for it
 def aboutView(request):
     return render(request,"about.html")
+
+# Create a new view for the gallery page
+def galleryView(request):
+    return render(request, 'gallery.html')
+
+# Create a new view for the schedule appintments page
+def scheduleView(request):
+    return render(request, 'schedule_appointment.html')
