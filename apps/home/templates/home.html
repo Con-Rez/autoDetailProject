@@ -46,6 +46,30 @@
       </div>
     </div>
   </div>
+  
+  <!-- Who We Are Container -->
+  <div class="row justify-content-evenly" style="background-color: red; margin-left: -15%;">
+    <div class="col-md-12 text-white" style="display: flex; margin-right: 10%; padding-left: 20%; padding-top: 7%; padding-bottom: 7%; align-items: center;">
+      <div class="col-md-6">
+        <h1 class="display-3 fw-bold" style="padding-bottom: 2%;">Who We Are</h1>
+        <p style="padding-right: 15%; font-size: larger;">
+          We are a local auto detail shop servicing customers in the
+          Sacramento region. We do a full auto detail from interior,
+          exterior, and even the engine. We detail all kinds of cars,
+          no matter how dirty, clean, old, or new.
+        </p>
+        <div class="col-md-12" style="padding-top: 15%;">
+          <button type="button" class="btn btn-light btn-lg" style="border-radius: 50px; margin-right: 20px;">Schedule Appointment</button>
+          <button type="button" class="btn btn-dark btn-lg" style="border-radius: 50px; margin-left: 20px;">Contact Us Today</button>
+        </div>
+      </div>
+      <div class="col-md-4 offset-md-2">
+        <div class="mt-12" style="width: 250px; height: auto; aspect-ratio: 1; background-color: white; border-radius: 20px; overflow: hidden;"> 
+          <img src="{% static 'imgs/logo.jpg' %}" alt="Logo" class="img-fluid rounded text-center" style="object-fit: contain; width: 100%; height: 100%; image-rendering:optimizeQuality;">
+        </div>
+      </div>
+    </div>
+  </div>  
 
   <!-- Bootstrap Row, second row of content cards-->
   <div class="row">
@@ -105,4 +129,5 @@
 
 </div>
 </div>
-{% endblock %}.
+ {% endblock %} 
+{% include 'footer.html' %}
