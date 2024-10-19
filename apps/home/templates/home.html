@@ -6,6 +6,11 @@
 {% bootstrap_messages %} <!--Optional: Display django.contrib.messages as Bootstrap alerts -->
 {% load static %} <!--Load files stored in static folder in app folder-->
 
+<head>
+  <!-- Link to your custom CSS file -->
+  <link rel="stylesheet" href="{% static 'css/custom.css' %}"> 
+</head>
+
 {% block content %}
 <div class="container"> <!-- Bootstrap container class, allows for automated page scaling. Makes the site mobile friendly! -->
   <div class="row"> <!-- Bootstrap row class, ensures a layout to the website if it is allowed to via scaling -->
@@ -98,6 +103,55 @@
       </div>
     </div>
   </div>
+
+  <div class="container my-5">
+    <!-- Section Header -->
+    <div class="text-center mb-4">
+        <h6 class="text-danger">Our Services</h6>
+        <h2 class="font-weight-bold">What We Do</h2>
+    </div>
+
+    <div class="row align-items-stretch justify-content-center">
+        <!-- Left Column: Interior and Exterior Services -->
+        <div class="col-md-3 d-flex flex-column justify-content-between">
+            <!-- Interior Service -->
+            <div class="card h-100 text-center p-4 mb-3 service-box" style="background-color: #f7f7f7;">
+                <img src="{% static 'imgs/CarSeat.png' %}" alt="Interior Icon" class="mb-3" style="width: 50px;">
+                <h5 class="font-weight-bold">Interior</h5>
+                <p class="card-text">No matter the interior material, we can refresh and get rid of stains and debris to make the inside look and smell brand new.</p>
+            </div>
+
+            <!-- Exterior Service -->
+            <div class="card h-100 text-center p-4 mt-3 service-box" style="background-color: #f7f7f7;">
+                <img src="{% static 'imgs/CarWash.png' %}" alt="Exterior Icon" class="mb-3" style="width: 50px;">
+                <h5 class="font-weight-bold">Exterior</h5>
+                <p class="card-text">We can get rid of any dirt, hard water spots, and paint swirls. We will return your car with a shine you did not believe was possible.</p>
+            </div>
+        </div>
+
+        <!-- Center Image -->
+        <div class="col-md-6 d-flex align-items-center justify-content-center">
+            <img src="{% static 'imgs/CenterImage.jpg' %}" class="img-fluid rounded center-img" alt="Service Image">
+        </div>
+
+        <!-- Right Column: Engine and Headlights Services -->
+        <div class="col-md-3 d-flex flex-column justify-content-between">
+            <!-- Engine Service -->
+            <div class="card h-100 text-center p-4 mb-3 service-box" style="background-color: #f7f7f7;">
+                <img src="{% static 'imgs/Engine.png' %}" alt="Engine Icon" class="mb-3" style="width: 50px;">
+                <h5 class="font-weight-bold">Engine</h5>
+                <p class="card-text">Engine is often the most overlooked service in auto detailing. We will refresh the engine and make it look shining like no other auto detailer.</p>
+            </div>
+
+            <!-- Headlights Service -->
+            <div class="card h-100 text-center p-4 mt-3 service-box" style="background-color: #f7f7f7;">
+                <img src="{% static 'imgs/Headlight.png' %}" alt="Headlights Icon" class="mb-3" style="width: 50px;">
+                <h5 class="font-weight-bold">Headlights</h5>
+                <p class="card-text">Yellow headlights? No problem! We can make your headlights look clear and new again.</p>
+            </div>
+        </div>
+    </div>
+</div>
 
   <!-- Bootstrap Row, third row of content -->
   <div class="row">
