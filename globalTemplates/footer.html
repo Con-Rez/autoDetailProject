@@ -1,0 +1,135 @@
+{% load static %} <!-- Load the static tag to use static files-->
+{% load bootstrap5 %} <!-- Load the bootstrap5 template tag library -->
+{% bootstrap_css %} <!-- Load the Bootstrap CSS img folder -->
+{% bootstrap_javascript %} <!-- Load the Bootstrap JavaScript img folder -->
+{% bootstrap_messages %} <!--Optional: Display django.contrib.messages as Bootstrap alerts -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <footer class="text-center text-lg-start text-white" style="background-color: black">
+        <!-- Footer Text -->
+        <section class="d-flex justify-content-center p-4" style="background-color: black">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <p class="text-center">
+                            We provide high-quality services, including interior cleaning, exterior polishing, and engine detailing to keep your vehicle looking brand new.
+                            Whether you need a deep clean or routine maintenance, our skilled team is dedicated to delivering exceptional results with premium products. Let us make your car shine!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container">
+            <hr style="border-top: 1px solid gray; width: 100%; margin: 0 auto;">
+        </div>
+        <!-- Footer Text -->
+
+        <!-- Logo  -->
+        <section>
+            <div class="container text-center text-md-start mt-5">
+                <div class="row mt-3">
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <div class="d-flex justify-content-start">
+                            <img src="{% static 'imgs/logo.jpg' %}" alt="AK Auto Detail Logo" height="100">
+                        </div>
+
+                        <p class="text-left mt-3">
+                            Contact us today to explore our auto detailing services and take advantage of great deals from the leading shop in the area. Let us be your trusted partner in keeping your vehicle in top condition, inside and out.
+                        </p>
+                    </div>
+                    <!-- Logo -->
+
+                    <div class="col-md-1 d-none d-md-block">
+                        <div style="border-left: 1px solid gray; height: 90%;"></div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="text-left fw-bold">Quick Links</h6>
+
+                        <p class="text-left">
+                            <a href="{% url 'home' %}" class="text-white">Home</a>
+                        </p>
+                        <p class="text-left">
+                            <a href="{% url 'about' %}" class="text-white">About Us</a>
+                        </p>
+                        <p class="text-left">
+                            <a href="{% url 'gallery' %}" class="text-white">Gallery</a>
+                        </p>
+                        <p class="text-left">
+                            <a href="{% url 'schedule_appointment' %}" class="text-white">Schedule Appointment</a>
+                        </p>
+                        <p class="text-left">
+                            Contact Us
+                        </p>
+                    </div>
+                    <!-- Quick Links -->
+                    
+                    <!-- Services -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="text-left fw-bold">Services</h6>
+
+                        <p class="text-left">Interior Detail</p>
+                        <p class="text-left">Exterior Detail</p>
+                        <p class="text-left">Engine Detail</p>
+                        <p class="text-left">Headlight Restoration</p>
+                    </div>
+                    <!-- Services -->
+
+                    <div class="col-md-1 d-none d-md-block">
+                        <div style="border-left: 1px solid gray; height: 90%;"></div>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <h6 class="text-left fw-bold">Contact</h6>
+
+                        <div class="text-left">
+                            <i class="ion-ios-telephone" style="font-size: 24px; color: white; margin-right: 8px;"></i>
+                            <span>(916) 617-0252</span>
+                        </div>
+                        <div class="text-left mt-3">
+                            <i class="ion-email" style="font-size: 24px; color: white; margin-right: 8px;"></i>
+                            <span>akautodetail2@gmail.com</span>
+                        </div>
+                        <div class="text-left mt-3">
+                            <a href="https://www.facebook.com" class="text-white me-3" target="_blank">
+                                <i class="ion-social-facebook" style="font-size: 24px;"></i>
+                            </a>
+                            <a href="https://www.twitter.com" class="text-white me-3" target="_blank">
+                                <i class="ion-social-twitter" style="font-size: 24px;"></i>
+                            </a>
+                            <a href="https://www.instagram.com" class="text-white" target="_blank">
+                                <i class="ion-social-instagram" style="font-size: 24px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Contact -->
+        </section>
+
+        <!-- Copyright -->
+        <div class="container">
+            <hr style="border-top: 1px solid gray; width: 100%; margin: 0 auto;">
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2024 Copyright: Zeros and Ones
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+</body>
+</html>

@@ -4,8 +4,12 @@
 {% bootstrap_css %} <!-- Load the Bootstrap CSS img folder -->
 {% bootstrap_javascript %} <!-- Load the Bootstrap JavaScript img folder -->
 {% bootstrap_messages %} <!--Optional: Display django.contrib.messages as Bootstrap alerts -->
-
 {% load static %} <!--Load files stored in static folder in app folder-->
+
+<head>
+  <!-- Link to your custom CSS file -->
+  <link rel="stylesheet" href="{% static 'css/custom.css' %}"> 
+</head>
 
 {% block content %}
 <div class="container"> <!-- Bootstrap container class, allows for automated page scaling. Makes the site mobile friendly! -->
@@ -47,6 +51,30 @@
       </div>
     </div>
   </div>
+  
+  <!-- Who We Are Container -->
+  <div class="row justify-content-evenly" style="background-color: red; margin-left: -15%;">
+    <div class="col-md-12 text-white" style="display: flex; margin-right: 10%; padding-left: 20%; padding-top: 7%; padding-bottom: 7%; align-items: center;">
+      <div class="col-md-6">
+        <h1 class="display-3 fw-bold" style="padding-bottom: 2%;">Who We Are</h1>
+        <p style="padding-right: 15%; font-size: larger;">
+          We are a local auto detail shop servicing customers in the
+          Sacramento region. We do a full auto detail from interior,
+          exterior, and even the engine. We detail all kinds of cars,
+          no matter how dirty, clean, old, or new.
+        </p>
+        <div class="col-md-12" style="padding-top: 15%;">
+          <button type="button" class="btn btn-light btn-lg" style="border-radius: 50px; margin-right: 20px;">Schedule Appointment</button>
+          <button type="button" class="btn btn-dark btn-lg" style="border-radius: 50px; margin-left: 20px;">Contact Us Today</button>
+        </div>
+      </div>
+      <div class="col-md-4 offset-md-2">
+        <div class="mt-12" style="width: 250px; height: auto; aspect-ratio: 1; background-color: white; border-radius: 20px; overflow: hidden;"> 
+          <img src="{% static 'imgs/logo.jpg' %}" alt="Logo" class="img-fluid rounded text-center" style="object-fit: contain; width: 100%; height: 100%; image-rendering:optimizeQuality;">
+        </div>
+      </div>
+    </div>
+  </div>  
 
   <!-- Bootstrap Row, second row of content cards-->
   <div class="row">
@@ -76,6 +104,55 @@
     </div>
   </div>
 
+  <div class="container my-5">
+    <!-- Section Header -->
+    <div class="text-center mb-4">
+        <h6 class="text-danger">Our Services</h6>
+        <h2 class="font-weight-bold">What We Do</h2>
+    </div>
+
+    <div class="row align-items-stretch justify-content-center">
+        <!-- Left Column: Interior and Exterior Services -->
+        <div class="col-md-3 d-flex flex-column justify-content-between">
+            <!-- Interior Service -->
+            <div class="card h-100 text-center p-4 mb-3 service-box" style="background-color: #f7f7f7;">
+                <img src="{% static 'imgs/CarSeat.png' %}" alt="Interior Icon" class="mb-3" style="width: 50px;">
+                <h5 class="font-weight-bold">Interior</h5>
+                <p class="card-text">No matter the interior material, we can refresh and get rid of stains and debris to make the inside look and smell brand new.</p>
+            </div>
+
+            <!-- Exterior Service -->
+            <div class="card h-100 text-center p-4 mt-3 service-box" style="background-color: #f7f7f7;">
+                <img src="{% static 'imgs/CarWash.png' %}" alt="Exterior Icon" class="mb-3" style="width: 50px;">
+                <h5 class="font-weight-bold">Exterior</h5>
+                <p class="card-text">We can get rid of any dirt, hard water spots, and paint swirls. We will return your car with a shine you did not believe was possible.</p>
+            </div>
+        </div>
+
+        <!-- Center Image -->
+        <div class="col-md-6 d-flex align-items-center justify-content-center">
+            <img src="{% static 'imgs/CenterImage.jpg' %}" class="img-fluid rounded center-img" alt="Service Image">
+        </div>
+
+        <!-- Right Column: Engine and Headlights Services -->
+        <div class="col-md-3 d-flex flex-column justify-content-between">
+            <!-- Engine Service -->
+            <div class="card h-100 text-center p-4 mb-3 service-box" style="background-color: #f7f7f7;">
+                <img src="{% static 'imgs/Engine.png' %}" alt="Engine Icon" class="mb-3" style="width: 50px;">
+                <h5 class="font-weight-bold">Engine</h5>
+                <p class="card-text">Engine is often the most overlooked service in auto detailing. We will refresh the engine and make it look shining like no other auto detailer.</p>
+            </div>
+
+            <!-- Headlights Service -->
+            <div class="card h-100 text-center p-4 mt-3 service-box" style="background-color: #f7f7f7;">
+                <img src="{% static 'imgs/Headlight.png' %}" alt="Headlights Icon" class="mb-3" style="width: 50px;">
+                <h5 class="font-weight-bold">Headlights</h5>
+                <p class="card-text">Yellow headlights? No problem! We can make your headlights look clear and new again.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
   <!-- Bootstrap Row, third row of content -->
   <div class="row">
     <div class="col-md-12">
@@ -83,5 +160,28 @@
       <p class="text-center">Today is {{todayTag}}</p>
     </div>
   </div>
+
+<!-------Social Media -->
+<div>
+  <h2 style="display: inline-block; margin-right: 10px; font-weight: bold;">akautodetail2</h2>
+  <button class="btn" style="background-color: rgb(8, 8, 178); color: white; display: inline-block; margin-bottom: 1rem; padding: 12px;width: 110px;">Follow Us</button>
 </div>
-{% endblock %}
+<div>
+  <iframe src="https://www.instagram.com/p/DAhTQVcSwIG/embed" 
+  width="320" height="330" frameborder="0" scrolling="no"style="margin: 30px 20px;"></iframe>
+  <iframe src="https://www.instagram.com/p/C_kWZbRR-IZ/embed" 
+    width="320" height="330" frameborder="0" scrolling="no" style="margin: 30px 20px;"></iframe>
+  <iframe src="https://www.instagram.com/reel/C-7BdaAxo79/embed" 
+  width="320" height="330" frameborder="0" scrolling="no" style="margin: 30px 20px;"></iframe>
+</div> 
+<h1> Instagram Images</h1>
+    <div class="images">
+        {% for image in images %}
+            <img src="{{ image }}" alt="Instagram images">
+        {% endfor %}
+    </div>
+
+</div>
+</div>
+ {% endblock %} 
+{% include 'footer.html' %}
