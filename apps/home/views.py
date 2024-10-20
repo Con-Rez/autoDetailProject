@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse # Allows for raw HTTP output commands within the views.py for testing
 import datetime; # Allows for the use of the datetime module to get the current date and time
-from instascrape import Profile
 # Create your views here.
 
 # Create a new view for the home page
