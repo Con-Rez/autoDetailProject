@@ -12,6 +12,7 @@ A Senior Project for nine Sac State Students in CSC 190.
 - [@Rodrigo-Guzman3](https://github.com/Rodrigo-Guzman3)
 - [@fanbrandon](https://github.com/fanbrandon)
 - [@Serefima](https://github.com/Serefima)
+- [@tonymai9](https://github.com/tonymai9)
 
 
 ## Deployment
