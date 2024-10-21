@@ -151,7 +151,6 @@
             </div>
         </div>
     </div>
-</div>
 
   <!-- Bootstrap Row, third row of content -->
   <div class="row">
@@ -161,27 +160,28 @@
     </div>
   </div>
 
-<!-------Social Media -->
-<div>
-  <h2 style="display: inline-block; margin-right: 10px; font-weight: bold;">akautodetail2</h2>
-  <button class="btn" style="background-color: rgb(8, 8, 178); color: white; display: inline-block; margin-bottom: 1rem; padding: 12px;width: 110px;">Follow Us</button>
-</div>
-<div>
-  <iframe src="https://www.instagram.com/p/DAhTQVcSwIG/embed" 
-  width="320" height="330" frameborder="0" scrolling="no"style="margin: 30px 20px;"></iframe>
-  <iframe src="https://www.instagram.com/p/C_kWZbRR-IZ/embed" 
-    width="320" height="330" frameborder="0" scrolling="no" style="margin: 30px 20px;"></iframe>
-  <iframe src="https://www.instagram.com/reel/C-7BdaAxo79/embed" 
-  width="320" height="330" frameborder="0" scrolling="no" style="margin: 30px 20px;"></iframe>
-</div> 
-<h1> Instagram Images</h1>
-    <div class="images">
-        {% for image in images %}
-            <img src="{{ image }}" alt="Instagram images">
-        {% endfor %}
-    </div>
+  <!-------Social Media -->
 
-</div>
+  <div>
+    <h2 style="display: inline-block; margin-right: 10px; font-weight: bold;">akautodetail2</h2>
+    <button class="btn" style="background-color: rgb(8, 8, 178); color: white; display: inline-block; margin-bottom: 1rem; padding: 12px;width: 110px;">Follow Us</button>
+  </div>
+  <div>
+    <iframe src="https://www.instagram.com/p/DAhTQVcSwIG/embed" 
+    width="320" height="330" frameborder="0" scrolling="no"style="margin: 30px 20px;"></iframe>
+    <iframe src="https://www.instagram.com/p/C_kWZbRR-IZ/embed" 
+      width="320" height="330" frameborder="0" scrolling="no" style="margin: 30px 20px;"></iframe>
+    <iframe src="https://www.instagram.com/reel/C-7BdaAxo79/embed" 
+    width="320" height="330" frameborder="0" scrolling="no" style="margin: 30px 20px;"></iframe>
+  </div> 
+    <h1> Instagram Images</h1>
+      <div class="images">
+        {% for image in images %}
+          <img src="{{ image }}" alt="Instagram images">
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 </div>
  {% endblock %} 
 {% include 'footer.html' %}
