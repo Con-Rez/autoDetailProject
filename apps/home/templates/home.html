@@ -13,6 +13,24 @@
 
 {% block content %}
 <div class="container"> <!-- Bootstrap container class, allows for automated page scaling. Makes the site mobile friendly! -->
+  <div class="row"> <!-- Bootstrap row class, ensures a layout to the website if it is allowed to via scaling -->
+    <!-- Bootstrap card for banner-->
+    <div class="col-12">
+      <div class="card banner-card">
+        <img src="{% static 'imgs/banner.png' %}" class="card-img-top" alt="Banner Image">
+        <div class="card-img-overlay">
+          <h1 class="card-title text-white">
+            WHERE EVERY<br>
+            CAR GETS THE<br>
+            <span style="color: red;">ROYAL</span><br>
+            TREATMENT<span style="color: red;">.</span>
+          </h1>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap Card, This one is for Jinsong Ouyang-->
+
   
   <!--This was some test code to demonstrate static and template imports and links, may be deleted-->
   <!--<div class="row">
