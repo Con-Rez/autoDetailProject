@@ -14,7 +14,6 @@
 {% block content %}
 <div class="container"> <!-- Bootstrap container class, allows for automated page scaling. Makes the site mobile friendly! -->
   <div class="row"> <!-- Bootstrap row class, ensures a layout to the website if it is allowed to via scaling -->
-
     <!-- Bootstrap card for banner-->
     <div class="col-12">
       <div class="card banner-card">
@@ -31,6 +30,10 @@
     </div>
     
     <!-- Bootstrap Card, This one is for Jinsong Ouyang-->
+
+  
+  <!--This was some test code to demonstrate static and template imports and links, may be deleted-->
+  <!--<div class="row">
     <div class="col-md-4 mb-4">
       <div class="card h-100">
         <img src="{% static 'imgs/ouyang.jpg' %}" class="card-img-top" alt="Image of Professor and Department Chair Jinsong Ouyang.">
@@ -42,7 +45,6 @@
       </div>
     </div>
 
-    <!-- Bootstrap Card, This one is for Anna Baynes-->
     <div class="col-md-4 mb-4">
       <div class="card h-100">
         <img src="{% static 'imgs/baynes.jpg' %}" class="card-img-top" alt="Image of Computer Science Associate Chair Anna Baynes.">
@@ -54,7 +56,6 @@
       </div>
     </div>
 
-    <!-- Bootstrap Card, this one is for Bill Gates-->
     <div class="col-md-4 mb-4">
       <div class="card h-100">
         <img src="https://media.licdn.com/dms/image/v2/D5603AQHv6LsdiUg1kw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1695167344576?e=1733356800&v=beta&t=7G6AbkYLSLbRk_s0kKRQqg36eedxwcbIRKd3_sHHkNA" class="card-img-top" alt="Picture of Bill Gates.">
@@ -65,7 +66,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div>-->
   
   <!-- Who We Are Container -->
   <div class="row justify-content-evenly" style="background-color: red; margin-left: -15%;">
@@ -91,10 +92,8 @@
     </div>
   </div>  
 
-  <!-- Bootstrap Row, second row of content cards-->
-  <div class="row">
-
-    <!--Bootstrap Card, this one is for the about page-->
+  <!--This was some test code to demonstrate static and template imports and links, may be deleted-->
+  <!--<div class="row">
     <div class="col-md-6 mb-4">
       <div class="card h-100">
         <img src="https://clipground.com/images/mongodb-png-logo-4.jpg" class="card-img-top" alt="mongoDB Logo">
@@ -106,7 +105,6 @@
       </div>
     </div>
 
-    <!--Bootstrap Card, this one is for the about page-->
     <div class="col-md-6 mb-4">
       <div class="card h-100">
         <img src="https://www.jadsmkbdatalab.nl/wp-content/uploads/2021/03/OMDB-API_logo.png" class="card-img-top" alt="OMDb Logo">
@@ -117,7 +115,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div>-->
 
   <div class="container my-5">
     <!-- Section Header -->
@@ -166,37 +164,131 @@
             </div>
         </div>
     </div>
-</div>
-
-  <!-- Bootstrap Row, third row of content -->
-  <div class="row">
+  <div class="col-xs-12" style="height:50px;"></div> <!-- Space between the cards and the footer -->
+  
+  <!-- Variable Import test example -->
+  <!-- <div class="row">
     <div class="col-md-12">
       <h1 class="text-center">Hello World!</h1>
       <p class="text-center">Today is {{todayTag}}</p>
     </div>
-  </div>
+  </div> -->
 
-<!-------Social Media -->
-<div>
-  <h2 style="display: inline-block; margin-right: 10px; font-weight: bold;">akautodetail2</h2>
-  <button class="btn" style="background-color: rgb(8, 8, 178); color: white; display: inline-block; margin-bottom: 1rem; padding: 12px;width: 110px;">Follow Us</button>
-</div>
-<div>
-  <iframe src="https://www.instagram.com/p/DAhTQVcSwIG/embed" 
-  width="320" height="330" frameborder="0" scrolling="no"style="margin: 30px 20px;"></iframe>
-  <iframe src="https://www.instagram.com/p/C_kWZbRR-IZ/embed" 
-    width="320" height="330" frameborder="0" scrolling="no" style="margin: 30px 20px;"></iframe>
-  <iframe src="https://www.instagram.com/reel/C-7BdaAxo79/embed" 
-  width="320" height="330" frameborder="0" scrolling="no" style="margin: 30px 20px;"></iframe>
-</div> 
-<h1> Instagram Images</h1>
-    <div class="images">
-        {% for image in images %}
-            <img src="{{ image }}" alt="Instagram images">
-        {% endfor %}
+  <!-- Google Reviews -->
+
+  <!-- Top-Rated Care -->
+  <div class="card-group shadow-lg">
+    <div class="card"> <!-- Google Maps Embed -->
+      <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3117.903565421771!2d-121.40285622024186!3d38.605089773250334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809adb00171de56f%3A0x58b0261c2569f2d!2sAK%20Auto%20Detail!5e0!3m2!1sen!2sus!4v1729470952793!5m2!1sen!2sus"
+            width="640"
+            height="300"
+            style="border: 0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+    </div>
+    <div class="card"> <!-- Top-Rated Care Message -->
+      <div class="card-body">
+        <div class="col-xs-12" style="height:20px;"></div>
+        <h5 class="card-title text-center fs-1 text-primary fw-light">Top-rated care</h5>
+          <div class="col-xs-12" style="height:20px;"></div>
+          <div class="row">
+              <p class="text-center text-nowrap fs-1 text-warning fw-bolder">5.0 &#11088 &#11088 &#11088 &#11088 &#11088</p>
+              <p class="text-center"><img src="https://lh3.googleusercontent.com/COxitqgJr1sJnIDe8-jiKhxDx1FrYbtRHKJ9z_hELisAlapwE9LUPh6fcXIfb5vwpbMl4xl9H9TRFPc5NOO8Sb3VSgIBrfRYvW6cUA" width="60" height="60"></p>
+          </div>
+        <a href="https://maps.app.goo.gl/hpXdthRRwjk7ZDDj9" class="stretched-link"> </a>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12" style="height:50px;"></div> <!-- Space between the cards and the footer -->
+
+
+  <!-- Static Testamonials -->
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+      <div class="shadow card h-100">
+        <div class="card-body">
+          <h5 class="card-title"> 
+            <div class="row"> <!-- Static Testimonial 1 -->
+              <div class="col">
+                <p class="text-center"><img src="https://lh3.googleusercontent.com/a-/ALV-UjWLIFgUOGfgS7rTQ_0TUUVdF6P26FBv0AtZmgctQrVqtNpQaTVt=w36-h36-p-rp-mo-br100">Katerina</p>
+              </div>
+              <div class="col">
+                <p class="text-center text-nowrap">&#11088 &#11088 &#11088 &#11088 &#11088</p> <!-- Star Rating, no wrap to keep from issues during mobile scaling -->
+              </div>
+            </div>
+          </h5>
+          <p class="card-text">The attention to detail was phenomenal. Every inch of my car, inside and out, was meticulously cleaned and polished. The exterior shines like new, and the interior looks and smells fantastic. They even managed to remove some stubborn stains and scratches that I thought were permanent. What impressed me the most was their commitment to customer satisfaction. They kept me updated throughout the process and made sure I was completely satisfied with the work before I left. The pricing was very fair for the high-quality service provided.</p>
+          <a href="https://maps.app.goo.gl/da7GqrehfdH3BmuEA" class="stretched-link"> </a>
+        </div>
+      </div>
     </div>
 
-</div>
+    <div class="col">
+      <div class="shadow card h-100">
+        <div class="card-body">
+          <h5 class="card-title"> 
+            <div class="row"> <!-- Static Testimonial 2 -->
+              <div class="col">
+                <p class="text-center"><img src="https://lh3.googleusercontent.com/a-/ALV-UjVGQ01R9DCRKn69QXWqC4uH5Oum5tRjOKP1_qK5KPSm9GLP8oiczw=w36-h36-p-rp-mo-ba2-br100">Ayah</p>
+              </div>
+              <div class="col">
+                <p class="text-center text-nowrap">&#11088 &#11088 &#11088 &#11088 &#11088</p> <!-- Star Rating, no wrap to keep from issues during mobile scaling -->
+              </div>
+            </div>
+          </h5>
+          <p class="card-text">I recently brought my car to this car detailing car wash and I couldn't be happier with the service I received. The staff was friendly and professional, and they did an amazing job cleaning my car inside and out. The attention to detail was impressive, and my car looked brand new when they were finished. I was also pleasantly surprised by how affordable their prices were. I will definitely be returning to this car wash in the future and would highly recommend it to anyone looking to have their car detailed.</p>
+          <a href="https://maps.app.goo.gl/BwdbSZgKz2LJgSUC6" class="stretched-link"> </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="shadow card h-100">
+        <div class="card-body">
+          <h5 class="card-title">
+            <div class="row"> <!-- Static Testimonial 3 -->
+              <div class="col">
+                <p class="text-center text-nowrap"><img src="https://lh3.googleusercontent.com/a-/ALV-UjVgJ-TZMZTz0HgbaMZqRLQH0oelWHcLF21IOZSjc-a1g812iv4e=w36-h36-p-rp-mo-br100">Guess Who</p>
+              </div>
+              <div class="col">
+                <p class="text-center">&#11088 &#11088 &#11088 &#11088 &#11088</p> <!-- Star Rating, no wrap to keep from issues during mobile scaling -->
+              </div>
+            </div>
+          </h5>
+          <p class="card-text">The service was quick and well-organized, and the final result was better than I hoped. If you’re looking for great car detailing and excellent service, I highly recommend AK Auto Detail. I’ll definitely be coming back.</p>
+          <a href="https://maps.app.goo.gl/FpwVGsJ1oB5Q2PKdA" class="stretched-link"> </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xs-12" style="height:50px;"></div> <!-- Added space for formatting -->
+
+  <!-- Instagram -->
+
+  <div>
+    <h2 style="display: inline-block; margin-right: 10px; font-weight: bold;">akautodetail2</h2>
+    <button class="btn" style="background-color: rgb(8, 8, 178); color: white; display: inline-block; margin-bottom: 1rem; padding: 12px;width: 110px;">Follow Us</button>
+  </div>
+  <div>
+    <iframe src="https://www.instagram.com/p/DAhTQVcSwIG/embed" 
+    width="320" height="330" frameborder="0" scrolling="no"style="margin: 30px 20px;"></iframe>
+    <iframe src="https://www.instagram.com/p/C_kWZbRR-IZ/embed" 
+      width="320" height="330" frameborder="0" scrolling="no" style="margin: 30px 20px;"></iframe>
+    <iframe src="https://www.instagram.com/reel/C-7BdaAxo79/embed" 
+    width="320" height="330" frameborder="0" scrolling="no" style="margin: 30px 20px;"></iframe>
+  </div> 
+    <h1> Instagram Images</h1>
+      <div class="images">
+        {% for image in images %}
+          <img src="{{ image }}" alt="Instagram images">
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 </div>
  {% endblock %} 
 {% include 'footer.html' %}
