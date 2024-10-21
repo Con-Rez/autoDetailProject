@@ -17,6 +17,7 @@ A Senior Project for nine Sac State Students in CSC 190.
 
 =======
 - [@tonymai9](https://github.com/tonymai9)
+- [@un90](https://github.com/un90)
 
 
 ## Deployment
