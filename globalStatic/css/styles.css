@@ -76,6 +76,47 @@ body {
     background-color: white;
 }
 
+/* Specific styling for banner card */
+.banner-card {
+    border-radius: 50px !important;  
+    overflow: hidden;                
+    position: relative;              
+    box-shadow: none !important;     
+}
+
+.banner-card .card-img-top {
+    border-radius: 50px !important;  
+    width: 100%;                     
+    height: auto;                    
+    object-fit: cover;               
+    object-position: center;         
+}
+
+/* banner text position */
+.banner-card .card-img-overlay {
+    position: absolute;              
+    top: 45%;
+    left: 5px;
+    transform: translateY(-50%);
+    width: auto;
+}
+
+/* banner font */
+.banner-card .card-title {
+    font-size: 60px;
+    font-weight: bold;
+    text-align: left;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin: 0;
+    font-family: 'Roboto', sans-serif; 
+}
+
+
+.card:not(.banner-card) {
+    border-radius: 0 !important;     
+    box-shadow: none !important;     
+}
+
 <<<<<<< HEAD
 =======
 /* Footer styling */
