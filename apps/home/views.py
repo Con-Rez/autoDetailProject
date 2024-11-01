@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse # Allows for raw HTTP output commands within the views.py for testing
 import datetime; # Allows for the use of the datetime module to get the current date and time
 # Create your views here.
@@ -23,3 +23,12 @@ def galleryView(request):
 # Create a new view for the schedule appintments page
 def scheduleView(request):
     return render(request, 'schedule_appointment.html')
+
+# help code customer contact/continue
+def submit_form(request):
+    if request.method == 'POST':
+        # Process form data here
+        # just returns a simple response, a different team member can add functionality here
+        return HttpResponse("Form submitted successfully.")
+    else:
+        return redirect('schedule_appointment')

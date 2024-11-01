@@ -6,5 +6,6 @@ urlpatterns = [
     path('about/', views.aboutView, name='about'),
     path('gallery/', views.galleryView, name='gallery'),
     path('schedule_appointment/', views.scheduleView, name='schedule_appointment'),
-   
+    # help code customer contact/continue
+    path('submit_form/', views.submit_form, name='submit_form'),
 ]
