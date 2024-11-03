@@ -103,7 +103,7 @@ body {
 
 /* banner font */
 .banner-card .card-title {
-    font-size: 60px;
+    font-size: 50px;
     font-weight: bold;
     text-align: left;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
@@ -115,6 +115,22 @@ body {
 .card:not(.banner-card) {
     border-radius: 0 !important;     
     box-shadow: none !important;     
+}
+
+.schedule-btn {
+    display: inline-block;            
+    background-color: red;           
+    color: white;                     
+    text-align: center;               
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;                  
+    font-weight: bold;                
+    padding: 15px 20px;            
+    text-decoration: none;           
+    border-radius: 8px;               
+    transition: background-color 0.3s ease; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    text-transform: uppercase; 
 }
 
 <<<<<<< HEAD
