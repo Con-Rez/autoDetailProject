@@ -15,8 +15,6 @@ A Senior Project for nine Sac State Students in CSC 190.
 - [@katerinacowan](https://github.com/katerinacowan)
 - [@Pencilsharp333](https://github.com/Pencilsharp333)
 - [@un90](https://github.com/un90)
-- 
-=======
 - [@tonymai9](https://github.com/tonymai9)
 
 
