@@ -1,111 +1,82 @@
-/* Default light mode (root) */
-:root {
-    --bg-color: white;
-    --text-color: black;
-    --card-bg-color: #f8f9fa; /* Default card background */
-    --card-text-color: black;
-    --navbar-bg-color: white;
-    --navbar-text-color: black;
-    --link-color: black;
-    --hover-border-color: black;
-    --button-bg-color: red;
-    --button-text-color: white;
-    --footer-bg-color: #f0f0f0; /* Light gray for footer */
-}
-
-/* Dark mode overrides */
-.dark-mode {
-    --bg-color: #121212;
-    --text-color: #e0e0e0;
-    --card-bg-color: #1e1e1e; /* Dark background for cards */
-    --card-text-color: #c7c7c7;
-    --navbar-bg-color: #1e1e1e;
-    --navbar-text-color: #ffffff;
-    --link-color: #bbbbbb;
-    --hover-border-color: #ffffff;
-    --button-bg-color: #d32f2f;
-    --button-text-color: #ffffff;
-    --footer-bg-color: #2c2c2c;
-}
-
-/* Apply colors to body and other elements */
-body {
-    background-color: var(--bg-color) !important;
-    color: var(--text-color) !important;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.container, .navbar, .banner-card, .follow-us {
-    background-color: var(--bg-color) !important;
-    color: var(--text-color) !important;
-}
-
-/* Override Bootstrap card styles */
-.card {
-    background-color: var(--card-bg-color) !important;
-    color: var(--card-text-color) !important;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Dark Mode Inversion for Service Images */
-.dark-mode .service-box img {
-    filter: invert(1) brightness(1.5); /* Invert and adjust brightness for better visibility */
-    transition: filter 0.3s ease;
-}
-
-/* Text-specific classes */
-.text-dark, .text-primary, .text-muted {
-    color: var(--text-color) !important;
-}
-
 /* Navbar styling */
 .navbar {
-    background-color: var(--navbar-bg-color) !important;
-    color: var(--navbar-text-color) !important;
+    /* Set the navbar background to white */
+    background-color: white !important;
+    /* Add padding: 20px top/bottom and 40px left/right */
     padding: 20px 40px !important;
+    /* Add a light gray bottom border */
     border-bottom: 1px solid #ddd !important;
-    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Navigation list and links */
+/* Logo image inside the navbar */
+.logo img {
+    /* Set the logo height to 80px */
+    height: 80px !important;
+}
+
+/* Navigation list styling */
 .nav-list {
+    /* Remove default list item markers */
     list-style-type: none !important;
+    /* Remove any default margin */
     margin: 0 !important;
+    /* Remove default padding */
     padding: 0 !important;
+    /* Align the navigation items horizontally */
     display: flex !important;
+    /* Add 40px space between each navigation item */
     gap: 40px !important;
 }
 
+/* Individual list item styling */
 .nav-list li {
+    /* Ensure each list item is inline */
     display: inline !important;
 }
 
+/* Link styling inside navigation list */
 .nav-list li a {
+    /* Remove the underline from links */
     text-decoration: none !important;
+    /* Make the link text bold */
     font-weight: bold !important;
+    /* Set font to Roboto */
     font-family: 'Roboto', sans-serif !important;
-    color: var(--link-color) !important;
+    /* Set the text color to black */
+    color: black !important;
+    /* No bottom border initially */
     border-bottom: 2px solid transparent !important;
+    /* Add 5px vertical padding */
     padding: 5px 0 !important;
+    /* Set font size to 18px */
     font-size: 18px !important;
+    /* Add 1px letter spacing */
     letter-spacing: 1px !important;
-    transition: color 0.3s ease, border-color 0.3s ease;
 }
 
 /* Hover effect for links */
 .nav-list li a:hover {
-    border-bottom: 2px solid var(--hover-border-color) !important;
+    /* Add a black bottom border on hover */
+    border-bottom: 2px solid black !important;
 }
 
-/* Responsive design */
+/* Responsive design for mobile/tablet screens */
 @media (max-width: 768px) {
     .nav-list {
+        /* Stack navigation items vertically */
         flex-direction: column !important;
+        /* Center the items when stacked */
         align-items: center !important;
     }
 }
 
-/* Banner card styling */
+/* Body styling */
+body {
+    /* Set the body background to white */
+    background-color: white;
+}
+
+/* Specific styling for banner card */
 .banner-card {
     border-radius: 50px !important;  
     overflow: hidden;                
@@ -121,7 +92,7 @@ body {
     object-position: center;         
 }
 
-/* Banner text position */
+/* banner text position */
 .banner-card .card-img-overlay {
     position: absolute;              
     top: 45%;
@@ -130,7 +101,7 @@ body {
     width: auto;
 }
 
-/* Banner font */
+/* banner font */
 .banner-card .card-title {
     font-size: 50px;
     font-weight: bold;
@@ -140,17 +111,16 @@ body {
     font-family: 'Roboto', sans-serif; 
 }
 
-/* Non-banner cards */
+
 .card:not(.banner-card) {
     border-radius: 0 !important;     
     box-shadow: none !important;     
 }
 
-/* Button styling */
 .schedule-btn {
     display: inline-block;            
-    background-color: var(--button-bg-color);           
-    color: var(--button-text-color);                     
+    background-color: red;           
+    color: white;                     
     text-align: center;               
     font-family: 'Roboto', sans-serif;
     font-size: 20px;                  
@@ -158,107 +128,13 @@ body {
     padding: 15px 20px;            
     text-decoration: none;           
     border-radius: 8px;               
-    transition: background-color 0.3s ease, color 0.3s ease; 
+    transition: background-color 0.3s ease; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
     text-transform: uppercase; 
 }
 
-.schedule-btn:hover {
-    background-color: #b71c1c; /* Slightly darker red for hover */
-    color: var(--button-text-color); 
-}
-
-/* Styling for the Schedule Appointment link button */
-.apt-btn {
-    display: inline-block; 
-    background-color: #555555; /* New color, blue */
-    color: white;             /* Text color */
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 15px 20px;
-    text-decoration: none;
-    border-radius: 50px;
-    margin-top: 15px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-transform: uppercase;
-}
-
-.apt-btn:hover {
-    background-color: #1b1b1b; /* Darker blue for hover effect */
-    color: white; /* Ensures text color remains white */
-}
-
-/* Container styling for Who We Are section */
-.who-we-are-container {
-    background-color: red; /* Fixed red background */
-    padding-left: 20%;
-    padding-top: 7%;
-    padding-bottom: 7%;
-    margin-left: -15%;
-}
-
-/* Static paragraph text color */
-.static-text {
-    color: #333333; /* Fixed color, dark gray */
-}
-
-
-/* Footer styling with consistent background color across all sections */
-footer, footer .container, footer section {
-    background-color: var(--footer-bg-color) !important; /* Apply footer background to all sections */
-    color: var(--text-color) !important; /* Ensure text is also consistent */
-    padding: 20px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Footer text and link colors */
-footer p, footer a {
-    color: var(--link-color) !important; /* Link color */
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-footer a:hover {
-    color: var(--hover-border-color) !important; /* Adjust on hover */
-}
-
-/* Footer icon styling */
-footer i {
-    color: var(--link-color) !important; /* Set color based on theme */
-    transition: color 0.3s ease;
-}
-
-/* Add a hover effect for social media icons */
-footer a:hover i {
-    color: var(--hover-border-color) !important; /* Hover color for icons */
-}
-
-/* Apply text color to all heading and paragraph elements */
-h1, h2, h3, h4, h5, h6, p, .lead, .text-center {
-    color: var(--text-color) !important;
-}
-
-/* Also apply to Bootstrap-specific classes */
-.table, .table th, .table td, .card-text, .card-title {
-    color: var(--text-color) !important;
-}
-
-/* Button text color */
-.btn, .btn-light, .btn-dark {
-    color: var(--button-text-color) !important;
-}
-
-/* Table and card backgrounds */
-.table, .card, .table th, .table td {
-    background-color: var(--card-bg-color) !important;
-    border-color: var(--hover-border-color) !important; /* For border color in dark mode */
-}
-
-/* Borders for tables in dark mode */
-.table-bordered th, .table-bordered td {
-    border-color: var(--hover-border-color) !important;
-}
+<<<<<<< HEAD
+=======
+/* Footer styling */
+>>>>>>> bea8eaab2179b40c23ec1261d779130625f50cfa
 
