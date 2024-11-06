@@ -4,17 +4,48 @@
 {% bootstrap_css %} <!-- Load the Bootstrap CSS img folder -->
 {% bootstrap_javascript %} <!-- Load the Bootstrap JavaScript img folder -->
 {% bootstrap_messages %} <!--Optional: Display django.contrib.messages as Bootstrap alerts -->
-
 {% load static %} <!--Load files stored in static folder in app folder-->
 
 {% block content %}
 <div class="container">
-  <h1 class="text-center mt-5">Zeroes and Ones</h1>
+  <h1 class="text-center mt-5">Gallery</h1>
   <div class="row justify-content-center">
     <div class="col-lg-8">
-      <p class="lead text-center">gallery page</p>
+      <p class="lead text-center">More Transformations</p>
+      <div id="galleryCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
+        <!-- Indicators -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+          <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="2"></button>
+        </div>
+
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static 'imgs/home-tran-bmw.png' %}" class="d-block w-100" alt="Image of a car">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'imgs/home-tran-ford.png' %}" class="d-block w-100" alt="Image of a car">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'imgs/home-tran-gmc.png' %}" class="d-block w-100" alt="Image of a car">
+          </div>
+        </div>
+
+        <!-- Carousel controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     </div>
   </div>
 </div>
 {% include 'footer.html' %}
 {% endblock %}
+

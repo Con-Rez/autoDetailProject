@@ -9,6 +9,7 @@ A Senior Project for nine Sac State Students in CSC 190.
 ## Authors
 
 - [@Con-Rez](https://github.com/Con-Rez)
+- [@RebeccaFitzpatrick](https://github.com/RebeccaFitzpatrick)
 - [@Rodrigo-Guzman3](https://github.com/Rodrigo-Guzman3)
 - [@fanbrandon](https://github.com/fanbrandon)
 - [@Serefima](https://github.com/Serefima)
