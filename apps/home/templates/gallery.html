@@ -15,100 +15,186 @@
 {% block content %}
 
 
-
-<div id="comparison">
-  <figure>
-    <div id="divisor"></div>
-  </figure>
-  <input type="range" min="0" max="100" value="50" id="slider" oninput="moveDivisor()">
+<div class="container"> <!-- Align with the navbar's container -->
+  <div class="slider-container">
+    <div id="image-comparison-slider">
+      <img src="{% static 'imgs/BeforeAfterFordBW.jpg' %}" alt="before">
+      <div class="img-wrapper">
+        <img src="{% static 'imgs/BeforeAfterFordColor.jpg' %}" alt="after">
+      </div>
+      <span class="label label-before">Before</span>
+      <span class="label label-after">After</span>
+      <div class="handle">
+        <div class="handle-line"></div>
+        <div class="handle-circle">
+          <i class="fas fa-chevron-left"></i>
+          <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="handle-line"></div>
+      </div>
+    </div>
+  </div>
 </div>
 
+
+
+
 <style>
-/**CSS**/
-div#comparison { 
-  width: 60vw;
-  height: 60vw;
-  max-width: 600px;
-  max-height: 600px;
-  overflow: hidden; 
+
+:root {
+  --image-comparison-slider-width: min(80vw, 300px);
+  --image-comparison-slider-handle-width: 50px;
+  --image-comparison-slider-height: 100px; /* Set a height for the slider */
 }
-div#comparison figure { 
-  background-image: url("{% static 'imgs/BeforeAfterFordColor' %}"); 
-  background-size: cover;
+
+.slider-container {
+  display: flex;          /* Use flexbox for alignment */
+  justify-content: left; /* Center the slider horizontally */
+  align-items: left;     /* Optional: Align vertically */
+  width: 100%;             /* Ensure it spans the parent container */
+  padding: 1rem 0;         /* Add vertical padding */
+}
+
+
+#image-comparison-slider {
   position: relative;
-  font-size: 0;
-  width: 100%; 
-  height: 100%;
-  margin: 0; 
-}
-div#comparison figure > img { 
-  position: relative;
-  width: 100%;
-}
-div#comparison figure div { 
-  background-image: url("{% static 'imgs/BeforeAfterFordBW' %}");
-  background-size: cover;
-  position: absolute;
-  width: 100%; 
-  box-shadow: 0 5px 10px -2px rgba(0,0,0,0.3);
+  width: var(--image-comparison-slider-width);
   overflow: hidden;
-  bottom: 0;
+  border-radius: 0.5rem;
+  box-shadow: -7px 5px 16px 1px rgba(56, 86, 122, 0.6);
+  cursor: col-resize;
+}
+#image-comparison-slider img {
+  display: block;
+  width: var(--image-comparison-slider-width);
+  height: auto;
+  max-height: 80vh;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+}
+#image-comparison-slider .img-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  
+}
+#image-comparison-slider .img-wrapper img {
+  position: absolute;
+  top: 0;
+  right: 0;
   height: 100%;
 }
+#image-comparison-slider .label {
+  position: absolute;
+  top: 1rem;
+  z-index: 3;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.33);
+  border-radius: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.85rem;
+  text-align: center;
+  letter-spacing: 1px;
+  user-select: none;
+  opacity: 0;
+  transition: 0.25s cubic-bezier(.68,.26,.58,1.22);
+}
+#image-comparison-slider:hover .label {
+  opacity: 1;
+}
+#image-comparison-slider .label.label-before {
+  left: 1rem;
+}
+#image-comparison-slider .label.label-after {
+  right: 1rem;
+  background-color: #f95540;
+}
+#image-comparison-slider .handle {
+  position: absolute;
+  top: 0;
+  left: calc(50% - var(--image-comparison-slider-handle-width)/2);
+  width: var(--image-comparison-slider-handle-width);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  z-index: 2;
+  /* transition: 0.25s cubic-bezier(.03,.98,.52,.99); */
+}
+#image-comparison-slider .handle-line {
+  width: 2px;
+  flex-grow: 1;
+  background-color: #fff;
+}
+#image-comparison-slider .handle-circle {
+  width: var(--image-comparison-slider-handle-width);
+  height: var(--image-comparison-slider-handle-width);
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  /* background-color: rgba(0,0,0,0.5); */
+}
 
-input[type=range]{
-  -webkit-appearance:none;
-  -moz-appearance:none;
-  position: relative;
-  top: -2rem; left: -2%;
-  background-color: rgba(255,255,255,0.1);
-  width: 102%; 
-}
-input[type=range]:focus { 
-  outline: none; 
-}
-input[type=range]:active { 
-  outline: none;  
-}
-
-input[type=range]::-moz-range-track { 
-  -moz-appearance:none;
-    height:15px;
-    width: 98%;
-    background-color: rgba(255,255,255,0.1); 
-    position: relative;
-    outline: none;    
- }
-input[type=range]::active { 
-  border: none; 
-  outline: none;
-}
-input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance:none;
-    width: 20px; height: 15px;   
-    background: #fff;
-    border-radius: 0;
-}
-input[type=range]::-moz-range-thumb {
-  -moz-appearance: none;
-  width: 20px;
-  height: 15px;
-  background: #fff;
-  border-radius: 0;
-}   
-input[type=range]:focus::-webkit-slider-thumb {
-    background: rgba(255,255,255,0.5);
-}
-input[type=range]:focus::-moz-range-thumb {
-    background: rgba(255,255,255,0.5);
+@media (max-width: 200px) {
+  :root {
+    --image-comparison-slider-width: 90vw;
+  }
 }
 </style>
 <script>
 /**JS**/
-var divisor = document.getElementById("divisor"),
-slider = document.getElementById("slider");
-function moveDivisor() { 
-    divisor.style.width = slider.value+"%";
+const slider = document.querySelector("#image-comparison-slider");
+const sliderImgWrapper = document.querySelector("#image-comparison-slider .img-wrapper");
+const sliderHandle = document.querySelector("#image-comparison-slider .handle");
+
+slider.addEventListener("mousemove", sliderMouseMove);
+slider.addEventListener("touchmove", sliderMouseMove);
+
+function sliderMouseMove(event) {
+
+if(isSliderLocked) return;
+
+const sliderLeftX = slider.offsetLeft;
+const sliderWidth = slider.clientWidth;
+const sliderHandleWidth = sliderHandle.clientWidth;
+
+let mouseX = (event.clientX || event.touches[0].clientX) - sliderLeftX;
+if(mouseX < 0) mouseX = 0;
+else if(mouseX > sliderWidth) mouseX = sliderWidth;
+
+sliderImgWrapper.style.width = `${((1 - mouseX/sliderWidth) * 100).toFixed(4)}%`;
+sliderHandle.style.left = `calc(${((mouseX/sliderWidth) * 100).toFixed(4)}% - ${sliderHandleWidth/2}px)`;
+}
+
+let isSliderLocked = false;
+
+slider.addEventListener("mousedown", sliderMouseDown);
+slider.addEventListener("touchstart", sliderMouseDown);
+slider.addEventListener("mouseup", sliderMouseUp);
+slider.addEventListener("touchend", sliderMouseUp);
+slider.addEventListener("mouseleave", sliderMouseLeave);
+
+function sliderMouseDown(event) {
+if(isSliderLocked) isSliderLocked = false;
+sliderMouseMove(event);
+}
+
+function sliderMouseUp() {
+if(!isSliderLocked) isSliderLocked = true;
+}
+
+function sliderMouseLeave() {
+if(isSliderLocked) isSliderLocked = false;
 }
 </script>
 
