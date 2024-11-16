@@ -7,45 +7,57 @@
 {% load static %} <!--Load files stored in static folder in app folder-->
 
 {% block content %}
-<div class="container">
-  <h1 class="text-center mt-5">Gallery</h1>
+  <div class="container" style="width: 100%; max-width:1200px; margin: 0 auto; padding-bottom: 20px;">
+  <h1 class="text-center mt-5" style="text-align: center; margin-top: 30px;">Gallery</h1>
   <div class="row justify-content-center">
-    <div class="col-lg-8">
-      <p class="lead text-center">More Transformations</p>
-      <div id="galleryCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
-        <!-- Indicators -->
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
-          <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="1"></button>
-          <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="2"></button>
-        </div>
-
+    <div class="col-lg-10">
+      <p class="lead text-center" style="text-align: center;font-size:1.25rem;">More Transformations</p>
+      <!--Carousel Container-->
+      <div id="galleryCarousel" class="carousel slide mt-4" data-bs-ride="carousel"
+        style="width: 100%; margin: 0 auto; position: relative;margin-bottom: 20px;">
         <!-- Carousel items -->
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="{% static 'imgs/home-tran-bmw.png' %}" class="d-block w-100" alt="Image of a car">
+         <div class="carousel-inner" style="border-radius: 15px; overflow:hidden; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">
+          <div class="carousel-item active" style="width: 100%;">
+            <img src="{% static 'imgs/home-tran-bmw.png' %}" class="d-block w-100" alt="Image of a car"
+            style="width: 100%; height: 400px; object-fit: cover; transition: transform 0.5s ease;">
+          </div>
+          <div class="carousel-item" style="width: 100%;">
+            <img src="{% static 'imgs/home-tran-ford.png' %}" class="d-block w-100" alt="Image of a car"
+            style="width: 100%; height: 400px; object-fit: cover; transition: transform 0.5s ease;">
           </div>
           <div class="carousel-item">
-            <img src="{% static 'imgs/home-tran-ford.png' %}" class="d-block w-100" alt="Image of a car">
+            <img src="{% static 'imgs/home-tran-gmc.png' %}" class="d-block w-100" alt="Image of a car"
+            style="width: 100%; height: 400px; object-fit: cover; transition: transform 0.5s ease;">
           </div>
-          <div class="carousel-item">
-            <img src="{% static 'imgs/home-tran-gmc.png' %}" class="d-block w-100" alt="Image of a car">
-          </div>
-        </div>
+        </div>  
 
         <!-- Carousel controls -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+          <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev"
+            style="position: absolute; top: 50%; transform: translateY(-50%); color: rgba(0, 0, 0, 0.7);">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next"
+          style="position: absolute; top: 50%; transform: translateY(-50%); color: rgba(0, 0, 0, 0.7);">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
-      </div>
+
+        <!--Indicators-->
+        <div class="carousel-indicators" style="bottom: -40px; display: flex; justify-content: center;">
+          <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+          style="background-color: rgba(0, 0, 0, 0.5); border: none;border-radius: 50%; width: 12px;height: 12px;margin: 0 5px; transition: background-color 0.3s ease;"></button>
+
+          <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="1"
+          style="background-color: rgba(0, 0, 0, 0.5); border: none;border-radius: 50%; width: 12px;height: 12px;margin: 0 5px; transition: background-color 0.3s ease;"></button>
+
+          <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="2"
+          style="background-color: rgba(0, 0, 0, 0.5); border: none;border-radius: 50%; width: 12px;height: 12px;margin: 0 5px; transition: background-color 0.3s ease;"></button>
+          </div>
+        </div>
     </div>
   </div>
-</div>
+</div>  
 {% include 'footer.html' %}
 {% endblock %}
 
