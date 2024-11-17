@@ -17,9 +17,43 @@
 
 <div class="container" style="width: 100%; max-width: 1200px; margin: 0 auto; padding-bottom: 20px;">
   <h1 class="text-center mt-5" style="text-align: center; margin-top: 30px;">Gallery</h1>
-  <div class="container"> <!-- Align with the navbar's container -->
+  <div class="container">
     <div class="slider-container">
-      <div id="image-comparison-slider">
+      <div class="image-comparison-slider">
+        <img src="{% static 'imgs/BeforeAfterFordBW.jpg' %}" alt="before">
+        <div class="img-wrapper">
+          <img src="{% static 'imgs/BeforeAfterFordColor.jpg' %}" alt="after">
+        </div>
+        <span class="label label-before">Before</span>
+        <span class="label label-after">After</span>
+        <div class="handle">
+          <div class="handle-line"></div>
+          <div class="handle-circle">
+            <i class="fas fa-chevron-left"></i>
+            <i class="fas fa-chevron-right"></i>
+          </div>
+          <div class="handle-line"></div>
+        </div>
+      </div>
+    
+      <div class="image-comparison-slider">
+        <img src="{% static 'imgs/BeforeAfterFordBW.jpg' %}" alt="before">
+        <div class="img-wrapper">
+          <img src="{% static 'imgs/BeforeAfterFordColor.jpg' %}" alt="after">
+        </div>
+        <span class="label label-before">Before</span>
+        <span class="label label-after">After</span>
+        <div class="handle">
+          <div class="handle-line"></div>
+          <div class="handle-circle">
+            <i class="fas fa-chevron-left"></i>
+            <i class="fas fa-chevron-right"></i>
+          </div>
+          <div class="handle-line"></div>
+        </div>
+      </div>
+
+      <div class="image-comparison-slider">
         <img src="{% static 'imgs/BeforeAfterFordBW.jpg' %}" alt="before">
         <div class="img-wrapper">
           <img src="{% static 'imgs/BeforeAfterFordColor.jpg' %}" alt="after">
@@ -166,50 +200,50 @@
 </script>
 
 <script>
-  /**JS**/
-  const slider = document.querySelector("#image-comparison-slider");
-  const sliderImgWrapper = document.querySelector("#image-comparison-slider .img-wrapper");
-  const sliderHandle = document.querySelector("#image-comparison-slider .handle");
-  
-  slider.addEventListener("mousemove", sliderMouseMove);
-  slider.addEventListener("touchmove", sliderMouseMove);
-  
+  document.querySelectorAll(".image-comparison-slider").forEach(setupSlider);
+
+function setupSlider(slider) {
+  const sliderImgWrapper = slider.querySelector(".img-wrapper");
+  const sliderHandle = slider.querySelector(".handle");
+
+  let isDragging = false;
+
+  slider.addEventListener("mousedown", startDragging);
+  slider.addEventListener("touchstart", startDragging);
+  slider.addEventListener("mouseup", stopDragging);
+  slider.addEventListener("touchend", stopDragging);
+  slider.addEventListener("mouseleave", stopDragging);
+
+  function startDragging(event) {
+    isDragging = true;
+    sliderMouseMove(event); // Update position on initial press
+    document.addEventListener("mousemove", sliderMouseMove);
+    document.addEventListener("touchmove", sliderMouseMove);
+  }
+
+  function stopDragging() {
+    isDragging = false;
+    document.removeEventListener("mousemove", sliderMouseMove);
+    document.removeEventListener("touchmove", sliderMouseMove);
+  }
+
   function sliderMouseMove(event) {
-  
-  if(isSliderLocked) return;
-  
-  const sliderLeftX = slider.offsetLeft;
-  const sliderWidth = slider.clientWidth;
-  const sliderHandleWidth = sliderHandle.clientWidth;
-  
-  let mouseX = (event.clientX || event.touches[0].clientX) - sliderLeftX;
-  if(mouseX < 0) mouseX = 0;
-  else if(mouseX > sliderWidth) mouseX = sliderWidth;
-  
-  sliderImgWrapper.style.width = `${((1 - mouseX/sliderWidth) * 100).toFixed(4)}%`;
-  sliderHandle.style.left = `calc(${((mouseX/sliderWidth) * 100).toFixed(4)}% - ${sliderHandleWidth/2}px)`;
+    if (!isDragging) return;
+
+    const sliderLeftX = slider.offsetLeft;
+    const sliderWidth = slider.clientWidth;
+    const sliderHandleWidth = sliderHandle.clientWidth;
+
+    let mouseX = (event.clientX || event.touches[0]?.clientX) - sliderLeftX;
+    if (mouseX < 0) mouseX = 0;
+    else if (mouseX > sliderWidth) mouseX = sliderWidth;
+
+    const percentage = (mouseX / sliderWidth) * 100;
+
+    sliderImgWrapper.style.width = `${(100 - percentage).toFixed(2)}%`;
+    sliderHandle.style.left = `calc(${percentage.toFixed(2)}% - ${sliderHandleWidth / 2}px)`;
   }
-  
-  let isSliderLocked = false;
-  
-  slider.addEventListener("mousedown", sliderMouseDown);
-  slider.addEventListener("touchstart", sliderMouseDown);
-  slider.addEventListener("mouseup", sliderMouseUp);
-  slider.addEventListener("touchend", sliderMouseUp);
-  slider.addEventListener("mouseleave", sliderMouseLeave);
-  
-  function sliderMouseDown(event) {
-  if(isSliderLocked) isSliderLocked = false;
-  sliderMouseMove(event);
-  }
-  
-  function sliderMouseUp() {
-  if(!isSliderLocked) isSliderLocked = true;
-  }
-  
-  function sliderMouseLeave() {
-  if(isSliderLocked) isSliderLocked = false;
-  }
+}
 
   
   </script>
