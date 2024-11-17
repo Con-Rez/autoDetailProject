@@ -83,16 +83,14 @@
           exterior, and even the engine. We detail all kinds of cars,
           no matter how dirty, clean, old, or new.
         </p>
-        <div class="col-md-12" style="padding-top: 15%;">
-          <a href="{% url 'schedule_appointment' %}" class="apt-btn">
-            Schedule Appointment
-          </a>
-          <button type="button" class="btn btn-dark btn-lg" style="border-radius: 50px; margin-left: 20px;">Contact Us Today</button>
+        <div class="d-flex justify-content-start gap-3 mt-4">
+          <a href="{% url 'schedule_appointment' %}" class="btn btn-light btn-lg rounded-pill text-black">Schedule Appointment</a>
+          <a href="{% url 'about' %}" class="btn btn-dark btn-lg rounded-pill">Contact Us Today</a>
         </div>
       </div>
-      <div class="col-md-4 offset-md-2">
-        <div class="mt-12" style="width: 250px; height: auto; aspect-ratio: 1; background-color: white; border-radius: 20px; overflow: hidden;"> 
-          <img src="{% static 'imgs/logo.jpg' %}" alt="Logo" class="img-fluid rounded text-center" style="object-fit: contain; width: 100%; height: 100%; image-rendering:optimizeQuality;">
+      <div class="col-md-4 d-flex justify-content-center mt-4 mt-md-0">
+        <div class="rounded bg-white overflow-hidden" style="max-width: 100%; width: 250px; aspect-ratio: 1/1; border-radius: 20px;">
+          <img src="{% static 'imgs/logo.jpg' %}" alt="Logo" class="img-fluid" style="width: 100%; height: auto; object-fit: contain;">
         </div>
       </div>
     </div>
