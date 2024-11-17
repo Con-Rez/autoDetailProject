@@ -149,6 +149,7 @@ body {
 }
 
 
+
 #image-comparison-slider {
   position: relative;
   width: var(--image-comparison-slider-width);
@@ -243,3 +244,4 @@ body {
     --image-comparison-slider-width: 90vw;
   }
 }
+
