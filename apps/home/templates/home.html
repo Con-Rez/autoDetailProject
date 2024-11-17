@@ -73,29 +73,27 @@
   </div>-->
   
   <!-- Who We Are Container -->
-  <div class="container my-5 p-4 m-0">
-    <div class="row justify-content-evenly rounded-3" style="background-color: #fa0000;">
-      <div class="col-md-12 text-white" style="display: flex; padding-left: 10%; padding-top: 7%; padding-bottom: 7%; align-items: center;">
-        <div class="col-md-6">
-          <h1 class="display-3 fw-bold" style="padding-bottom: 2%;">Who We Are</h1>
-          <p style="padding-right: 15%; font-size: larger;">
-            We are a local auto detail shop servicing customers in the
-            Sacramento region. We do a full auto detail from interior,
-            exterior, and even the engine. We detail all kinds of cars,
-            no matter how dirty, clean, old, or new.
-          </p>
-          <div class="d-flex justify-content-start gap-3 mt-4">
-            <a href="{% url 'schedule_appointment' %}" class="btn btn-light btn-lg rounded-pill" role="button">Schedule Appointment</a>
-            <a href="{% url 'about' %}" class="btn btn-dark btn-lg rounded-pill">Contact Us Today</a>
-          </div>
-        </div>
-        <div class="col-md-4 d-flex justify-content-center mt-4 mt-md-0">
-          <div class="rounded bg-white overflow-hidden" style="max-width: 100%; width: 250px; aspect-ratio: 1/1; border-radius: 20px;">
-            <img src="{% static 'imgs/logo.jpg' %}" alt="Logo" class="img-fluid" style="width: 100%; height: auto; object-fit: contain;">
-          </div>
+  <div class="row justify-content-evenly who-we-are-container">
+    <div class="col-md-12 text-white" style="display: flex; margin-right: 10%; padding-left: 20%; padding-top: 7%; padding-bottom: 7%; align-items: center;">
+      <div class="col-md-6">
+        <h1 class="display-3 fw-bold" style="padding-bottom: 2%;">Who We Are</h1>
+        <p class="static-text" style="padding-right: 15%; font-size: larger;">
+          We are a local auto detail shop servicing customers in the
+          Sacramento region. We do a full auto detail from interior,
+          exterior, and even the engine. We detail all kinds of cars,
+          no matter how dirty, clean, old, or new.
+        </p>
+        <div class="d-flex justify-content-start gap-3 mt-4">
+          <a href="{% url 'schedule_appointment' %}" class="btn btn-light btn-lg rounded-pill text-black">Schedule Appointment</a>
+          <a href="{% url 'about' %}" class="btn btn-dark btn-lg rounded-pill">Contact Us Today</a>
         </div>
       </div>
-    </div>  
+      <div class="col-md-4 d-flex justify-content-center mt-4 mt-md-0">
+        <div class="rounded bg-white overflow-hidden" style="max-width: 100%; width: 250px; aspect-ratio: 1/1; border-radius: 20px;">
+          <img src="{% static 'imgs/logo.jpg' %}" alt="Logo" class="img-fluid" style="width: 100%; height: auto; object-fit: contain;">
+        </div>
+      </div>
+    </div>
   </div>
 
   <!--This was some test code to demonstrate static and template imports and links, may be deleted-->
