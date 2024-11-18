@@ -212,7 +212,7 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  width: 100%;
+  width: auto;
   height: 100%;
   object-fit: cover;
 }
@@ -249,7 +249,7 @@ body {
 .image-comparison-slider .handle {
   position: absolute;
   top: 0;
-  left: calc(50% - var(--image-comparison-slider-handle-width) / 2);
+  left: 50%;/*calc(50% - var(--image-comparison-slider-handle-width) / 2);*/
   width: var(--image-comparison-slider-handle-width);
   height: 100%;
   display: flex;
