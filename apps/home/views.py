@@ -18,7 +18,22 @@ def aboutView(request):
 
 # Create a new view for the gallery page
 def galleryView(request):
-    return render(request, 'gallery.html')
+    before_image_path = 'imgs/BeforeAfterFordBW.jpg'
+    after_image_path = 'imgs/BeforeAfterFordColor.jpg'
+
+    context = {
+        'before_image': before_image_path,
+        'after_image': after_image_path,
+
+        'before_image2': before_image_path,
+        'after_image2': after_image_path,
+        
+        'before_image3': before_image_path,
+        'after_image3': after_image_path
+    }
+    print("Context: ", context)
+
+    return render(request, 'gallery.html', context)
 
 # Create a new view for the schedule appintments page
 def scheduleView(request):
