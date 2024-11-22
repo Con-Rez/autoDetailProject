@@ -16,6 +16,14 @@ def homeView(request):
 def aboutView(request):
     return render(request,"about.html")
 
+#Create a new view for the about us page, no arguments needed for it
+def aboutUsView(request):
+    return render(request,"about_us.html")
+
+#Create a new view for the contact us page, no arguments needed for it 
+def ContactUsView(request):
+    return render(request,"contact_us.html")
+
 # Create a new view for the gallery page
 def galleryView(request):
     before_image_path = 'imgs/BeforeAfterFordBW.jpg'
