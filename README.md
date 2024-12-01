@@ -88,6 +88,51 @@ Further planned development information can be found via...
 - [The Figma Prototype](https://www.figma.com/design/n5vPLWYCKmbhHrYgbkFscb/Detail-shop-mockup?node-id=0-1&t=g3LebtGtZ8f6anEN-1)
 - [The Jira Board](https://zeros-and-ones.atlassian.net/jira/software/projects/SCRUM/boards/1)
 
+### Sprint 5 (Week 1-2)
+**Focus:** Refining and expanding core features while preparing the server for deployment.  
+**Milestones:**
+- **Enhancements:** Improve and finalize the header, banner, and footer sections (part 2).
+- Expand on "Our Services," "Our Transformation," "Who We Are," and "Google Reviews" pages.
+- Add additional functionality to social media integration.  
+**Additional Objectives:**
+- Implement a login portal for photo management.
+- Set up and configure the hosting server.
+
+---
+
+### Sprint 6 (Week 3-4)
+**Focus:** Iterative refinement and debugging of core features.  
+**Milestones:**
+- **Enhancements:** Further refine and finalize "Choose a Date" and "Pick a Time" scheduling functionalities (part 2).
+- Improve the customer contact/communication interface.  
+**Additional Objectives:**
+- Conduct comprehensive code cleanup and restructuring.
+- Begin extensive debugging and testing.
+- Document and address external dependencies to ensure long-term stability.
+
+---
+
+### Sprint 7 (Week 5-6)
+**Focus:** Comprehensive documentation and gallery refinements.  
+**Milestones:**
+- **Enhancements:** Polish and expand the "Before/After" transformation showcase (part 2).
+- Apply final improvements to the transformation gallery and user flows.  
+**Additional Objectives:**
+- Develop in-depth GitHub Wiki documentation for maintaining the website.
+- Include guides on photo management, the appointments calendar, and troubleshooting for internal use.
+
+---
+
+### Sprint 8 (Week 7-8)
+**Focus:** Final testing, deployment, and wrapping up documentation.  
+**Milestones:**
+- **Enhancements:** Finalize all remaining UI/UX adjustments, including home view, scheduling system, and gallery features (part 2).
+- Complete final testing and debugging for a production-ready site.  
+**Additional Objectives:**
+- Wrap up documentation on GitHub Wiki.
+- Prepare for live deployment and ensure all features are stable.
+
+---
 
 ## Screenshots
 
