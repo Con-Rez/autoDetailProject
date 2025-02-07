@@ -1,1 +1,1 @@
-web: python manage.py runserver
+web: daphne autoDetailProject.asgi:application --port $PORT --bind 0.0.0.0
