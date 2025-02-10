@@ -9,6 +9,12 @@ class PhotoAdmin(admin.ModelAdmin):
     search_fields = ('title',)
     readonly_fields = ('image_preview',)
 
+    def changelist_view(self, request, extra_context=None):
+        extra_context = extra_context or {}
+        extra_context['title'] = 'Photo Gallery Administration'
+        extra_context['subtitle'] = 'Manage your photo gallery with ease. Please upload photos with the same size for best results.'
+        return super(PhotoAdmin, self).changelist_view(request, extra_context=extra_context)
+
     def image_tag(self, obj):
         return format_html('<img src="/static/imgs/{}" style="max-height:50px; width:auto;" />'.format(os.path.basename(obj.image.name)))
     image_tag.short_description = 'Image'
