@@ -70,7 +70,7 @@ body {
 /* Navigation list and links */
 .nav-list {
     list-style-type: none !important;
-    margin: 0 !important;
+    margin: 50px !important;
     padding: 0 !important;
     display: flex !important;
     gap: 40px !important;
@@ -90,6 +90,11 @@ body {
     font-size: 18px !important;
     letter-spacing: 1px !important;
     transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.logo img {
+    height: 150px !important; /* Adjust height */
+    width: auto !important; /* Maintain aspect ratio */
 }
 
 /* Hover effect for links */
@@ -163,6 +168,37 @@ body {
     text-transform: uppercase; 
 }
 
+.text-danger {
+    font-family: 'Poppins', sans-serif; /* Change to your preferred font */
+    font-size: 23px; /* Adjust size if needed */
+    font-weight: bold; /* Make it bold */
+}
+
+.sub-title {
+    font-family: 'Poppins', sans-serif; /* Change to your preferred font */
+    font-size: 50px; /* Adjust size if needed */
+    font-weight: bold; /* Make it bold */
+}
+
+.transformation-title {
+    font-family: 'Poppins', sans-serif; /* Change to your preferred font */
+    font-size: 50px; /* Adjust size if needed */
+    font-weight: bold; /* Make it bold */
+}
+
+.transformation-img {
+    width: 100%; /* Makes images fill their container */
+    height: 500px; /* Adjust height as needed */
+    object-fit: cover; /* Ensures images maintain their aspect ratio */
+    border-radius: 8px; /* Optional: keeps the rounded edges */
+}
+
+.follow-us {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    /* Makes the div take full screen height */
+  }
 
 ::root {
   --image-comparison-slider-width: min(80vw, 100px);
