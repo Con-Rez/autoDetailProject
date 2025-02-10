@@ -10,11 +10,24 @@ class PhotoAdmin(admin.ModelAdmin):
     readonly_fields = ('image_preview',)
 
     def image_tag(self, obj):
-        return format_html('<img src="/static/imgs/{}" width="50" height="50" />'.format(os.path.basename(obj.image.name)))
+        return format_html('<img src="/static/imgs/{}" style="max-height:50px; width:auto;" />'.format(os.path.basename(obj.image.name)))
     image_tag.short_description = 'Image'
 
     def image_preview(self, obj):
-        return format_html('<img src="/static/imgs/{}" width="200" height="200" />'.format(os.path.basename(obj.image.name)))
+        return format_html('<img src="/static/imgs/{}" style="max-height:300px; width:auto;" />'.format(os.path.basename(obj.image.name)))
     image_preview.short_description = 'Current Image'
+
+    # Remove options that could break the gallery functionality
+    def has_add_permission(self, request):
+        return False
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+    def get_actions(self, request):
+        actions = super().get_actions(request)
+        if 'delete_selected' in actions:
+            del actions['delete_selected']
+        return actions
 
 admin.site.register(Photo, PhotoAdmin)
