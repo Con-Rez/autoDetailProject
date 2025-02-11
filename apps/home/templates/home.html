@@ -10,6 +10,7 @@
   <!-- Link to your custom CSS file -->
   <link rel="stylesheet" href="{% static 'css/custom.css' %}"> 
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'css/welcomemsg.css' %}">
 </head>
 
 {% block content %}
@@ -32,6 +33,83 @@
         </div>
       </div>
     </div>
+
+
+      <!-- Animated Welcome Message Section -->
+  <div class="container my-5 text-center animated-welcome">
+    <h2>
+      Your car should be 
+      <span id="animated-word"></span>
+      <span class="cursor"></span>
+    </h2>
+  </div>
+    
+    <!-- Bootstrap Card, This one is for Jinsong Ouyang-->
+
+  
+  <!--This was some test code to demonstrate static and template imports and links, may be deleted-->
+  <!--<div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <img src="{% static 'imgs/ouyang.jpg' %}" class="card-img-top" alt="Image of Professor and Department Chair Jinsong Ouyang.">
+        <div class="card-body">
+          <h5 class="card-title">Jinsong Ouyang</h5>
+          <p class="card-text">Professor and Department Chair of Computer Science at Sacramento State University.</p>
+          <a href="https://www.csus.edu/faculty/o/jouyang/" class="btn btn-primary">View Faculty Page</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <img src="{% static 'imgs/baynes.jpg' %}" class="card-img-top" alt="Image of Computer Science Associate Chair Anna Baynes.">
+        <div class="card-body">
+          <h5 class="card-title">Anna Baynes</h5>
+          <p class="card-text">Associate Chair of Computer Science at Sacramento State University</p>
+          <a href="https://theuselessweb.com/" class="btn btn-primary">Visit an Unrelated Website</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <img src="https://media.licdn.com/dms/image/v2/D5603AQHv6LsdiUg1kw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1695167344576?e=1733356800&v=beta&t=7G6AbkYLSLbRk_s0kKRQqg36eedxwcbIRKd3_sHHkNA" class="card-img-top" alt="Picture of Bill Gates.">
+        <div class="card-body">
+          <h5 class="card-title">Bill Gates</h5>
+          <p class="card-text">Co-founder of Microsoft.</p>
+          <a href="https://www.linkedin.com/in/williamhgates/" class="btn btn-primary">View LinkedIn Profile</a>
+        </div>
+      </div>
+    </div>
+  </div>-->
+  
+ 
+
+  <!--This was some test code to demonstrate static and template imports and links, may be deleted-->
+  <!--<div class="row">
+    <div class="col-md-6 mb-4">
+      <div class="card h-100">
+        <img src="https://clipground.com/images/mongodb-png-logo-4.jpg" class="card-img-top" alt="mongoDB Logo">
+        <div class="card-body">
+          <h5 class="card-title">Create MongoDB</h5>
+          <p class="card-text">Create a new document in database.</p>
+          <a href="" class="btn btn-primary">Go to Create Document Page</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+      <div class="card h-100">
+        <img src="https://www.jadsmkbdatalab.nl/wp-content/uploads/2021/03/OMDB-API_logo.png" class="card-img-top" alt="OMDb Logo">
+        <div class="card-body">
+          <h5 class="card-title">Search OMDb</h5>
+          <p class="card-text">Search for movies by name.</p>
+          <a href="" class="btn btn-primary">Go to Search Page</a>
+        </div>
+      </div>
+    </div>
+  </div>-->
+
 
   <!-- Our Services Section -->
   <div class="container my-5">
@@ -302,6 +380,56 @@
   </div>
 </div>
 </div> 
+
+
+
+  <!-- JavaScript for the animated welcome message -->
+  <script>
+    // Array of words to cycle through
+    const words = ['clean', 'stylish' , 'modern'];
+    let wordIndex = 0;    // Current word index
+    let charIndex = 0;    // Current character index
+
+    // Timing configurations (in milliseconds)
+    const typingSpeed = 150;   // Time between typing each character
+    const erasingSpeed = 100;  // Time between erasing each character
+    const newWordDelay = 2000; // Time to wait after a word is completely typed
+
+    // Function to type one character at a time
+    function type() {
+      if (charIndex < words[wordIndex].length) {
+        document.getElementById('animated-word').textContent += words[wordIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, typingSpeed);
+      } else {
+        // Word complete; wait before erasing
+        setTimeout(erase, newWordDelay);
+      }
+    }
+
+    // Function to erase one character at a time
+    function erase() {
+      if (charIndex > 0) {
+        document.getElementById('animated-word').textContent = words[wordIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, erasingSpeed);
+      } else {
+        // Move to the next word (wrap around if necessary)
+        wordIndex = (wordIndex + 1) % words.length;
+        setTimeout(type, typingSpeed);
+      }
+    }
+
+    // Start the typing effect once the DOM content is loaded
+    document.addEventListener('DOMContentLoaded', function () {
+      setTimeout(type, typingSpeed);
+    });
+  </script>
+</div>
+
+
+
+
 
 {% include 'footer.html' %}
  {% endblock %} 
