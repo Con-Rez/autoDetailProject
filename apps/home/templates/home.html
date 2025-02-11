@@ -72,33 +72,80 @@
     </div>
   </div>-->
   
-  <!-- Who We Are Container -->
   <div class="container my-5 p-4 m-0">
-    <div class="row justify-content-evenly rounded-3" style="background-color: #fa0000;">
-      <div class="col-md-12 text-white" style="display: flex; padding-left: 10%; padding-top: 7%; padding-bottom: 7%; align-items: center;">
-        <div class="col-md-6">
-          <h1 class="display-3 fw-bold" style="padding-bottom: 2%;">Who We Are</h1>
-          <p style="padding-right: 15%; font-size: larger;">
-            We are a local auto detail shop servicing customers in the
-            Sacramento region. We do a full auto detail from interior,
-            exterior, and even the engine. We detail all kinds of cars,
-            no matter how dirty, clean, old, or new.
-          </p>
-          <div class="d-flex justify-content-start gap-3 mt-4">
-            <a href="{% url 'schedule_appointment' %}" class="btn btn-light btn-lg rounded-pill" role="button">Schedule Appointment</a>
-            <a href="{% url 'about' %}" class="btn btn-dark btn-lg rounded-pill">Contact Us Today</a>
-          </div>
+    <div class="row justify-content-evenly rounded-3 shadow-lg" style="background-color: #fa0000;">
+        <div class="col-md-12 text-white d-flex align-items-center" style="padding-left: 10%; padding-top: 7%; padding-bottom: 7%;">
+            <div class="col-md-6">
+                <h1 class="display-3 fw-bold mb-3">Who We Are</h1>
+                <p style="padding-right: 15%; font-size: larger;">
+                    We are a local auto detail shop servicing customers in the
+                    Sacramento region. We do a full auto detail from interior,
+                    exterior, and even the engine. We detail all kinds of cars,
+                    no matter how dirty, clean, old, or new.
+                </p>
+                <div class="d-flex justify-content-start gap-3 mt-4">
+                    <a href="{% url 'schedule_appointment' %}" class="btn btn-light btn-lg rounded-pill shadow">Schedule Appointment</a>
+                    <a href="{% url 'about' %}" class="btn btn-dark btn-lg rounded-pill shadow">Contact Us Today</a>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex justify-content-center mt-4 mt-md-0">
+                <div class="rounded bg-white overflow-hidden shadow-lg" style="max-width: 100%; width: 250px; aspect-ratio: 1/1; border-radius: 20px;">
+                    <img src="{% static 'imgs/logo.jpg' %}" alt="Logo" class="img-fluid" style="width: 100%; height: auto; object-fit: contain;">
+                </div>
+            </div>
         </div>
-        <div class="col-md-4 d-flex justify-content-center mt-4 mt-md-0">
-          <div class="rounded bg-white overflow-hidden" style="max-width: 100%; width: 250px; aspect-ratio: 1/1; border-radius: 20px;">
-            <img src="{% static 'imgs/logo.jpg' %}" alt="Logo" class="img-fluid" style="width: 100%; height: auto; object-fit: contain;">
-          </div>
-        </div>
-      </div>
-    </div>  
+    </div>
+</div>
+<!-- Our Services Section -->
+<div class="container my-5" style="border-radius: 20px; overflow: hidden;">
+  <!-- Section Header -->
+  <div class="text-center mb-4">
+      <h6 class="text-danger">Our Services</h6>
+      <h2 class="font-weight-bold">What We Do</h2>
   </div>
 
-  <!--This was some test code to demonstrate static and template imports and links, may be deleted-->
+  <div class="row align-items-stretch justify-content-center">
+      <!-- Left Column: Interior and Exterior Services -->
+      <div class="col-md-3 d-flex flex-column justify-content-between">
+          <!-- Interior Service -->
+          <div class="card h-100 text-center p-4 mb-3 service-box" style="background-color: #f7f7f7; border-radius: 15px; box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); overflow: hidden;">
+              <img src="{% static 'imgs/CarSeat.png' %}" alt="Interior Icon" class="mb-3" style="width: 50px; border-radius: 50%; box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);">
+              <h5 class="font-weight-bold">Interior</h5>
+              <p class="card-text">No matter the interior material, we can refresh and get rid of stains and debris to make the inside look and smell brand new.</p>
+          </div>
+
+          <!-- Exterior Service -->
+          <div class="card h-100 text-center p-4 mt-3 service-box" style="background-color: #f7f7f7; border-radius: 15px; box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); overflow: hidden;">
+              <img src="{% static 'imgs/CarWash.png' %}" alt="Exterior Icon" class="mb-3" style="width: 50px; border-radius: 50%; box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);">
+              <h5 class="font-weight-bold">Exterior</h5>
+              <p class="card-text">We can get rid of any dirt, hard water spots, and paint swirls. We will return your car with a shine you did not believe was possible.</p>
+          </div>
+      </div>
+
+      <!-- Center Image -->
+      <div class="col-md-6 d-flex align-items-center justify-content-center">
+          <img src="{% static 'imgs/CenterImage.jpg' %}" class="img-fluid center-img" alt="Service Image" style="border-radius: 15px; box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);">
+      </div>
+
+      <!-- Right Column: Engine and Headlights Services -->
+      <div class="col-md-3 d-flex flex-column justify-content-between">
+          <!-- Engine Service -->
+          <div class="card h-100 text-center p-4 mb-3 service-box" style="background-color: #f7f7f7; border-radius: 15px; box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); overflow: hidden;">
+              <img src="{% static 'imgs/Engine.png' %}" alt="Engine Icon" class="mb-3" style="width: 50px; border-radius: 50%; box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);">
+              <h5 class="font-weight-bold">Engine</h5>
+              <p class="card-text">Engine is often the most overlooked service in auto detailing. We will refresh the engine and make it look shining like no other auto detailer.</p>
+          </div>
+
+          <!-- Headlights Service -->
+          <div class="card h-100 text-center p-4 mt-3 service-box" style="background-color: #f7f7f7; border-radius: 15px; box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); overflow: hidden;">
+              <img src="{% static 'imgs/Headlight.png' %}" alt="Headlights Icon" class="mb-3" style="width: 50px; border-radius: 50%; box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);">
+              <h5 class="font-weight-bold">Headlights</h5>
+              <p class="card-text">Yellow headlights? No problem! We can make your headlights look clear and new again.</p>
+          </div>
+      </div>
+  </div>
+</div>
+<!--This was some test code to demonstrate static and template imports and links, may be deleted-->
   <!--<div class="row">
     <div class="col-md-6 mb-4">
       <div class="card h-100">
@@ -122,56 +169,6 @@
       </div>
     </div>
   </div>-->
-
-  <!-- Our Services Section -->
-  <div class="container my-5">
-    <!-- Section Header -->
-    <div class="text-center mb-4">
-        <h6 class="text-danger">Our Services</h6>
-        <h2 class="font-weight-bold">What We Do</h2>
-    </div>
-
-    <div class="row align-items-stretch justify-content-center">
-        <!-- Left Column: Interior and Exterior Services -->
-        <div class="col-md-3 d-flex flex-column justify-content-between">
-            <!-- Interior Service -->
-            <div class="card h-100 text-center p-4 mb-3 service-box" style="background-color: #f7f7f7;">
-                <img src="{% static 'imgs/CarSeat.png' %}" alt="Interior Icon" class="mb-3" style="width: 50px;">
-                <h5 class="font-weight-bold">Interior</h5>
-                <p class="card-text">No matter the interior material, we can refresh and get rid of stains and debris to make the inside look and smell brand new.</p>
-            </div>
-
-            <!-- Exterior Service -->
-            <div class="card h-100 text-center p-4 mt-3 service-box" style="background-color: #f7f7f7;">
-                <img src="{% static 'imgs/CarWash.png' %}" alt="Exterior Icon" class="mb-3" style="width: 50px;">
-                <h5 class="font-weight-bold">Exterior</h5>
-                <p class="card-text">We can get rid of any dirt, hard water spots, and paint swirls. We will return your car with a shine you did not believe was possible.</p>
-            </div>
-        </div>
-
-        <!-- Center Image -->
-        <div class="col-md-6 d-flex align-items-center justify-content-center">
-            <img src="{% static 'imgs/CenterImage.jpg' %}" class="img-fluid rounded center-img" alt="Service Image">
-        </div>
-
-        <!-- Right Column: Engine and Headlights Services -->
-        <div class="col-md-3 d-flex flex-column justify-content-between">
-            <!-- Engine Service -->
-            <div class="card h-100 text-center p-4 mb-3 service-box" style="background-color: #f7f7f7;">
-                <img src="{% static 'imgs/Engine.png' %}" alt="Engine Icon" class="mb-3" style="width: 50px;">
-                <h5 class="font-weight-bold">Engine</h5>
-                <p class="card-text">Engine is often the most overlooked service in auto detailing. We will refresh the engine and make it look shining like no other auto detailer.</p>
-            </div>
-
-            <!-- Headlights Service -->
-            <div class="card h-100 text-center p-4 mt-3 service-box" style="background-color: #f7f7f7;">
-                <img src="{% static 'imgs/Headlight.png' %}" alt="Headlights Icon" class="mb-3" style="width: 50px;">
-                <h5 class="font-weight-bold">Headlights</h5>
-                <p class="card-text">Yellow headlights? No problem! We can make your headlights look clear and new again.</p>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- Transformations Section -->
 <div class="container my-5">
@@ -264,7 +261,7 @@
 
 <div class="follow-us" style="text-align: left; margin: 20px;">
   <a href="https://www.instagram.com/akautodetail2/" target="_blank">
-      <button style="background-color: #3897f0; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px; cursor: pointer;">
+      <button style="background-color: #3897f0; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px; cursor: pointer; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);">
           Follow Us on Instagram
       </button>
   </a>
@@ -272,14 +269,14 @@
 <div class="container-fluid">
   <div class="row">
       <div class="col-12">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/akautodetail2/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); width: 100%; max-width: 100%;">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/akautodetail2/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 4px 8px rgba(0, 0, 0, 0.2); width: 100%; max-width: 100%;">
               <div style="padding:16px;">
                   <a href="https://www.instagram.com/akautodetail2/?utm_source=ig_embed&amp;utm_campaign=loading" style="background:#FFFFFF; line-height:0; padding:0; text-align:center; text-decoration:none; width:100%;" target="_blank">
                       <div style="display: flex; flex-direction: row; align-items: center;">
-                          <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div>
+                          <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"></div>
                           <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
-                              <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div>
-                              <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div>
+                              <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"></div>
+                              <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"></div>
                           </div>
                       </div>
                       <div style="padding: 19% 0;"></div>
@@ -299,16 +296,14 @@
       </div>
   </div>
 </div>
-</div> 
-
-
-  <!-- Static Testamonials -->
-  <div class="row row-cols-1 row-cols-md-3 g-4">
+</div>
+<!-- Static Testamonials -->
+<div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col">
       <div class="shadow card h-100">
         <div class="card-body">
           <h5 class="card-title"> 
-            <div class="row"> <!-- Static Testimonial 1 -->
+            <div class="row">  <!--Static Testimonial 1-->
               <div class="col">
                 <p class="text-center"><img src="https://lh3.googleusercontent.com/a-/ALV-UjWLIFgUOGfgS7rTQ_0TUUVdF6P26FBv0AtZmgctQrVqtNpQaTVt=w36-h36-p-rp-mo-br100">Katerina</p>
               </div>
@@ -327,7 +322,7 @@
       <div class="shadow card h-100">
         <div class="card-body">
           <h5 class="card-title"> 
-            <div class="row"> <!-- Static Testimonial 2 -->
+            <div class="row"> <!--Static Testimonial 2-->
               <div class="col">
                 <p class="text-center"><img src="https://lh3.googleusercontent.com/a-/ALV-UjVGQ01R9DCRKn69QXWqC4uH5Oum5tRjOKP1_qK5KPSm9GLP8oiczw=w36-h36-p-rp-mo-ba2-br100">Ayah</p>
               </div>
@@ -346,7 +341,7 @@
       <div class="shadow card h-100">
         <div class="card-body">
           <h5 class="card-title">
-            <div class="row"> <!-- Static Testimonial 3 -->
+            <div class="row">  <!--Static Testimonial 3-->
               <div class="col">
                 <p class="text-center text-nowrap"><img src="https://lh3.googleusercontent.com/a-/ALV-UjVgJ-TZMZTz0HgbaMZqRLQH0oelWHcLF21IOZSjc-a1g812iv4e=w36-h36-p-rp-mo-br100">Guess Who</p>
               </div>
@@ -360,7 +355,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> 
 
   <div class="col-xs-12" style="height:50px;"></div> <!-- Added space for formatting -->
 </div>
