@@ -27,10 +27,12 @@
   <!--Navigation bar-->
   <header>
     <nav class="custom-navbar">
-      <div class="container d-flex justify-content-between align-items-center">
+      <div class="container-fluid d-flex justify-content-between align-items-center">
         <!--Logo-->
         <div class="logo">
-          <img src="{% static 'imgs/logo.jpg' %}" alt="AK Auto Detail Logo" height="80">
+          <a href="{% url 'home' %}">
+            <img src="{% static 'imgs/logo.jpg' %}" alt="AK Auto Detail Logo" height="80">
+          </a>
         </div>
 
 
