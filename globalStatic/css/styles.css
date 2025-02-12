@@ -163,6 +163,22 @@ body {
     text-transform: uppercase; 
 }
 
+/* Gallery container */
+.gallery-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.gallery-title {
+    text-align: left;
+    margin-top: 5rem; 
+    letter-spacing: 2.5px;
+    font-size: 3.5rem; 
+    font-weight: 900;
+    text-transform: uppercase; 
+}
 
 ::root {
   --image-comparison-slider-width: min(80vw, 100px);

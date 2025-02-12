@@ -8,8 +8,7 @@
 
 <head>
   <!-- Link to your custom CSS file -->
-  <link rel="stylesheet" href="{% static 'css/custom.css' %}"> 
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="{% static '/styles.css' %}">
 </head>
 
 {% block content %}
@@ -32,46 +31,7 @@
         </div>
       </div>
     </div>
-    
-    <!-- Bootstrap Card, This one is for Jinsong Ouyang-->
 
-  
-  <!--This was some test code to demonstrate static and template imports and links, may be deleted-->
-  <!--<div class="row">
-    <div class="col-md-4 mb-4">
-      <div class="card h-100">
-        <img src="{% static 'imgs/ouyang.jpg' %}" class="card-img-top" alt="Image of Professor and Department Chair Jinsong Ouyang.">
-        <div class="card-body">
-          <h5 class="card-title">Jinsong Ouyang</h5>
-          <p class="card-text">Professor and Department Chair of Computer Science at Sacramento State University.</p>
-          <a href="https://www.csus.edu/faculty/o/jouyang/" class="btn btn-primary">View Faculty Page</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-4 mb-4">
-      <div class="card h-100">
-        <img src="{% static 'imgs/baynes.jpg' %}" class="card-img-top" alt="Image of Computer Science Associate Chair Anna Baynes.">
-        <div class="card-body">
-          <h5 class="card-title">Anna Baynes</h5>
-          <p class="card-text">Associate Chair of Computer Science at Sacramento State University</p>
-          <a href="https://theuselessweb.com/" class="btn btn-primary">Visit an Unrelated Website</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-4 mb-4">
-      <div class="card h-100">
-        <img src="https://media.licdn.com/dms/image/v2/D5603AQHv6LsdiUg1kw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1695167344576?e=1733356800&v=beta&t=7G6AbkYLSLbRk_s0kKRQqg36eedxwcbIRKd3_sHHkNA" class="card-img-top" alt="Picture of Bill Gates.">
-        <div class="card-body">
-          <h5 class="card-title">Bill Gates</h5>
-          <p class="card-text">Co-founder of Microsoft.</p>
-          <a href="https://www.linkedin.com/in/williamhgates/" class="btn btn-primary">View LinkedIn Profile</a>
-        </div>
-      </div>
-    </div>
-  </div>-->
-  
   <!-- Who We Are Container -->
   <div class="container my-5 p-4 m-0">
     <div class="row justify-content-evenly rounded-3" style="background-color: #fa0000;">
@@ -93,36 +53,10 @@
           <div class="rounded bg-white overflow-hidden" style="max-width: 100%; width: 250px; aspect-ratio: 1/1; border-radius: 20px;">
             <img src="{% static 'imgs/logo.jpg' %}" alt="Logo" class="img-fluid" style="width: 100%; height: auto; object-fit: contain;">
           </div>
-        </div>
+        </div> 
       </div>
     </div>  
   </div>
-
-  <!--This was some test code to demonstrate static and template imports and links, may be deleted-->
-  <!--<div class="row">
-    <div class="col-md-6 mb-4">
-      <div class="card h-100">
-        <img src="https://clipground.com/images/mongodb-png-logo-4.jpg" class="card-img-top" alt="mongoDB Logo">
-        <div class="card-body">
-          <h5 class="card-title">Create MongoDB</h5>
-          <p class="card-text">Create a new document in database.</p>
-          <a href="" class="btn btn-primary">Go to Create Document Page</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-6 mb-4">
-      <div class="card h-100">
-        <img src="https://www.jadsmkbdatalab.nl/wp-content/uploads/2021/03/OMDB-API_logo.png" class="card-img-top" alt="OMDb Logo">
-        <div class="card-body">
-          <h5 class="card-title">Search OMDb</h5>
-          <p class="card-text">Search for movies by name.</p>
-          <a href="" class="btn btn-primary">Go to Search Page</a>
-        </div>
-      </div>
-    </div>
-  </div>-->
-
   <!-- Our Services Section -->
   <div class="container my-5">
     <!-- Section Header -->
@@ -220,14 +154,6 @@
   <!-- Bootstrap Row, third row of content -->
   <div class="row">
   <div class="col-xs-12" style="height:50px;"></div> <!-- Space between the cards and the footer -->
-  
-  <!-- Variable Import test example -->
-  <!-- <div class="row">
-    <div class="col-md-12">
-      <h1 class="text-center">Hello World!</h1>
-      <p class="text-center">Today is {{todayTag}}</p>
-    </div>
-  </div> -->
 
   <!-- Google Reviews -->
 
@@ -299,8 +225,6 @@
       </div>
   </div>
 </div>
-</div> 
-
 
   <!-- Static Testamonials -->
   <div class="row row-cols-1 row-cols-md-3 g-4">
