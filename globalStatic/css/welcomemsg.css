@@ -1,0 +1,43 @@
+/* Container styling for the animated welcome message */
+    .animated-welcome {
+      background: linear-gradient(135deg, #f6d365, #FF0000) !important;
+      padding: 20px 30px !important;
+      border-radius: 15px !important;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+      margin: 40px auto !important;
+      max-width: 90% !important;
+    }
+    
+    .animated-welcome h2 {
+      font-size: 2.5rem !important;
+      font-weight: bold !important;
+      color: #ffffff !important;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+      margin: 0 !important;
+    }
+    
+    /* Styling for the animated word with a color-changing effect */
+    #animated-word {
+      color: #ffeb3b !important;
+      animation: colorchange 4s infinite !important;
+    }
+    
+    @keyframes colorchange {
+      0%   { color: #ffeb3b !important; }
+      50%  { color: #ff4081 !important; }
+      100% { color: #ffeb3b !important; }
+    }
+    
+    /* Blinking cursor styling */
+    .cursor {
+      display: inline-block !important;
+      width: 2px !important;
+      height: 1.2em !important;
+      background-color: #ffffff !important;
+      margin-left: 5px !important;
+      animation: blink 0.7s steps(1) infinite !important;
+    }
+    
+    @keyframes blink {
+      50% { opacity: 0 !important; }
+    }

@@ -29,7 +29,8 @@ SECRET_KEY = 'django-insecure-32fj7(9e7dvz-8^j2v773_($b$*o0mc-5bdv)_^9ls2hx+1qqp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.herokuapp.com','0.0.0.0', '127.0.0.1']
+
 
 
 # Application definition
@@ -53,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'autoDetailProject.urls'
@@ -121,6 +123,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
+
+# Ensure that your project is configured to handle static files.
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [

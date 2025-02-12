@@ -6,3 +6,7 @@
 *.pyc 
 __pycache__/
 keys.py
+*.sqlite3
+
+# Heroku environment variables
+.env
