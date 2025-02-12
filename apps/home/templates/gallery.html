@@ -8,18 +8,15 @@
 
 <head>
   <!-- Link to your custom CSS files -->
-  
-  <link rel="stylesheet" href="{% static 'css/custom.css' %}"> 
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-
+  <link rel="stylesheet" href="{% static '/styles.css' %}">
 </head>
 
 {% block content %}
 
 <!-- Main container for the gallery -->
-<div class="container" style="width: 100%; max-width: 1200px; margin: 0 auto; padding-bottom: 20px;">
+<div class="container gallery-container">
   <!-- Gallery title -->
-  <h1 class="text-left mt-5" style="letter-spacing: 2.5px; font-size: 3.5rem; font-weight: 900;">OUR BEFORE/AFTER</h1>
+  <h1 class="gallery-title">before/after</h1>
   
   <!-- Container for image comparison sliders -->
   <div class="container">
@@ -84,7 +81,7 @@
   </div>
 
   <!-- Carousel section for displaying additional transformations -->
-  <h1 class="text-left mt-5 text-uppercase" style="letter-spacing: 2.5px; font-size: 3.5rem; font-weight: 900;">More Transformations</h1>
+  <h1 class="gallery-title">More Transformations</h1>
   <div class="row justify-content-center">
     <div class="col-lg-10">
   
@@ -110,7 +107,7 @@
 
 <!-- JavaScript for image transition -->
 <script>
-  let currentSlide = 1; // Tracks the current active slide
+let currentSlide = 1; // Tracks the current active slide
 const totalSlides = 5;
 let autoSlideTimer;
 
