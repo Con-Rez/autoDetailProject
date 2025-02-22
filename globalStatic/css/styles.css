@@ -28,6 +28,14 @@
     --footer-bg-color: #2c2c2c;
 }
 
+.container-fluid {
+    width: 100%; /* Instead of 100vw */
+    max-width: 100%; /* Prevents overflowing */
+    overflow-x: hidden; /* Ensures no horizontal scroll */
+}
+
+
+
 /* Apply colors to body and other elements */
 body {
     background-color: var(--bg-color) !important;
@@ -69,11 +77,12 @@ body {
 
 /* Navigation list and links */
 .nav-list {
-    list-style-type: none !important;
-    margin: 50px !important;
+    margin: 20px auto !important; /* Reduce margin */
     padding: 0 !important;
     display: flex !important;
-    gap: 40px !important;
+    flex-wrap: wrap !important; /* Allows wrapping */
+    gap: 10px !important; /* Reduce space between items */
+    justify-content: center !important;
 }
 
 .nav-list li {
@@ -93,8 +102,17 @@ body {
 }
 
 .logo img {
-    height: 150px !important; /* Adjust height */
-    width: auto !important; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensures it resizes within its container */
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Removes extra space around the image */
+    margin: 0 auto; /* Centers the logo */
+}
+
+/* Adjust logo size for mobile screens */
+@media (max-width: 768px) {
+    .logo img {
+        height: 100px; /* Smaller logo for mobile */
+    }
 }
 
 /* Hover effect for links */
@@ -129,20 +147,28 @@ body {
 /* Banner text position */
 .banner-card .card-img-overlay {
     position: absolute;              
-    top: 45%;
+    top: 50%;
     left: 5px;
     transform: translateY(-50%);
-    width: auto;
+    max-width: 100%;
 }
 
 /* Banner font */
 .banner-card .card-title {
-    font-size: 50px;
+    font-size: clamp(24px, 5vw, 50px); /* Ensures the text scales dynamically */
     font-weight: bold;
-    text-align: left;
+    text-align: left; /* left text */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     margin: 0;
     font-family: 'Roboto', sans-serif; 
+    width: 100%;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+    .banner-card .card-title {
+        font-size: 28px; /* Adjust font size for better readability */
+    }
 }
 
 /* Non-banner cards */
@@ -365,11 +391,22 @@ body {
 
 /* Container styling for Who We Are section */
 .who-we-are-container {
-    background-color: red; /* Fixed red background */
-    padding-left: 20%;
-    padding-top: 7%;
-    padding-bottom: 7%;
-    margin-left: -15%;
+    background-color: red; /* Keeps the red background */
+    padding: 7% 5%; /* Adjust padding for better scaling */
+    margin: 0 auto; /* Centering */
+    width: 100%; /* Make sure it takes full width */
+    min-height: 300px; /* Set a minimum height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Ensures text inside is centered */
+}
+
+/* Make sure it adjusts properly on smaller screens */
+@media (max-width: 768px) {
+    .who-we-are-container {
+        padding: 10% 3%; /* More padding on smaller screens */
+    }
 }
 
 /* Static paragraph text color */
