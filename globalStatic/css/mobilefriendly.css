@@ -1,0 +1,156 @@
+/* Mobile-friendly styles */
+@media (max-width: 992px) {
+    /* Reduce logo size for smaller screens */
+    .navbar-brand img {
+        height: 40px;
+    }
+
+    /* Fix Navbar alignment */
+    .navbar {
+        padding: 0.5rem 1rem;
+        min-height: 70px; /* Ensures consistent navbar height */
+    }
+
+    .navbar-toggler {
+        border: none;
+        outline: none;
+        padding: 5px 10px; /* Reduce padding shift */
+        transition: none;  /* Prevent size changes on click */
+    }
+
+    .navbar-collapse {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Center navbar items properly */
+    .navbar-nav {
+        width: auto; /* Allow items to size naturally */
+        flex-direction: column; /* Stack items properly */
+    }
+
+    .navbar-nav .nav-item {
+        padding: 10px;
+    }
+
+    /* Adjust Dark Mode button alignment */
+    .dark-mode-toggle-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    /* Fix for big text looking weird on mobile */
+    h1, h2, h3 {
+        font-size: 5vw; /* Make text scale with screen size */
+        text-align: center;
+    }
+
+    /* Fix buttons being squeezed */
+    .btn-lg {
+        width: 90%; /* Ensure buttons are not too small */
+        max-width: 300px; /* Prevents overly wide buttons */
+        padding: 15px 20px;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    /* Fix text inside buttons */
+    .gradient-button {
+        padding: 15px 20px;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    /* Fix weird spacing issues */
+    .section {
+        padding: 20px;
+    }
+}
+
+/* Dark Mode Fixes */
+.dark-mode .navbar {
+    background-color: #1e1e1e !important;
+}
+
+.dark-mode .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.dark-mode .navbar-toggler-icon {
+    filter: brightness(90%); /* Ensures good contrast */
+}
+
+.dark-mode .navbar-nav .nav-link {
+    color: #ffffff !important;
+}
+
+.dark-mode .navbar-nav .nav-link:hover {
+    color: #f1c40f !important;
+}
+
+/* Make all images responsive */
+img {
+    max-width: 100%; /* Ensures images never exceed their container width */
+    height: auto; /* Maintains aspect ratio */
+}
+
+/* Mobile-specific image scaling */
+@media (max-width: 768px) {
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Ensure hero images, banners, and large images scale properly */
+    .hero-image, .banner-image {
+        width: 100%;
+        max-height: 50vh; /* Prevents images from being too tall */
+        object-fit: cover; /* Ensures images fit nicely without stretching */
+    }
+
+    /* Reduce logo size */
+    .navbar-brand img {
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-image, .banner-image {
+        max-height: 40vh; /* Reduce height further */
+    }
+}
+
+/* Bootstrap 4 specific fixes */
+.navbar-toggler {
+    padding: 5px 10px;
+    border: none;
+}
+
+.navbar-collapse {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar-nav {
+    width: 100%;
+    justify-content: center;
+}
+
+@media (max-width: 992px) {
+    .navbar-collapse {
+        text-align: center;
+    }
+}
+
+/* Ensure buttons are properly styled on smaller screens */
+.btn-lg {
+    width: 90%;
+    max-width: 300px;
+    padding: 15px 20px;
+    font-size: 1rem;
+}
