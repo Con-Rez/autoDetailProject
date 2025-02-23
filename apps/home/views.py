@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse # Allows for raw HTTP output commands within the views.py for testing
 import datetime; # Allows for the use of the datetime module to get the current date and time
+from .models import Service
 # Create your views here.
 
 # Create a new view for the home page
@@ -44,8 +45,10 @@ def galleryView(request):
     return render(request, 'gallery.html', context)
 
 # Create a new view for the schedule appintments page
+# Return a list of services to be displayed on the schedule appointment page
 def scheduleView(request):
-    return render(request, 'schedule_appointment.html')
+    services = Service.objects.all()
+    return render(request, 'schedule_appointment.html', {'services': services})
 
 # help code customer contact/continue
 def submit_form(request):
@@ -55,3 +58,4 @@ def submit_form(request):
         return HttpResponse("Form submitted successfully.")
     else:
         return redirect('schedule_appointment')
+    
