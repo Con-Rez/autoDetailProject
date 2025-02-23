@@ -9,70 +9,99 @@
 
 {% block content %}
 
-<div class="container">
-
-  <!-- Google Calendar Appointment Scheduling -->
-  <div class="iframe-container" style="padding: 20px; background-color: var(--card-bg-color); border-radius: 10px;">
-    <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2IiQ_sRU3H1Z6p1DZyJhyg1ITZ_dHFNViptvAEMSJHYlYpElLic4ZYSI6tZ0e3y0HEzddazHkp?gv=true" 
-      style="border: 0; width: 100%; height: 800px; border-radius: 8px;" 
-      frameborder="0">
-    </iframe>
-  </div>
-  <!-- end Google Calendar Appointment Scheduling -->
-
 <!-- Services List with Checkboxes -->
-<div class="services-list" style="margin-top: 20px;">
-  <h3>Select Services</h3>
-  <form id="services-form">
-    <!-- Loop through each service and display a checkbox -->
-    {% for service in services %}
-      <div class="form-check">
-        <input class="form-check-input service-checkbox" type="checkbox" value="{{ service.cost }}" data-time="{{ service.time_to_complete }}" id="service{{ service.id }}">
-        <label class="form-check-label" for="service{{ service.id }}">
-          {{ service.name }} - ${{ service.cost }} - {{ service.time_to_complete }} hours
-        </label>
+<div class="container my-5 shadow-lg">
+  <div class="row">
+    <script src="{% static 'js/costCalculator.js' %}"></script>
+    <div class="card shadow-lg">
+      <div class="card-header text-center fs-1">
+        Services Calculator
       </div>
-    {% endfor %}
-  </form>
-  <div style="margin-top: 20px;">
-    <p>Total Cost: $<span id="total-cost">0.00</span></p>
-    <p>Total Time: <span id="total-time">0.00</span> hours</p>
+      <div class="card-body">
+        <p class="card-text text-center">Calculate your possible costs before coming in or making an appointment.</p>
+        <h6 class="card-subtitle mb-2 text-muted fw-bold text-center">NOTE: This is NOT an official receipt or estimate!</h6>
+        <form id="services-form">
+          <!-- Loop through each service and display a checkbox -->
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Service</th>
+                <th scope="col">Cost</th>
+                <th scope="col">Time to Complete</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for service in services %}
+              <tr>
+                <th scope="row" class="text-center">
+                  <div class="form-check">
+                    <input class="form-check-input service-checkbox" type="checkbox" value="{{ service.cost }}" data-time="{{ service.time_to_complete }}" id="service{{ service.id }}" style="transform: scale(2);">
+                  </div>
+                </th>
+                <label class="form-check-label text-center" for="service{{ service.id }}"></label>
+                  <td>{{ service.name }}</td>
+                  <td>${{ service.cost }}</td>
+                  <td>{{ service.time_to_complete }}</td>
+                  <td>
+                    <div class="text-left">
+                        <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ service.id }}" aria-expanded="false" aria-controls="collapse{{ service.id }}" {% if not service.description %}disabled{% endif %}>
+                        &#10597; Click for Description &#10597;
+                        </button>
+                    </div>
+                  </td>
+                </label>
+              </tr>
+              <tr class="collapse" id="collapse{{ service.id }}">
+                <td colspan="5">
+                  <div class="card card-body">
+                    {{ service.description }}
+                  </div>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </form>
+      </div>
+      <div class="card-footer">        
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body text-center">
+                <h5 class="card-title text-center">Total Cost:</h5>
+                Roughly $<span id="total-cost">0.00</span> total.
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body text-center">
+                <h5 class="card-title text-center">Total Time</h5>
+                Roughly <span id="total-time">0.00</span> hours.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 <!-- end Services List with Checkboxes -->
 
-<!-- JavaScript to calculate total cost and time without refreshing the page -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const checkboxes = document.querySelectorAll('.service-checkbox');
-    const totalCostElement = document.getElementById('total-cost');
-    const totalTimeElement = document.getElementById('total-time');
-    
-    // Add event listener to each checkbox
-    checkboxes.forEach(checkbox => {
-      checkbox.addEventListener('change', updateTotals);
-    });
-
-    // Update totals when the page loads
-    function updateTotals() {
-      let totalCost = 0;
-      let totalTime = 0;
-
-      // Loop through each checkbox and add up the total cost and time
-      checkboxes.forEach(checkbox => {
-        if (checkbox.checked) {
-          totalCost += parseFloat(checkbox.value);
-          totalTime += parseFloat(checkbox.getAttribute('data-time'));
-        }
-      });
-
-      // Update the total cost and time on the page
-      totalCostElement.textContent = totalCost.toFixed(2);
-      totalTimeElement.textContent = totalTime.toFixed(2);
-    }
-  });
-</script>
-
+<!-- Google Calendar Appointment Scheduling -->
+<div class="container my-5 shadow-lg">
+  <div class="row">
+    <div class="iframe-container" style="padding: 20px; background-color: var(--card-bg-color); border-radius: 10px;">
+      <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2IiQ_sRU3H1Z6p1DZyJhyg1ITZ_dHFNViptvAEMSJHYlYpElLic4ZYSI6tZ0e3y0HEzddazHkp?gv=true" 
+        style="border: 0; width: 100%; height: 800px; border-radius: 8px;" 
+        frameborder="0">
+      </iframe>
+    </div>
+  </div>
 </div>
+<!-- end Services List with Checkboxes -->
+
 {% include 'footer.html' %}
 {% endblock %}

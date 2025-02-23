@@ -27,6 +27,12 @@
     --button-text-color: #ffffff;
     --footer-bg-color: #2c2c2c;
 }
+/* Dark mode for table on Appointment Cost Calculator */
+.dark-mode table,
+.dark-mode th,
+.dark-mode td {
+    color: var(--text-color);
+}
 
 .container-fluid {
     width: 100%; /* Instead of 100vw */
