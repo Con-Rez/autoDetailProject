@@ -10,6 +10,14 @@
         padding: 0.5rem 1rem;
         min-height: 70px; /* Ensures consistent navbar height */
     }
+    .custom-navbar .nav-link {
+        transition: color 0.3s ease, transform 0.3s ease; /* Smooth color and transform */
+      }
+      
+      .custom-navbar .nav-link:hover {
+        color: #007bff; /* Change color on hover */
+        transform: scale(1.05); /* Slightly enlarge the text on hover */
+      }
 
     .navbar-toggler {
         border: none;

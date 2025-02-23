@@ -67,13 +67,29 @@ body {
 }
 
 /* Navbar styling */
-.navbar {
-    background-color: var(--navbar-bg-color) !important;
-    color: var(--navbar-text-color) !important;
-    padding: 20px 40px !important;
-    border-bottom: 1px solid #ddd !important;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
+.custom-navbar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999; /* Ensure it's on top */
+    width: 100%; /* Make sure the navbar spans the full width */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: for depth */
+    background-color: rgba(255, 255, 255, 0.9); /* Optional: for transparency */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  body {
+    padding-top: 160px; /* Adjust this to match your navbar height */
+  }
+
+  .custom-navbar .nav-link {
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth color and transform */
+  }
+  
+  .custom-navbar .nav-link:hover {
+    color: #007bff; /* Change color on hover */
+    transform: scale(1.05); /* Slightly enlarge the text on hover */
+  }
 
 /* Navigation list and links */
 .nav-list {
@@ -81,7 +97,7 @@ body {
     padding: 0 !important;
     display: flex !important;
     flex-wrap: wrap !important; /* Allows wrapping */
-    gap: 10px !important; /* Reduce space between items */
+    gap: 30px !important; /* Reduce space between items */
     justify-content: center !important;
 }
 
@@ -96,7 +112,7 @@ body {
     color: var(--link-color) !important;
     border-bottom: 2px solid transparent !important;
     padding: 5px 0 !important;
-    font-size: 18px !important;
+    font-size: 24px !important;
     letter-spacing: 1px !important;
     transition: color 0.3s ease, border-color 0.3s ease;
 }
@@ -112,6 +128,18 @@ body {
 @media (max-width: 768px) {
     .logo img {
         height: 100px; /* Smaller logo for mobile */
+    }
+
+    /* Adjust nav-list for smaller screens */
+    .nav-list {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 15px !important; /* Smaller gap for mobile */
+    }
+
+    /* Adjust font size for smaller screens */
+    .nav-list li a {
+        font-size: 18px !important; /* Slightly smaller font size for mobile */
     }
 }
 
@@ -147,17 +175,19 @@ body {
 /* Banner text position */
 .banner-card .card-img-overlay {
     position: absolute;              
-    top: 50%;
-    left: 5px;
-    transform: translateY(-50%);
-    max-width: 100%;
+    top: 50%;                        
+    left: 5%;                        
+    transform: translateY(-50%);     
+    max-width: 90%; /* Ensure text doesn't stretch too wide */
+    padding: 0 10px; /* Padding for text spacing */
+    z-index: 2; /* Keeps text on top of the image */
 }
 
 /* Banner font */
 .banner-card .card-title {
-    font-size: clamp(24px, 5vw, 50px); /* Ensures the text scales dynamically */
+    font-size: clamp(24px, 5vw, 50px); /* Scalable text size */
     font-weight: bold;
-    text-align: left; /* left text */
+    text-align: left; 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     margin: 0;
     font-family: 'Roboto', sans-serif; 
@@ -167,7 +197,33 @@ body {
 /* Adjust for smaller screens */
 @media (max-width: 768px) {
     .banner-card .card-title {
-        font-size: 28px; /* Adjust font size for better readability */
+        font-size: 28px; /* Reduce font size for better readability */
+    }
+
+    .banner-card .card-img-overlay {
+        left: 10%; /* Center text a bit more on smaller screens */
+        max-width: 80%;
+    }
+
+    .schedule-btn {
+        font-size: 16px; /* Adjust button font size for small screens */
+        padding: 12px 15px; /* Adjust button padding */
+    }
+}
+
+@media (max-width: 576px) {
+    .banner-card .card-img-overlay {
+        left: 10%; /* Center text further */
+        max-width: 85%; /* Ensure text fits well */
+    }
+
+    .banner-card .card-title {
+        font-size: 20px; /* Smaller font size for very small screens */
+    }
+
+    .schedule-btn {
+        font-size: 14px; /* Smaller button text */
+        padding: 10px 12px; /* Adjust padding for smaller screens */
     }
 }
 
