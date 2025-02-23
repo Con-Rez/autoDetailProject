@@ -1,7 +1,14 @@
 from django.contrib import admin
 from django.utils.html import format_html
+from django.db import models
 from .models import Photo
+from .models import Service
 import os
+
+class ServiceAdmin(admin.ModelAdmin):
+    list_display = ('name', 'cost', 'time_to_complete', 'description')
+    search_fields = ('name', 'description')
+    list_filter = ('cost', 'time_to_complete')
 
 # PhotoAdmin class defined, inherits from admin.ModelAdmin
 class PhotoAdmin(admin.ModelAdmin):
@@ -37,3 +44,4 @@ class PhotoAdmin(admin.ModelAdmin):
         return actions
 
 admin.site.register(Photo, PhotoAdmin)
+admin.site.register(Service, ServiceAdmin)

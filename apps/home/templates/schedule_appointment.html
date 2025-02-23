@@ -8,6 +8,7 @@
 {% load static %} <!--Load files stored in static folder in app folder-->
 
 {% block content %}
+
 <div class="container">
 
   <!-- Google Calendar Appointment Scheduling -->
@@ -18,6 +19,59 @@
     </iframe>
   </div>
   <!-- end Google Calendar Appointment Scheduling -->
+
+<!-- Services List with Checkboxes -->
+<div class="services-list" style="margin-top: 20px;">
+  <h3>Select Services</h3>
+  <form id="services-form">
+    <!-- Loop through each service and display a checkbox -->
+    {% for service in services %}
+      <div class="form-check">
+        <input class="form-check-input service-checkbox" type="checkbox" value="{{ service.cost }}" data-time="{{ service.time_to_complete }}" id="service{{ service.id }}">
+        <label class="form-check-label" for="service{{ service.id }}">
+          {{ service.name }} - ${{ service.cost }} - {{ service.time_to_complete }} hours
+        </label>
+      </div>
+    {% endfor %}
+  </form>
+  <div style="margin-top: 20px;">
+    <p>Total Cost: $<span id="total-cost">0.00</span></p>
+    <p>Total Time: <span id="total-time">0.00</span> hours</p>
+  </div>
+</div>
+<!-- end Services List with Checkboxes -->
+
+<!-- JavaScript to calculate total cost and time without refreshing the page -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const checkboxes = document.querySelectorAll('.service-checkbox');
+    const totalCostElement = document.getElementById('total-cost');
+    const totalTimeElement = document.getElementById('total-time');
+    
+    // Add event listener to each checkbox
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', updateTotals);
+    });
+
+    // Update totals when the page loads
+    function updateTotals() {
+      let totalCost = 0;
+      let totalTime = 0;
+
+      // Loop through each checkbox and add up the total cost and time
+      checkboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+          totalCost += parseFloat(checkbox.value);
+          totalTime += parseFloat(checkbox.getAttribute('data-time'));
+        }
+      });
+
+      // Update the total cost and time on the page
+      totalCostElement.textContent = totalCost.toFixed(2);
+      totalTimeElement.textContent = totalTime.toFixed(2);
+    }
+  });
+</script>
 
 </div>
 {% include 'footer.html' %}
