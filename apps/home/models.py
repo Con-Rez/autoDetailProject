@@ -23,10 +23,10 @@ class Photo(models.Model):
         if self.image:
             if hasattr(self.image, 'width') and hasattr(self.image, 'height'): # size check, normallay the images are 3024x4032
                 if self.image.width < 2000 or self.image.height < 3000: # these parameters will only make the images slightly smaller and not affect page too much
-                    raise ValidationError("Image too Small")
+                    raise ValidationError("Image too small. Width should be greater than 2000 and Height should be greater than 3000.")
                 
                 if self.image.width > self.image.height: # see if image is vertical, try to keep vertical slider images
-                    raise ValidationError("Image must be vertical") # prevents horizontal images from messing with the webpage
+                    raise ValidationError("Image must be vertical. Height should be greater than width.") # prevents horizontal images from messing with the webpage
                     
 
     def save(self, *args, **kwargs): #self=title of database entry, 
