@@ -1,0 +1,50 @@
+/* discountModal.css */
+
+/* Style for the Discount Modal */
+.discount-modal .modal-content {
+    background: linear-gradient(135deg, #ff6f00, #FF0000) !important;
+    padding: 20px !important;
+    border-radius: 15px !important;
+    box-shadow: 0 4px 10px #0000004d !important;
+    border: none !important;
+  }
+  
+  .discount-modal .modal-header {
+    border-bottom: none !important;
+    text-align: center !important;
+  }
+  
+  .discount-modal .modal-title {
+    font-size: 2rem !important;
+    font-weight: bold !important;
+    color: #ffffff !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+  }
+  
+  .discount-modal .modal-body {
+    font-size: 1.2rem !important;
+    color: #ffffff !important;
+    text-align: center !important;
+    padding: 20px 10px !important;
+  }
+  
+  .discount-modal .modal-footer {
+    border-top: none !important;
+    justify-content: center !important;
+    padding: 10px !important;
+  }
+  
+  .discount-modal .btn-primary {
+    background-color: #ffffff !important;
+    color: #FF0000 !important;
+    font-weight: bold !important;
+    padding: 10px 20px !important;
+    border-radius: 50px !important;
+    border: none !important;
+    transition: background-color 0.3s ease !important;
+  }
+  
+  .discount-modal .btn-primary:hover {
+    background-color: #ffffff !important;
+  }
+  
