@@ -1,6 +1,6 @@
 /* Container styling for the animated welcome message */
     .animated-welcome {
-      background: linear-gradient(135deg, #f6d365, #FF0000) !important;
+      background: linear-gradient(135deg, #ff6f00, #FF0000) !important;
       padding: 20px 30px !important;
       border-radius: 15px !important;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
@@ -23,9 +23,9 @@
     }
     
     @keyframes colorchange {
-      0%   { color: #ffeb3b !important; }
-      50%  { color: #ff4081 !important; }
-      100% { color: #ffeb3b !important; }
+      0%   { color: #ff6f00 !important; }
+      50%  { color: #FF0000 !important; }
+      100% { color: #ff6f00 !important; }
     }
     
     /* Blinking cursor styling */

@@ -4,8 +4,12 @@
 {% bootstrap_css %} <!-- Load the Bootstrap CSS img folder -->
 {% bootstrap_javascript %} <!-- Load the Bootstrap JavaScript img folder -->
 {% bootstrap_messages %} <!--Optional: Display django.contrib.messages as Bootstrap alerts -->
-
 {% load static %} <!--Load files stored in static folder in app folder-->
+
+<head>
+  <!-- Link to your custom CSS file -->
+  <link rel="stylesheet" href="{% static 'css/discountModal.css' %}">
+</head>
 
 {% block content %}
 
@@ -102,6 +106,27 @@
   </div>
 </div>
 <!-- end Services List with Checkboxes -->
+
+<!-- Discount Modal -->
+<div class="modal fade discount-modal" id="discountModal" tabindex="-1" aria-labelledby="discountModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="discountModalLabel">Limited Time Promotion</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Get <strong>5% off</strong> your service when you schedule an appointment for the first time!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Awesome, Let's Go!</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Include discount modal JavaScript -->
+<script src="{% static 'js/discountModal.js' %}"></script>
 
 {% include 'footer.html' %}
 {% endblock %}

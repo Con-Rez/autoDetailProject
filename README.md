@@ -52,10 +52,20 @@ To deploy this project, first install the PIP dependencies listed in the include
 pip install -r requirements.txt
 ```
 
+then run the following for test_(insert name thats appropiate for your task).py to work (you'll need to create new test_(name).py files for your new tasks you want to test, create it in the same folder as test_dismodal.py and tests.py)
+```bash
+pip install selenium webdriver-manager
+```
+
 Then run the server.
 
 ```bash
 python manage.py runserver
+```
+
+to run the test files using selenium:
+```bash
+python manage.py test home
 ```
 
 ## Running Tests
