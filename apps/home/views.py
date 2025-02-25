@@ -29,16 +29,20 @@ def ContactUsView(request):
 def galleryView(request):
     before_image_path = 'imgs/BeforeAfterFordBW.jpg'
     after_image_path = 'imgs/BeforeAfterFordColor.jpg'
+    before_image_path_2 = 'imgs/BeforeAfterChevyBW.jpg'
+    after_image_path_2 = 'imgs/BeforeAfterChevyColor.jpg'
+    before_image_path_3 = 'imgs/BeforeAfterHyundaiBW.jpg'
+    after_image_path_3 = 'imgs/BeforeAfterHyundaiColor.jpg'
 
     context = {
         'before_image': before_image_path,
         'after_image': after_image_path,
 
-        'before_image2': before_image_path,
-        'after_image2': after_image_path,
+        'before_image2': before_image_path_2,
+        'after_image2': after_image_path_2,
         
-        'before_image3': before_image_path,
-        'after_image3': after_image_path
+        'before_image3': before_image_path_3,
+        'after_image3': after_image_path_3
     }
     print("Context: ", context)
 
