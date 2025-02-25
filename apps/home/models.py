@@ -40,6 +40,8 @@ class Photo(models.Model):
                 print(IMGSPATH + os.path.basename(old_image_path))
                 self.image.name = IMGSPATH + os.path.basename(old_image_path) # Set the image name to the old image name with the correct path
                 super(Photo, self).save(*args, **kwargs) # Save the new image to the database again
+            else:
+                super(Photo, self).save(*args, **kwargs)
         except Photo.DoesNotExist:
             super(Photo, self).save(*args, **kwargs)
 
