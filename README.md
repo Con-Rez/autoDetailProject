@@ -63,6 +63,11 @@ Then run the server.
 python manage.py runserver
 ```
 
+to run the test files using selenium:
+```bash
+python manage.py test home
+```
+
 ## Running Tests
 
 To run tests, you can use the following commands. More info can be found here: [Django Testing Documentation](https://docs.djangoproject.com/en/5.1/topics/testing/overview/)
