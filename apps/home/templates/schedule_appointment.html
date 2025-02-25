@@ -125,16 +125,8 @@
   </div>
 </div>
 
-<!-- JavaScript to trigger the discount modal -->
-<script>
-  document.addEventListener('DOMContentLoaded', function(){
-    var discountModal = new bootstrap.Modal(document.getElementById('discountModal'));
-    // Show the modal after a 5-second delay
-    setTimeout(function(){
-      discountModal.show();
-    }, 5000);
-  });
-</script>
+<!-- Include discount modal JavaScript -->
+<script src="{% static 'js/discountModal.js' %}"></script>
 
 {% include 'footer.html' %}
 {% endblock %}
