@@ -1,5 +1,4 @@
 {% extends 'navbar.html' %}
-
 {% load bootstrap5 %} <!-- Load the bootstrap5 template tag library -->
 {% bootstrap_css %} <!-- Load the Bootstrap CSS img folder -->
 {% bootstrap_javascript %} <!-- Load the Bootstrap JavaScript img folder -->
@@ -12,9 +11,42 @@
 </head>
 
 {% block content %}
+<style>
+    .form-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-<!-- Services List with Checkboxes -->
-<div class="container my-5 shadow-lg">
+    .hidden-content {
+        display: none;
+    }
+
+    .form-container iframe {
+        width: 100%; 
+        height: 100%; 
+        border: none;
+    }
+
+    .iframe-container {
+        padding: 20px;
+        background-color: var(--card-bg-color);
+        border-radius: 10px;
+    }
+</style>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<!-- CAPTCHA Form (Initially Visible) -->
+<form class="form-container" id="captcha-form" method="POST">
+    {% csrf_token %}
+    <div class="g-recaptcha" data-sitekey="6Lej8OIqAAAAAKsZ6a_qsKn4fJA8zzz3_KFAczql" data-callback="showContent"></div>
+</form>
+
+<!-- Services List with Checkboxes (Initially Hidden) -->
+<div class="container my-5 shadow-lg hidden-content" id="services-container">
   <div class="row">
     <script src="{% static 'js/costCalculator.js' %}"></script>
     <div class="card shadow-lg">
@@ -25,7 +57,6 @@
         <p class="card-text text-center">Calculate your possible costs before coming in or making an appointment.</p>
         <h6 class="card-subtitle mb-2 text-muted fw-bold text-center">NOTE: This is NOT an official receipt or estimate!</h6>
         <form id="services-form">
-          <!-- Loop through each service and display a checkbox -->
           <table class="table">
             <thead>
               <tr>
@@ -94,8 +125,8 @@
 </div>
 <!-- end Services List with Checkboxes -->
 
-<!-- Google Calendar Appointment Scheduling -->
-<div class="container my-5 shadow-lg">
+<!-- Google Calendar Appointment Scheduling (Initially Hidden) -->
+<div class="container my-5 shadow-lg hidden-content" id="calendar-container">
   <div class="row">
     <div class="iframe-container" style="padding: 20px; background-color: var(--card-bg-color); border-radius: 10px;">
       <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2IiQ_sRU3H1Z6p1DZyJhyg1ITZ_dHFNViptvAEMSJHYlYpElLic4ZYSI6tZ0e3y0HEzddazHkp?gv=true" 
@@ -129,4 +160,18 @@
 <script src="{% static 'js/discountModal.js' %}"></script>
 
 {% include 'footer.html' %}
+
+<script>
+    // This function will be triggered when CAPTCHA is solved
+    function showContent() {
+        console.log("CAPTCHA solved, showing the services and calendar.");
+
+        document.getElementById('services-container').classList.remove('hidden-content');
+        document.getElementById('calendar-container').classList.remove('hidden-content');
+
+        // Hide the CAPTCHA form
+        document.getElementById('captcha-form').classList.add('hidden-content');
+    }
+</script>
+
 {% endblock %}
