@@ -138,3 +138,6 @@ STATIC_ROOT = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+RECAPTCHA_PUBLIC_KEY = '6Lej8OIqAAAAAKsZ6a_qsKn4fJA8zzz3_KFAczql'  # Public key
+RECAPTCHA_PRIVATE_KEY = '6Lej8OIqAAAAAMbzFI-KWn6bthdnejHW8X-PsvBD'  # Private key

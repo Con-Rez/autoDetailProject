@@ -1,36 +1,62 @@
 {% extends 'navbar.html' %}
-
 {% load bootstrap5 %} <!-- Load the bootstrap5 template tag library -->
 {% bootstrap_css %} <!-- Load the Bootstrap CSS img folder -->
 {% bootstrap_javascript %} <!-- Load the Bootstrap JavaScript img folder -->
 {% bootstrap_messages %} <!--Optional: Display django.contrib.messages as Bootstrap alerts -->
-
 {% load static %} <!--Load files stored in static folder in app folder-->
 
 {% block content %}
-
 <style>
     .form-container {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-        .form-container iframe {
-            width: 100%; 
-            height: 100%; 
-            border: none;
-        }
+    .hidden-form {
+        display: none;
+    }
+
+    .form-container iframe {
+        width: 100%; 
+        height: 100%; 
+        border: none;
+    }
+
+    /* Optional: hide form initially */
+    .captcha-container {
+        display: block;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
 </style>
-<div class="form-container">
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdrQ_HO78qT6GZTmMtY6X52iOegtiOO1dFKA_9S4T8J1ZrKgQ/viewform?embedded=true" width="640" height="722" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<form class="form-container captcha-container" id="form" method="POST">
+    {% csrf_token %}
+    <div class="g-recaptcha" data-sitekey="6Lej8OIqAAAAAKsZ6a_qsKn4fJA8zzz3_KFAczql" data-callback="showGoogleForm"></div>
+</form>
+
+<div class="form-container hidden-form" id="google-form-container">
+    <iframe id="hidden-form" src="https://docs.google.com/forms/d/e/1FAIpQLSdrQ_HO78qT6GZTmMtY6X52iOegtiOO1dFKA_9S4T8J1ZrKgQ/viewform?embedded=true" width="640" height="722" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 </div>
+
 {% include 'footer.html' %}
+
+<script>
+    // Show the Google Form once CAPTCHA is solved
+    function showGoogleForm() {
+        console.log("CAPTCHA solved, showing the form iframe.");
+        document.getElementById('google-form-container').classList.remove('hidden-form');  // Show Google Form iframe
+        document.querySelector('.captcha-container').style.display = 'none';  // Hide CAPTCHA form
+    }
+</script>
+
 {% endblock %}
-
-
-
-    
