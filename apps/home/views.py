@@ -35,8 +35,8 @@ def galleryView(request):
     after_image_path_3 = 'imgs/BeforeAfterHyundaiColor.jpg'
 
     context = {
-        'before_image': before_image_path,
-        'after_image': after_image_path,
+        'before_image1': before_image_path,
+        'after_image1': after_image_path,
 
         'before_image2': before_image_path_2,
         'after_image2': after_image_path_2,
