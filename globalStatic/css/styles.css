@@ -444,6 +444,35 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-transform: uppercase;
+} 
+
+/* For tablets Schedule Appointment link button */
+@media (max-width: 768px) {
+    .apt-btn {
+        font-size: 18px; 
+        padding: 14px 18px; 
+        max-width: 250px; 
+        margin-top: -20px;
+   
+    }
+}
+
+/* For mobile screens Schedule Appointment link button */
+@media (max-width: 576px) {
+    .apt-btn {
+        font-size: 16px; 
+        padding: 12px 15px; 
+        max-width: 220px; 
+    }
+}
+
+/* For very small screens Schedule Appointment link button */
+@media (max-width: 375px) {
+    .apt-btn {
+        font-size: 14px; 
+        padding: 10px 12px; 
+        max-width: 200px; 
+    }
 }
 
 .apt-btn:hover {
@@ -532,5 +561,23 @@ h1, h2, h3, h4, h5, h6, p, .lead, .text-center {
 .table-bordered th, .table-bordered td {
     border-color: var(--hover-border-color) !important;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
