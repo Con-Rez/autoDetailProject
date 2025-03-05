@@ -1,36 +1,32 @@
 {% extends 'navbar.html' %}
-
 {% load bootstrap5 %} <!-- Load the bootstrap5 template tag library -->
 {% bootstrap_css %} <!-- Load the Bootstrap CSS img folder -->
 {% bootstrap_javascript %} <!-- Load the Bootstrap JavaScript img folder -->
-{% bootstrap_messages %} <!--Optional: Display django.contrib.messages as Bootstrap alerts -->
-
-{% load static %} <!--Load files stored in static folder in app folder-->
+{% bootstrap_messages %} <!-- Optional: Display django.contrib.messages as Bootstrap alerts -->
+{% load static %} <!-- Load files stored in static folder in app folder -->
 
 {% block content %}
-
 <style>
-    .form-container {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+  .form-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-        .form-container iframe {
-            width: 100%; 
-            height: 100%; 
-            border: none;
-        }
+  .form-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
 </style>
-<div class="form-container">
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdrQ_HO78qT6GZTmMtY6X52iOegtiOO1dFKA_9S4T8J1ZrKgQ/viewform?embedded=true" width="640" height="722" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 
+<div class="form-container">
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdrQ_HO78qT6GZTmMtY6X52iOegtiOO1dFKA_9S4T8J1ZrKgQ/viewform?embedded=true" width="640" height="722" frameborder="0" marginheight="0" marginwidth="0">
+    Loading…
+  </iframe>
 </div>
+
 {% include 'footer.html' %}
 {% endblock %}
-
-
-
-    

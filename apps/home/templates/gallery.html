@@ -1,5 +1,4 @@
 {% extends 'navbar.html' %}
-
 {% load bootstrap5 %}
 {% bootstrap_css %}
 {% bootstrap_javascript %}
@@ -12,7 +11,6 @@
 </head>
 
 {% block content %}
-
 <!-- Main container for the gallery -->
 <div class="container gallery-container">
   <!-- Gallery title -->
@@ -43,7 +41,7 @@
         </div>
       </div>
 
-      <!-- Repeated image comparison sliders -->
+      <!-- Repeated image comparison slider -->
       <div class="image-comparison-slider">
         <img src="{% static before_image2 %}" alt="before">
         <div class="img-wrapper">
@@ -61,6 +59,7 @@
         </div>
       </div>
 
+      <!-- Another image comparison slider -->
       <div class="image-comparison-slider">
         <img src="{% static before_image3 %}" alt="before">
         <div class="img-wrapper">
@@ -84,7 +83,6 @@
   <h1 class="gallery-title">More Transformations</h1>
   <div class="row justify-content-center">
     <div class="col-lg-10">
-  
       <section id="slider">
         <input type="radio" name="slider" id="s1" checked>
         <input type="radio" name="slider" id="s2">
@@ -105,11 +103,9 @@
     </div>
   </div>
 
+  <!-- Include image transitions and image sliders JavaScript -->
+  <script src="{% static 'js/imgSliders.js' %}"></script>
+  <script src="{% static 'js/imgTransition.js' %}"></script>
 
-<!-- Include image transitions and image sliders JavaScript -->
-<script src="{% static 'js/imgSliders.js' %}"></script>
-<script src="{% static 'js/imgTransition.js' %}"></script>
-
-
-{% include 'footer.html' %}
+  {% include 'footer.html' %}
 {% endblock %}
