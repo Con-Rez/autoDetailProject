@@ -27,6 +27,13 @@
     --button-text-color: #ffffff;
     --footer-bg-color: #2c2c2c;
 }
+
+/* Fix hover color in dark mode for nav links */
+.dark-mode .nav-list li a:hover {
+    color: white !important; /* Change to your preferred color */
+    background-color: transparent !important; /* Remove unwanted background */
+    text-decoration: none !important;
+}
 /* Dark mode for table on Appointment Cost Calculator */
 .dark-mode table,
 .dark-mode th,
@@ -39,7 +46,6 @@
     max-width: 100%; /* Prevents overflowing */
     overflow-x: hidden; /* Ensures no horizontal scroll */
 }
-
 
 
 /* Apply colors to body and other elements */
@@ -93,7 +99,7 @@ body {
   }
   
   .custom-navbar .nav-link:hover {
-    color: #007bff; /* Change color on hover */
+    color: #ffffff; /* Change color on hover */
     transform: scale(1.05); /* Slightly enlarge the text on hover */
   }
 
@@ -250,10 +256,13 @@ body {
     border-radius: 0 !important;     
     box-shadow: none !important;     
 }
+ 
 /* Button styling */
+
+/* Schedule Now Button */
 .schedule-btn {
     display: inline-block;            
-    background-color: var(--button-bg-color);           
+    background-color: var(--button-bg-color);       
     color: var(--button-text-color);                     
     text-align: center;               
     font-family: 'Roboto', sans-serif;
@@ -265,6 +274,12 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
     text-transform: uppercase; 
+}
+
+/* Slightly darken the background on hover */
+.schedule-btn:hover {
+    background-color: rgb(158, 0, 0) !important; /* Slightly darker red */
+    color: rgb(194, 194, 194) !important;
 }
 
 /* Gallery container */
@@ -575,24 +590,6 @@ h1, h2, h3, h4, h5, h6, p, .lead, .text-center {
     border-color: var(--hover-border-color) !important;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .instagram-media{
     background:#FFF;
     border:0;
@@ -601,5 +598,4 @@ h1, h2, h3, h4, h5, h6, p, .lead, .text-center {
     width: 100%; max-width:
     100%;
 }
-
 }
