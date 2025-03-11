@@ -161,31 +161,35 @@ body {
         align-items: center !important;
     }
 }
-
 /* Banner card styling */
 .banner-card {
     border-radius: 50px !important;  
     overflow: hidden;                
     position: relative;              
     box-shadow: none !important;     
+    max-width: 1200px; 
+    margin: 0 auto; 
 }
 
+/* Fix the banner image stretching */
 .banner-card .card-img-top {
     border-radius: 50px !important;  
     width: 100%;                     
     height: auto;                    
     object-fit: cover;               
     object-position: center;         
+    max-width: 1200px; /* Prevent stretching beyond content width */
+    display: block;
 }
 
 /* Banner text position */
 .banner-card .card-img-overlay {
     position: absolute;              
     top: 50%;                        
-    left: 5%;                        
+    left: 10%; /* Adjust for better balance on larger screens */
     transform: translateY(-50%);     
     max-width: 90%; /* Ensure text doesn't stretch too wide */
-    padding: 0 10px; /* Padding for text spacing */
+    padding: 0 10px; 
     z-index: 2; /* Keeps text on top of the image */
 }
 
@@ -202,6 +206,10 @@ body {
 
 /* Adjust for smaller screens */
 @media (max-width: 768px) {
+    .banner-card {
+        max-width: 90%; /* Allow smaller width */
+    }
+
     .banner-card .card-title {
         font-size: 28px; /* Reduce font size for better readability */
     }
@@ -218,6 +226,10 @@ body {
 }
 
 @media (max-width: 576px) {
+    .banner-card {
+        max-width: 95%; /* Keep it responsive */
+    }
+
     .banner-card .card-img-overlay {
         left: 10%; /* Center text further */
         max-width: 85%; /* Ensure text fits well */
@@ -238,7 +250,6 @@ body {
     border-radius: 0 !important;     
     box-shadow: none !important;     
 }
-
 /* Button styling */
 .schedule-btn {
     display: inline-block;            
