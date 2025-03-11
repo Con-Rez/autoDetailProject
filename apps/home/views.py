@@ -27,12 +27,12 @@ def ContactUsView(request):
 
 # Create a new view for the gallery page
 def galleryView(request):
-    before_image_path = 'imgs/BeforeAfterFordBW.jpg'
-    after_image_path = 'imgs/BeforeAfterFordColor.jpg'
-    before_image_path_2 = 'imgs/BeforeAfterChevyBW.jpg'
-    after_image_path_2 = 'imgs/BeforeAfterChevyColor.jpg'
-    before_image_path_3 = 'imgs/BeforeAfterHyundaiBW.jpg'
-    after_image_path_3 = 'imgs/BeforeAfterHyundaiColor.jpg'
+    before_image_path = 'imgs/galleryLeftBefore.jpg'
+    after_image_path = 'imgs/galleryLeftAfter.jpg'
+    before_image_path_2 = 'imgs/galleryMiddleBefore.jpg'
+    after_image_path_2 = 'imgs/galleryMiddleAfter.jpg'
+    before_image_path_3 = 'imgs/galleryRightBefore.jpg'
+    after_image_path_3 = 'imgs/galleryRightAfter.jpg'
 
     context = {
         'before_image1': before_image_path,
