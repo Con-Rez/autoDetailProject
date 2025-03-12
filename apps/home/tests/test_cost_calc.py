@@ -121,6 +121,35 @@ class cost_calc_test(StaticLiveServerTestCase):
         self.assertEqual(cost, expectedCost, f"Expected cost {expectedCost}, but got {cost}")
         self.assertEqual(time_est, expectedTime, f"Expected time {expectedTime}, but got {time_est}")
 
+    def test_reset(self):
+        driver = self.driver
+        driver.get(URL)
+
+        dark = driver.find_element(by=By.ID, value="dark-mode-toggle")
+        dark.click()
+
+        expectedCost = 0.00
+        expectedTime = 0.00
+
+        service1 = driver.find_element(by=By.ID, value="service1")
+        service1.click()
+        service2 = driver.find_element(by=By.ID, value="service2")
+        service2.click()
+
+        time.sleep(1)
+        service1.click()
+        service2.click()
+
+
+        cost_element = driver.find_element(by=By.ID, value="total-cost")
+        time_element = driver.find_element(by=By.ID, value="total-time")
+
+        cost = float(cost_element.text.strip())
+        time_est = float(time_element.text.strip())
+
+        self.assertEqual(cost, expectedCost, f"Expected cost {expectedCost}, but got {cost}")
+        self.assertEqual(time_est, expectedTime, f"Expected time {expectedTime}, but got {time_est}")
+
 
 
     def tearDown(self):
