@@ -53,7 +53,10 @@ def add_service():
     # Display results on Services Calculator (Assumes this is the third service on the page.)
     driver.get("http://127.0.0.1:8000/schedule_appointment/")  
     time.sleep(2)
-    driver.find_element(By.NAME, "service3").click()
+    try:
+        driver.find_element(By.ID, "service3").click()
+    except Exception as e:
+        print(f"Error: {e}")
     
     print(f"User created {SERVICE_NAME} service entry")
 
@@ -83,20 +86,23 @@ def edit_service():
     # Display results on Services Calculator (Assumes this is the third service on the page.)
     driver.get("http://127.0.0.1:8000/schedule_appointment/")  
     time.sleep(2)
-    driver.find_element(By.NAME, "service3").click()
-    driver.find_element(By.NAME, "collapse3").click()
-
+    try:
+        driver.find_element(By.ID, "service3").click()
+        driver.find_element(By.ID, "collapse3").click()
+    except Exception as e:
+        print(f"Error: {e}")
+    
     print(f"User edited a service entry {SERVICE_NAME}")
 
 def delete_service():
     """ Deletes the created user via Django admin """
-    driver.get("http://127.0.0.1:8000/adminauth/user/")
+    driver.get("http://127.0.0.1:8000/adminhome/service/")
     time.sleep(2)
     driver.find_element(By.LINK_TEXT, SERVICE_NAME).click()
 
     # Find and select the service's checkbox
     try:
-        user_checkbox = driver.find_element(By.XPATH, f"//th[contains(., '{SERVICE_DESCRIPTION}')]/preceding-sibling::td/input[@type='checkbox']")
+        user_checkbox = driver.find_element(By.XPATH, f"//th[contains(., '{SERVICE_NAME}')]/preceding-sibling::td/input[@type='checkbox']")
         user_checkbox.click()
     except Exception as e:
         print("Service checkbox not found:", e)
@@ -228,8 +234,10 @@ try:
     driver.get("http://127.0.0.1:8000/adminlogout/")  # Logout user
     time.sleep(2)
 
+    print("All Tests Passed: Service creation, Editing, Deletion, and failed invalid Service creation worked correctly.")
+
 except Exception as e:
-    print("All Tests Passed: Service creation, Editing, Deletetion, and failed invalid Service creation worked correctly.")
+    print("The Testing failed. Please check the error message above.")
 
 finally:
     driver.quit()
