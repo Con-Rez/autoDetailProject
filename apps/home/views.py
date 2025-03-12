@@ -4,7 +4,7 @@ import datetime; # Allows for the use of the datetime module to get the current 
 from .models import Service
 from .forms import ContactForm
 
-CAPTCHAENABLED = True;
+CAPTCHAENABLED = True; # Set to True to enable captcha site-wide, False to disable
 
 # Create a new view for the home page
 def homeView(request):
