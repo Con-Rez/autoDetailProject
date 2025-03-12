@@ -250,6 +250,20 @@ body {
         padding: 10px 12px; /* Adjust padding for smaller screens */
     }
 }
+/* Exempt the iframe container from dark mode */
+.no-dark-mode {
+    background-color: white !important; /* Keep background light */
+    color: black !important; /* Keep text readable */
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  /* Specifically target iframe inside the container for dark mode */
+  @media (prefers-color-scheme: dark) {
+    .no-dark-mode iframe {
+      background-color: white !important; /* Ensure iframe remains light */
+    }
+  }
 
 /* Non-banner cards */
 .card:not(.banner-card) {

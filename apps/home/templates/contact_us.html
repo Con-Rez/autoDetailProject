@@ -28,22 +28,24 @@
       <form method="post" action=".">
         {% csrf_token %}
         {{ form.captcha }}
-      <button type="submit" style="margin-top: 10px;">Submit</button>
-    </form>
+        <button type="submit" style="margin-top: 10px;">Submit</button>
+      </form>
       <p style="color: red; margin-top: 10px;">Please complete the captcha to proceed. There's four letters, and they're all capitals.</p>
     {% else %}
       <p style="color: green; margin-top: 10px;">Captcha validation succeeded. Please proceed to fill out the form.</p>
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdrQ_HO78qT6GZTmMtY6X52iOegtiOO1dFKA_9S4T8J1ZrKgQ/viewform?embedded=true" width="640" height="850 frameborder="0" marginheight="0" marginwidth="0">
+      <iframe class="no-dark-mode" src="https://docs.google.com/forms/d/e/1FAIpQLSdrQ_HO78qT6GZTmMtY6X52iOegtiOO1dFKA_9S4T8J1ZrKgQ/viewform?embedded=true"
+              width="640" height="850" frameborder="0" marginheight="0" marginwidth="0">
         Loading…
       </iframe>
     {% endif %}
   </div>
 {% else %}
-<div class="captcha-container" style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin: 20px 0;">
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdrQ_HO78qT6GZTmMtY6X52iOegtiOO1dFKA_9S4T8J1ZrKgQ/viewform?embedded=true" width="640" height="850" frameborder="0" marginheight="0" marginwidth="0">
-    Loading…
-  </iframe>
-</div>
+  <div class="captcha-container no-dark-mode" style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin: 20px 0;">
+    <iframe class="no-dark-mode" src="https://docs.google.com/forms/d/e/1FAIpQLSdrQ_HO78qT6GZTmMtY6X52iOegtiOO1dFKA_9S4T8J1ZrKgQ/viewform?embedded=true"
+            width="640" height="850" frameborder="0" marginheight="0" marginwidth="0">
+      Loading…
+    </iframe>
+  </div>
 {% endif %}
 
 
