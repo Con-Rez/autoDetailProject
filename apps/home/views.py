@@ -2,7 +2,9 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse # Allows for raw HTTP output commands within the views.py for testing
 import datetime; # Allows for the use of the datetime module to get the current date and time
 from .models import Service
-# Create your views here.
+from .forms import ContactForm
+
+CAPTCHAENABLED = True;
 
 # Create a new view for the home page
 def homeView(request):
@@ -23,7 +25,17 @@ def aboutUsView(request):
 
 #Create a new view for the contact us page, no arguments needed for it 
 def ContactUsView(request):
-    return render(request,"contact_us.html")
+    if CAPTCHAENABLED:
+        if request.method == 'POST':
+            captchaForm = ContactForm(request.POST)
+            if captchaForm.is_valid():
+                # Process the form data
+                pass
+        else:
+            captchaForm = ContactForm()
+    else:
+        captchaForm = None
+    return render(request, "contact_us.html", {'form': captchaForm, 'captchaenabled': CAPTCHAENABLED})
 
 # Create a new view for the gallery page
 def galleryView(request):

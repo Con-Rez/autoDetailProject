@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home', # This is the home app that was created
     'bootstrap5', # This is the bootstrap5 app that was installed: https://pypi.org/project/django-bootstrap-v5/
+    'captcha', # This is the captcha app that was installed: https://pypi.org/project/django-simple-captcha/
 ]
 
 MIDDLEWARE = [
