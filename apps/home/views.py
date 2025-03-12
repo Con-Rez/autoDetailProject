@@ -64,7 +64,17 @@ def galleryView(request):
 # Return a list of services to be displayed on the schedule appointment page
 def scheduleView(request):
     services = Service.objects.all()
-    return render(request, 'schedule_appointment.html', {'services': services})
+    if CAPTCHAENABLED:
+        if request.method == 'POST':
+            captchaForm = ContactForm(request.POST)
+            if captchaForm.is_valid():
+                # Process the form data
+                pass
+        else:
+            captchaForm = ContactForm()
+    else:
+        captchaForm = None
+    return render(request, 'schedule_appointment.html', {'form': captchaForm, 'captchaenabled': CAPTCHAENABLED,'services': services})
 
 # help code customer contact/continue
 def submit_form(request):
