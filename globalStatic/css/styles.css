@@ -460,6 +460,17 @@ position: absolute;
   /* background-color: rgba(0,0,0,0.5); */
 }
 
+#videoCarousel {
+    max-width: 800px;
+    margin: auto;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .carousel video {
+    border-radius: 10px;
+  }
+  
+
 @media (max-width: 200px) {
   :root {
     --image-comparison-slider-width: 90vw;
