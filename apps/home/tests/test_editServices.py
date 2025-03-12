@@ -98,7 +98,6 @@ def delete_service():
     """ Deletes the created user via Django admin """
     driver.get("http://127.0.0.1:8000/adminhome/service/")
     time.sleep(2)
-    driver.find_element(By.LINK_TEXT, SERVICE_NAME).click()
 
     # Find and select the service's checkbox
     try:
@@ -140,11 +139,13 @@ def verify_service_creation_failure(username, password):
     if not error_note.is_displayed():
         print("Something went wrong: Error note not displayed for blank fields.")
         testFailed = True
+    time.sleep(2)
     
     # Clear the text fields
     driver.find_element(By.NAME, "name").clear()
     driver.find_element(By.NAME, "cost").clear()
     driver.find_element(By.NAME, "time_to_complete").clear()
+    time.sleep(2)
 
     # Next, attempt no name test
     driver.find_element(By.NAME, "cost").send_keys(SERVICE_COST)
@@ -154,11 +155,13 @@ def verify_service_creation_failure(username, password):
     if not error_note.is_displayed():
         print("Something went wrong: Error note not displayed for no name test.")
         testFailed = True
+    time.sleep(2)
 
     # Clear the text fields
     driver.find_element(By.NAME, "name").clear()
     driver.find_element(By.NAME, "cost").clear()
     driver.find_element(By.NAME, "time_to_complete").clear()
+    time.sleep(2)
 
     # Next, attempt no cost test
     driver.find_element(By.NAME, "name").send_keys(SERVICE_NAME)
@@ -168,11 +171,13 @@ def verify_service_creation_failure(username, password):
     if not error_note.is_displayed():
         print("Something went wrong: Error note not displayed for no cost test.")
         testFailed = True
+    time.sleep(2)
 
     # Clear the text fields
     driver.find_element(By.NAME, "name").clear()
     driver.find_element(By.NAME, "cost").clear()
     driver.find_element(By.NAME, "time_to_complete").clear()
+    time.sleep(2)
 
     # Next, attempt invalid cost test
     driver.find_element(By.NAME, "name").send_keys(SERVICE_NAME)
@@ -183,11 +188,13 @@ def verify_service_creation_failure(username, password):
     if not error_note.is_displayed():
         print("Something went wrong: Error note not displayed for invalid cost test.")
         testFailed = True
+    time.sleep(2)
 
     # Clear the text fields
     driver.find_element(By.NAME, "name").clear()
     driver.find_element(By.NAME, "cost").clear()
     driver.find_element(By.NAME, "time_to_complete").clear()
+    time.sleep(2)
 
     # Next, attempt no time to complete test
     driver.find_element(By.NAME, "name").send_keys(SERVICE_NAME)
@@ -197,6 +204,7 @@ def verify_service_creation_failure(username, password):
     if not error_note.is_displayed():
         print("Something went wrong: Error note not displayed for empty time to complete test.")
         testFailed = True
+    time.sleep(2)
 
     # Next, attempt invalid time to complete test
     driver.find_element(By.NAME, "name").send_keys(SERVICE_NAME)
@@ -207,10 +215,13 @@ def verify_service_creation_failure(username, password):
     if not error_note.is_displayed():
         print("Something went wrong: Error note not displayed for invalid time to complete test.")
         testFailed = True
+    time.sleep(2)
 
     # Display if any tests failed
     if testFailed:
         print("One or More Invalid Input Tests Failed: Error notes listed above.")
+    else:
+        print("All Invalid Input Tests Passed.")
 
 # Execute the script
 try:
