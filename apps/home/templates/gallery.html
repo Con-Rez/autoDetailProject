@@ -79,6 +79,40 @@
     </div>
   </div>
 
+
+    <!-- Video Transformation Section -->
+    <h1 class="gallery-title">Transformation Videos</h1>
+    <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <video class="d-block w-100" controls autoplay muted loop>
+            <source src="{% static 'videos/transformation1.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="carousel-item">
+          <video class="d-block w-100" controls autoplay muted loop>
+            <source src="{% static 'videos/transformation2.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="carousel-item">
+          <video class="d-block w-100" controls autoplay muted loop>
+            <source src="{% static 'videos/transformation3.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
   <!-- Carousel section for displaying additional transformations -->
   <h1 class="gallery-title">More Transformations</h1>
   <div class="row justify-content-center">
