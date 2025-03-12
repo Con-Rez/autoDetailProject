@@ -56,11 +56,11 @@ def add_service():
     driver.get("http://127.0.0.1:8000/schedule_appointment/")  
     time.sleep(2)
     try:
-        driver.find_element(By.ID, "service3").click()
+        driver.find_element(By.XPATH, f"//td[contains(text(), '{SERVICE_NAME}')]/preceding-sibling::th//input[@type='checkbox']").click()
     except Exception as e:
         print(f"Error: {e}")
     
-    print(f"User created {SERVICE_NAME} service entry")
+    print(f"PASS: User created {SERVICE_NAME} service entry")
 
 def edit_service():
     """Edits a created Service via Django admin"""
@@ -89,12 +89,12 @@ def edit_service():
     driver.get("http://127.0.0.1:8000/schedule_appointment/")  
     time.sleep(2)
     try:
-        driver.find_element(By.ID, "service3").click()
-        driver.find_element(By.ID, "collapse3").click()
+        driver.find_element(By.XPATH, f"//td[contains(text(), '{SERVICE_NAME}')]/preceding-sibling::th//input[@type='checkbox']").click()
+        driver.find_element(By.XPATH, f"//td[contains(text(), '{SERVICE_NAME}')]/following-sibling::td//button[contains(text(), 'Click for Description')]").click()
     except Exception as e:
         print(f"Error: {e}")
     
-    print(f"User edited a service entry {SERVICE_NAME}")
+    print(f"PASS: User edited a service entry {SERVICE_NAME}")
 
 def delete_service():
     """ Deletes the created user via Django admin """
@@ -106,7 +106,7 @@ def delete_service():
         user_checkbox = driver.find_element(By.XPATH, f"//th[contains(., '{SERVICE_NAME}')]/preceding-sibling::td/input[@type='checkbox']")
         user_checkbox.click()
     except Exception as e:
-        print("Service checkbox not found:", e)
+        print("ERROR: Service checkbox not found:", e)
         return
 
     # Select "Delete selected users" from the action dropdown
@@ -125,8 +125,7 @@ def delete_service():
     driver.get("http://127.0.0.1:8000/schedule_appointment/")  
     time.sleep(2)
 
-    print("Service deleted successfully.")
-
+    print("PASS: Service deleted successfully.")
 
 def verify_service_creation_failure(username, password):
     testFailed = False
@@ -139,7 +138,7 @@ def verify_service_creation_failure(username, password):
     driver.find_element(By.NAME, "_save").click() 
     error_note = driver.find_element(By.CLASS_NAME, "errornote")
     if not error_note.is_displayed():
-        print("Something went wrong: Error note not displayed for blank fields.")
+        print("ERROR: Something went wrong: Error note not displayed for blank fields.")
         testFailed = True
     time.sleep(2)
     
@@ -155,7 +154,7 @@ def verify_service_creation_failure(username, password):
     driver.find_element(By.NAME, "_save").click() 
     error_note = driver.find_element(By.CLASS_NAME, "errornote")
     if not error_note.is_displayed():
-        print("Something went wrong: Error note not displayed for no name test.")
+        print("ERROR: Something went wrong: Error note not displayed for no name test.")
         testFailed = True
     time.sleep(2)
 
@@ -171,7 +170,7 @@ def verify_service_creation_failure(username, password):
     driver.find_element(By.NAME, "_save").click() 
     error_note = driver.find_element(By.CLASS_NAME, "errornote")
     if not error_note.is_displayed():
-        print("Something went wrong: Error note not displayed for no cost test.")
+        print("ERROR: Something went wrong: Error note not displayed for no cost test.")
         testFailed = True
     time.sleep(2)
 
@@ -188,7 +187,7 @@ def verify_service_creation_failure(username, password):
     driver.find_element(By.NAME, "_save").click() 
     error_note = driver.find_element(By.CLASS_NAME, "errornote")
     if not error_note.is_displayed():
-        print("Something went wrong: Error note not displayed for invalid cost test.")
+        print("ERROR: Something went wrong: Error note not displayed for invalid cost test.")
         testFailed = True
     time.sleep(2)
 
@@ -204,7 +203,7 @@ def verify_service_creation_failure(username, password):
     driver.find_element(By.NAME, "_save").click() 
     error_note = driver.find_element(By.CLASS_NAME, "errornote")
     if not error_note.is_displayed():
-        print("Something went wrong: Error note not displayed for empty time to complete test.")
+        print("ERROR: Something went wrong: Error note not displayed for empty time to complete test.")
         testFailed = True
     time.sleep(2)
 
@@ -215,15 +214,15 @@ def verify_service_creation_failure(username, password):
     driver.find_element(By.NAME, "_save").click() 
     error_note = driver.find_element(By.CLASS_NAME, "errornote")
     if not error_note.is_displayed():
-        print("Something went wrong: Error note not displayed for invalid time to complete test.")
+        print("ERROR: Something went wrong: Error note not displayed for invalid time to complete test.")
         testFailed = True
     time.sleep(2)
 
     # Display if any tests failed
     if testFailed:
-        print("One or More Invalid Input Tests Failed: Error notes listed above.")
+        print("ERROR: One or More Invalid Input Tests Failed: Error notes listed above.")
     else:
-        print("All Invalid Input Tests Passed.")
+        print("PASS: All Invalid Input Tests Passed.")
 
 # Execute the script
 try:
@@ -247,10 +246,10 @@ try:
     driver.get("http://127.0.0.1:8000/adminlogout/")  # Logout user
     time.sleep(2)
 
-    print("All Tests Passed: Service creation, Editing, Deletion, and failed invalid Service creation worked correctly.")
+    print("COMPLETE: All Tests Passed Successfully.")
 
 except Exception as e:
-    print("The Testing failed. Please check the error message above.")
+    print("FAILURE: The Testing failed. Please check the error message above.")
 
 finally:
     driver.quit()
