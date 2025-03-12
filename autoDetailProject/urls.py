@@ -22,5 +22,6 @@ from django.contrib import admin
 urlpatterns = [
     path('admin', admin.site.urls), # This is for the admin site
     path('', include('home.urls')), # This is for the home site
+    path('captcha/', include('captcha.urls')), # This is for the captcha site
     ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # The above line is for serving static files during development
