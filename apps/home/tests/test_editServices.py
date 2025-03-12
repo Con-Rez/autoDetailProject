@@ -4,6 +4,8 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 import time
 
+# run tests with python manage.py test home.tests.test_editServices
+
 # Configuration
 ADMIN_URL = "http://127.0.0.1:8000/adminlogin/?next=/admin"  # Change as needed
 ADMIN_USERNAME = "akadmin"
