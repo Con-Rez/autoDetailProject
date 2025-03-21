@@ -1,3 +1,4 @@
+from django.core.validators import MinValueValidator
 from django.db import models
 from django.core.exceptions import ValidationError
 import os
@@ -60,3 +61,17 @@ class Photo(models.Model):
 
     def __str__(self):
         return self.title
+
+class Review(models.Model):
+    title = models.CharField(max_length=100, blank=False)
+    text = models.TextField(blank=False)
+    link = models.URLField()
+    STAR_RATINGS = [(1, '1'), (2, '2'), (3, '3'), 
+                   (4, '4'), (5, '5')]
+    stars = models.IntegerField(choices=STAR_RATINGS, blank=False)
+
+    def __str__(self):
+        return self.title
+        
+    def get_star_range(self):
+        return range(self.stars)

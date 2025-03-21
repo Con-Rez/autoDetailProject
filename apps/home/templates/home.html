@@ -213,49 +213,27 @@
       </div>
     </div>
 
-    <!-- Static Testimonials -->
+    <!-- Dynamic Testimonials -->
     <div class="container my-5">
       <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+        {% for review in reviews %}
         <div class="col-lg-4 d-flex justify-content-center">
           <div class="shadow card h-100 w-100 text-center">
             <div class="card-body">
-              <h5 class="card-title">Katerina</h5>
-              <p class="text-nowrap">&#11088; &#11088; &#11088; &#11088; &#11088;</p>
-              <p class="card-text">
-                The attention to detail was phenomenal. Every inch of my car, inside and out, was meticulously cleaned and polished.
-              </p>
-              <a href="https://maps.app.goo.gl/da7GqrehfdH3BmuEA" class="stretched-link"></a>
+              <h5 class="card-title">{{ review.title }}</h5>
+              <p class="text-nowrap">{% for i in review.get_star_range %}
+              &#11088;
+              {% endfor %}</p>  
+              <p class="card-text">{{ review.text }}</p>
+              <a href="{{ review.link }}" class="stretched-link"></a>
             </div>
           </div>
         </div>
-
-        <div class="col-lg-4 d-flex justify-content-center">
-          <div class="shadow card h-100 w-100 text-center">
-            <div class="card-body">
-              <h5 class="card-title">Ayah</h5>
-              <p class="text-nowrap">&#11088; &#11088; &#11088; &#11088; &#11088;</p>
-              <p class="card-text">
-                The service was quick and well-organized, and the final result was better than I hoped.
-              </p>
-              <a href="https://maps.app.goo.gl/BwdbSZgKz2LJgSUC6" class="stretched-link"></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 d-flex justify-content-center">
-          <div class="shadow card h-100 w-100 text-center">
-            <div class="card-body">
-              <h5 class="card-title">Guess Who</h5>
-              <p class="text-nowrap">&#11088; &#11088; &#11088; &#11088; &#11088;</p>
-              <p class="card-text">
-                The staff was friendly and professional, and they did an amazing job cleaning my car inside and out.
-              </p>
-              <a href="https://maps.app.goo.gl/FpwVGsJ1oB5Q2PKdA" class="stretched-link"></a>
-            </div>
-          </div>
-        </div>
-      </div>
+       {% endfor %}
+     </div>
     </div>
+  </div>
+</div>
 
     <!-- Instagram Social Media -->
     <div class="container text-center">
