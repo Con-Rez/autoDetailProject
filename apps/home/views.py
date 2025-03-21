@@ -3,17 +3,15 @@ from django.http import HttpResponse # Allows for raw HTTP output commands withi
 import datetime; # Allows for the use of the datetime module to get the current date and time
 from .models import Service
 from .forms import ContactForm
+from .models import Review
 
 CAPTCHAENABLED = True; # Set to True to enable captcha site-wide, False to disable
 
 # Create a new view for the home page
 def homeView(request):
-    # This can override the HTML file in its entirety!
-    # return HttpResponse("Hello world, this is a python file output!") 
+    reviews = Review.objects.all().order_by('?')[:3]  # Fetch 3 random reviews
+    return render(request, 'home.html', {'reviews': reviews})
 
-    # Create and pass variable to home.html to say the current time
-    today = datetime.datetime.now().date() 
-    return render(request,"home.html", {"todayTag": today})
 
 # Create a new view for the about page, no arguments needed for it
 def aboutView(request):
@@ -84,4 +82,6 @@ def submit_form(request):
         return HttpResponse("Form submitted successfully.")
     else:
         return redirect('schedule_appointment')
+
+
     
