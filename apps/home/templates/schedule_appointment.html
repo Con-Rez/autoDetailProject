@@ -8,7 +8,7 @@
 <head>
   <!-- Link to your custom CSS file -->
   <link rel="stylesheet" href="{% static 'css/discountModal.css' %}">
-</head>
+</head> 
 
 {% block content %}
 <style>
@@ -209,10 +209,9 @@
             <input type="text" id="promoCodeInputCalc" class="form-control" placeholder="Enter promo code">
             <button class="btn btn-secondary" type="button" id="applyPromoBtnCalc">Apply Promo Code</button>
           </div>
-          <!-- Inline message area -->
           <div id="promoMessage" class="mt-2"></div>
         </div>
-        
+      
         <!-- Updated Totals Display with Savings -->
         <div class="card-footer">
           <div class="row">
@@ -235,10 +234,10 @@
             </div>
           </div>
         </div>
-      </div> <!-- End card-body -->
-    </div> <!-- End card -->
-  </div> <!-- End row -->
-</div> <!-- End container for Services List -->
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Google Calendar Appointment Scheduling -->
 {% if captchaenabled %}
@@ -276,18 +275,20 @@
     </div>
   </div>
 {% endif %}
-
+  
+{% if promotion %}
 <!-- Discount Modal -->
 <div class="modal fade discount-modal" id="discountModal" tabindex="-1" aria-labelledby="discountModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="discountModalLabel">Limited Time Promotion</h5>
+        <h5 class="modal-title" id="discountModalLabel">{{ promotion.name }}</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Get <strong>5% off</strong> your service when you schedule an appointment for the first time!<br>
-        Use promo code <strong>PROMO5</strong> in the service calculator below.
+        Get <strong>{{ promotion.discount_percentage }}% off</strong> your service!<br>
+        {{ promotion.message }}<br>
+        Use promo code <strong>{{ promotion.code }}</strong> in the service calculator below.
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
@@ -297,8 +298,25 @@
     </div>
   </div>
 </div>
+{% endif %}
 
-<!-- Include discount modal JavaScript -->
+<!-- Inline Script: Set activePromotion after content has loaded -->
+{% if promotion %}
+<script>
+  window.activePromotion = {
+      code: "{{ promotion.code|escapejs }}",
+      discount_percentage: {{ promotion.discount_percentage }},
+      name: "{{ promotion.name|escapejs }}",
+      message: "{{ promotion.message|escapejs }}"
+  };
+</script>
+{% else %}
+<script>
+  window.activePromotion = null;
+</script>
+{% endif %}
+
+<!-- Include js -->
 <script src="{% static 'js/discountModal.js' %}"></script>
 <script src="{% static 'js/costCalculator.js' %}"></script>
 

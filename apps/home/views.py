@@ -4,6 +4,7 @@ import datetime; # Allows for the use of the datetime module to get the current 
 from .models import Service
 from .forms import ContactForm
 from .models import Review
+from .models import Promotion
 
 CAPTCHAENABLED = True; # Set to True to enable captcha site-wide, False to disable
 
@@ -62,6 +63,19 @@ def galleryView(request):
 # Return a list of services to be displayed on the schedule appointment page
 def scheduleView(request):
     services = Service.objects.all()
+    current_date = datetime.date.today()
+    print("Today is:", current_date)
+
+    try:
+        active_promotion = Promotion.objects.get(
+            start_date__lte=current_date, 
+            end_date__gte=current_date
+        )
+        print("Found active promotion:", active_promotion.code)
+    except Promotion.DoesNotExist:
+        active_promotion = None
+        print("No active promotion found")
+
     if CAPTCHAENABLED:
         if request.method == 'POST':
             captchaForm = ContactForm(request.POST)
@@ -72,7 +86,13 @@ def scheduleView(request):
             captchaForm = ContactForm()
     else:
         captchaForm = None
-    return render(request, 'schedule_appointment.html', {'form': captchaForm, 'captchaenabled': CAPTCHAENABLED,'services': services})
+
+    return render(request, 'schedule_appointment.html', {
+        'form': captchaForm,
+        'captchaenabled': CAPTCHAENABLED,
+        'services': services,
+        'promotion': active_promotion
+    })
 
 # help code customer contact/continue
 def submit_form(request):

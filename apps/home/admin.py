@@ -4,6 +4,7 @@ from django.db import models
 from .models import Photo
 from .models import Service
 from .models import Review
+from .models import Promotion
 import os
 
 class ServiceAdmin(admin.ModelAdmin):
@@ -53,6 +54,12 @@ class PhotoAdmin(admin.ModelAdmin):
             del actions['delete_selected']
         return actions
 
+#discountModal feature update
+class PromotionAdmin(admin.ModelAdmin):
+    list_display = ('name', 'code', 'discount_percentage', 'start_date', 'end_date', 'message')
+    search_fields = ('name', 'code')
+
+admin.site.register(Promotion, PromotionAdmin)
 admin.site.register(Photo, PhotoAdmin)
 admin.site.register(Service, ServiceAdmin)
 admin.site.register(Review, ReviewAdmin)

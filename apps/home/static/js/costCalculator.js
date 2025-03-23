@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const totalCostElement = document.getElementById('total-cost');
     const totalTimeElement = document.getElementById('total-time');
     const savingsElement = document.getElementById('savings'); 
-    const promoMessage = document.getElementById('promoMessage'); // The new message div
+    const promoMessage = document.getElementById('promoMessage');
 
     // Global flag to indicate if discount is applied
     window.discountApplied = false;
@@ -24,18 +24,17 @@ document.addEventListener('DOMContentLoaded', function() {
             promoMessage.className = "mt-2"; 
             promoMessage.textContent = "";
 
-            if (promoCode.toUpperCase() === "PROMO5") {
+            if (
+                window.activePromotion &&
+                promoCode.toUpperCase().trim() === window.activePromotion.code.toUpperCase().trim()
+            ) {
                 window.discountApplied = true;
                 updateTotals();
-
-                // Add a Bootstrap alert class for a success message
                 promoMessage.classList.add("alert", "alert-success");
-                promoMessage.textContent = "Promo code applied! You are saving 5% on your total cost.";
+                promoMessage.textContent = "Promo code applied! You are saving " + window.activePromotion.discount_percentage + "% on your total cost.";
             } else {
                 window.discountApplied = false;
                 updateTotals();
-
-                // Add a Bootstrap alert class for an error message
                 promoMessage.classList.add("alert", "alert-danger");
                 promoMessage.textContent = "Invalid promo code. Please try again.";
             }
@@ -57,8 +56,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         let finalTotalCost = originalTotalCost;
         let discountAmount = 0;
-        if (window.discountApplied) {
-            discountAmount = originalTotalCost * 0.05;
+        if (window.discountApplied && window.activePromotion) {
+            discountAmount = originalTotalCost * (window.activePromotion.discount_percentage / 100);
             finalTotalCost = originalTotalCost - discountAmount;
         }
 

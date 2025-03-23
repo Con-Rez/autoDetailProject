@@ -1,6 +1,7 @@
-from django.core.validators import MinValueValidator
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 from django.core.exceptions import ValidationError
+import datetime
 import os
 
 class Service(models.Model):
@@ -75,3 +76,25 @@ class Review(models.Model):
         
     def get_star_range(self):
         return range(self.stars)
+    
+#discountModal feature update
+class Promotion(models.Model):
+    name = models.CharField(max_length=100)  # Name of Promotion
+    code = models.CharField(max_length=50, unique=True)  # Code for Promotion
+    message = models.TextField()  # Message Displayed on Appointments Page
+    discount_percentage = models.DecimalField(
+        max_digits=4, 
+        decimal_places=2, 
+        validators=[MinValueValidator(0), MaxValueValidator(100)]
+    )
+    start_date = models.DateField()  # When the promotion becomes active
+    end_date = models.DateField()    # When the promotion ends
+
+    def clean(self):
+        if self.start_date >= self.end_date:
+            raise ValidationError("Start date must be before end date.")
+        if self.discount_percentage <= 0 or self.discount_percentage > 100:
+            raise ValidationError("Discount percentage must be between 0 and 100.")
+
+    def __str__(self):
+        return self.name
