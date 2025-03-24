@@ -63,6 +63,52 @@ class Photo(models.Model):
     def __str__(self):
         return self.title
 
+# New model for Video transformations
+VIDEOSPATH = 'apps/home/static/videos/'
+class TransformationVideo(models.Model):
+    title = models.CharField(max_length=100)
+    video = models.FileField(upload_to=VIDEOSPATH)  # Where new videos are uploaded to
+    description = models.TextField(blank=True)
+    order = models.IntegerField(default=0)  # Use this to control the display order in the carousel
+    
+    def clean(self):
+        # Validate video file extension
+        if self.video:
+            ext = os.path.splitext(self.video.name)[1].lower()
+            if ext not in ['.mp4', '.mov', '.avi', '.webm']:
+                raise ValidationError("Unsupported file format. Please upload MP4, MOV, AVI, or WebM files.")
+    
+    def save(self, *args, **kwargs):
+        self.full_clean()  # This runs the clean() method before saving
+        try:
+            # Check if this video already exists in the database
+            this = TransformationVideo.objects.get(id=self.id)
+            # If the video has changed
+            if this.video != self.video:
+                # Save new video to database
+                old_video_path = this.video.path
+                super(TransformationVideo, self).save(*args, **kwargs)
+                
+                # Remove the old video
+                if os.path.exists(old_video_path):
+                    os.remove(old_video_path)
+                
+                # Rename the new video to the old video
+                new_video_path = self.video.path
+                os.rename(new_video_path, old_video_path)
+                
+                # Set the video name to the old video name with the correct path
+                print(VIDEOSPATH + os.path.basename(old_video_path))
+                self.video.name = VIDEOSPATH + os.path.basename(old_video_path)
+                super(TransformationVideo, self).save(*args, **kwargs)
+            else:
+                super(TransformationVideo, self).save(*args, **kwargs)
+        except TransformationVideo.DoesNotExist:
+            super(TransformationVideo, self).save(*args, **kwargs)
+    
+    def __str__(self):
+        return self.title
+
 class Review(models.Model):
     title = models.CharField(max_length=100, blank=False)
     text = models.TextField(blank=False)
