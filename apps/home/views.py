@@ -64,17 +64,11 @@ def galleryView(request):
 def scheduleView(request):
     services = Service.objects.all()
     current_date = datetime.date.today()
-    print("Today is:", current_date)
-
-    try:
-        active_promotion = Promotion.objects.get(
-            start_date__lte=current_date, 
-            end_date__gte=current_date
-        )
-        print("Found active promotion:", active_promotion.code)
-    except Promotion.DoesNotExist:
-        active_promotion = None
-        print("No active promotion found")
+    
+    active_promotion = Promotion.objects.filter(
+        start_date__lte=current_date,
+        end_date__gte=current_date
+    ).first()
 
     if CAPTCHAENABLED:
         if request.method == 'POST':
