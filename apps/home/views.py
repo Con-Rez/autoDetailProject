@@ -5,6 +5,7 @@ from .models import Service
 from .forms import ContactForm
 from .models import Review
 from .models import Promotion
+from .models import TransformationVideo
 
 CAPTCHAENABLED = True; # Set to True to enable captcha site-wide, False to disable
 
@@ -44,6 +45,9 @@ def galleryView(request):
     after_image_path_2 = 'imgs/galleryMiddleAfter.jpg'
     before_image_path_3 = 'imgs/galleryRightBefore.jpg'
     after_image_path_3 = 'imgs/galleryRightAfter.jpg'
+    
+    # Get all transformation videos, ordered by the 'order' field
+    transformation_videos = TransformationVideo.objects.all().order_by('order')
 
     context = {
         'before_image1': before_image_path,
@@ -53,7 +57,9 @@ def galleryView(request):
         'after_image2': after_image_path_2,
         
         'before_image3': before_image_path_3,
-        'after_image3': after_image_path_3
+        'after_image3': after_image_path_3,
+        
+        'transformation_videos': transformation_videos
     }
     print("Context: ", context)
 
@@ -96,6 +102,3 @@ def submit_form(request):
         return HttpResponse("Form submitted successfully.")
     else:
         return redirect('schedule_appointment')
-
-
-    

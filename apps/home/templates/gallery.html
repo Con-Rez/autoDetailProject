@@ -84,24 +84,39 @@
     <h1 class="gallery-title">Transformation Videos</h1>
     <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
-        <div class="carousel-item active">
-          <video class="d-block w-100" controls autoplay muted loop>
-            <source src="{% static 'videos/transformation1.mp4' %}" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <div class="carousel-item">
-          <video class="d-block w-100" controls autoplay muted loop>
-            <source src="{% static 'videos/transformation2.mp4' %}" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <div class="carousel-item">
-          <video class="d-block w-100" controls autoplay muted loop>
-            <source src="{% static 'videos/transformation3.mp4' %}" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
+        {% for video in transformation_videos %}
+          <div class="carousel-item {% if forloop.first %}active{% endif %}">
+            <div class="video-container text-center">
+              <video class="d-block w-100" controls {% if forloop.first %}autoplay{% endif %} muted loop>
+                <source src="{% static 'videos/'|add:video.video.name|cut:'apps/home/static/videos/' %}" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              {% if video.description %}
+                <p class="video-description mt-2">{{ video.description }}</p>
+              {% endif %}
+            </div>
+          </div>
+        {% empty %}
+          <!-- Fallback content if no videos in database -->
+          <div class="carousel-item active">
+            <video class="d-block w-100" controls autoplay muted loop>
+              <source src="{% static 'videos/transformation1.mp4' %}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="carousel-item">
+            <video class="d-block w-100" controls autoplay muted loop>
+              <source src="{% static 'videos/transformation2.mp4' %}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="carousel-item">
+            <video class="d-block w-100" controls autoplay muted loop>
+              <source src="{% static 'videos/transformation3.mp4' %}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        {% endfor %}
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
