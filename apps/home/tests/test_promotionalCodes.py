@@ -7,7 +7,7 @@ import time
 from datetime import datetime, timedelta
 
 # Basic configuration for admin login and appointments page
-ADMIN_LOGIN_URL = "http://127.0.0.1:8000/adminlogin/?next=/admin"
+ADMIN_LOGIN_URL = "http://127.0.0.1:8000/admin/login/?next=/admin/"
 APPOINTMENTS_URL = "http://127.0.0.1:8000/schedule_appointment/"
 
 ADMIN_USERNAME = "akadmin"
@@ -40,7 +40,7 @@ def admin_login(username, password):
 
 def add_promotion():
     # Go to the 'add promotion' page, wait for form, fill it out, then save
-    driver.get("http://127.0.0.1:8000/adminhome/promotion/add/")
+    driver.get("http://127.0.0.1:8000/admin/home/promotion/add/")
     name_field = wait.until(EC.presence_of_element_located((By.ID, "id_name")))
     name_field.send_keys(PROMO_NAME)
     driver.find_element(By.ID, "id_code").send_keys(PROMO_CODE)
@@ -56,7 +56,7 @@ def add_promotion():
 
 def edit_promotion():
     # Find the newly added promotion, click to edit, then change its message
-    driver.get("http://127.0.0.1:8000/adminhome/promotion/")
+    driver.get("http://127.0.0.1:8000/admin/home/promotion/")
     wait.until(EC.presence_of_element_located((By.LINK_TEXT, PROMO_NAME)))
     driver.find_element(By.LINK_TEXT, PROMO_NAME).click()
     wait.until(EC.presence_of_element_located((By.ID, "id_message")))
@@ -65,13 +65,13 @@ def edit_promotion():
     message_field.clear()
     message_field.send_keys(UPDATED_PROMO_MESSAGE)
     driver.find_element(By.NAME, "_save").click()
-    wait.until(EC.url_contains("/adminhome/promotion/"))
+    wait.until(EC.url_contains("/admin/home/promotion/"))
     time.sleep(2)
     print("PASS: Promotion edited.")
 
 def delete_promotion():
     # Navigate to promotion list, open the promotion, click delete, then confirm
-    driver.get("http://127.0.0.1:8000/adminhome/promotion/")
+    driver.get("http://127.0.0.1:8000/admin/home/promotion/")
     wait.until(EC.presence_of_element_located((By.LINK_TEXT, PROMO_NAME)))
     driver.find_element(By.LINK_TEXT, PROMO_NAME).click()
     wait.until(EC.presence_of_element_located((By.ID, "id_message")))
@@ -80,7 +80,7 @@ def delete_promotion():
     wait.until(EC.presence_of_element_located((By.XPATH, "//input[@type='submit']")))
     time.sleep(1)
     driver.find_element(By.XPATH, "//input[@type='submit']").click()
-    wait.until(EC.url_contains("/adminhome/promotion/"))
+    wait.until(EC.url_contains("/admin/home/promotion/"))
     time.sleep(2)
     print("PASS: Promotion deleted.")
 
@@ -159,7 +159,7 @@ try:
     add_promotion()
 
     # Log out admin so we can test the promo in the front end
-    driver.get("http://127.0.0.1:8000/adminlogout/")
+    driver.get("http://127.0.0.1:8000/admin/logout/")
     time.sleep(2)
 
     # 2) Test valid and invalid promo codes on the appointments page
@@ -171,14 +171,14 @@ try:
     edit_promotion()
 
     # Log out, select single service, apply newly edited promo code
-    driver.get("http://127.0.0.1:8000/adminlogout/")
+    driver.get("http://127.0.0.1:8000/admin/logout/")
     time.sleep(2)
     driver.get(APPOINTMENTS_URL)
     time.sleep(1)
     test_select_single_service_and_apply_promo()
 
     # 4) Admin logs in again to delete the promotion
-    driver.get("http://127.0.0.1:8000/adminlogout/")
+    driver.get("http://127.0.0.1:8000/admin/logout/")
     time.sleep(2)
     admin_login(ADMIN_USERNAME, ADMIN_PASSWORD)
     delete_promotion()

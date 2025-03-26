@@ -12,6 +12,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AK Auto Detail</title>
 
+  <!-- Dark Mode Script to Prevent Flash -->
+  <script>
+    (function() {
+      if (localStorage.getItem("darkMode") === "enabled") {
+        document.documentElement.classList.add("dark-mode");
+      }
+    })();
+  </script>
+
   <!-- Google Font -->
   <link rel="stylesheet" href="{% static 'fonts/roboto/roboto.css' %}">
 
@@ -76,21 +85,16 @@
     document.addEventListener("DOMContentLoaded", function () {
         const darkModeToggleButton = document.getElementById("dark-mode-toggle");
         const darkModeClass = "dark-mode";
-        const body = document.body;
+        const body = document.documentElement;
         const navbarCollapse = document.getElementById("navbarNav");
 
         // Initialize Bootstrap Collapse
         let bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
 
-        // Check for stored dark mode preference
-        if (localStorage.getItem("darkMode") === "enabled") {
-            body.classList.add(darkModeClass);
-            darkModeToggleButton.textContent = "Light Mode";
-        } else {
-            darkModeToggleButton.textContent = "Dark Mode";
-        }
+        // Check and set button text
+        darkModeToggleButton.textContent = body.classList.contains(darkModeClass) ? "Light Mode" : "Dark Mode";
 
-        // Toggle dark mode on button click
+        // Toggle dark mode
         darkModeToggleButton.addEventListener("click", function () {
             body.classList.toggle(darkModeClass);
             const isDarkModeEnabled = body.classList.contains(darkModeClass);
@@ -98,7 +102,7 @@
             darkModeToggleButton.textContent = isDarkModeEnabled ? "Light Mode" : "Dark Mode";
         });
 
-        // Close navbar when clicking a link (on mobile)
+        // Close navbar on mobile when clicking a link
         document.querySelectorAll(".nav-link").forEach(link => {
             link.addEventListener("click", function () {
                 if (window.innerWidth < 992) {
@@ -108,6 +112,7 @@
         });
     });
 </script>
+
   <!-- Bootstrap JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 

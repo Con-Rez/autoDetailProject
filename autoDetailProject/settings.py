@@ -31,8 +31,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['.herokuapp.com','0.0.0.0', '127.0.0.1','*']
 
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -57,6 +55,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
+
+APPEND_SLASH = True
 
 ROOT_URLCONF = 'autoDetailProject.urls'
 
@@ -139,3 +139,5 @@ STATIC_ROOT = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+APPEND_SLASH = True

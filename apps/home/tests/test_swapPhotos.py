@@ -7,9 +7,9 @@ import os
 import requests
 
 # Configuration
-ADMIN_URL = "http://127.0.0.1:8000/adminlogin/?next=/admin" 
-PHOTO_LIST_URL = "http://127.0.0.1:8000/adminhome/photo/"  # The page with clickable links
-PHOTO_CHANGE_URL = "http://127.0.0.1:8000/adminhome/photo/16/change/"  # Adjust this to the correct photo change URL
+ADMIN_URL = "http://127.0.0.1:8000/admin/login/?next=/admin/" 
+PHOTO_LIST_URL = "http://127.0.0.1:8000/admin/home/photo/"  # The page with clickable links
+PHOTO_CHANGE_URL = "http://127.0.0.1:8000/admin/home/photo/16/change/"  # Adjust this to the correct photo change URL
 ADMIN_USERNAME = "akadmin"
 ADMIN_PASSWORD = "Carmaker8DivisiveCinema"
 IMAGE_URL = "https://images.pexels.com/photos/1805053/pexels-photo-1805053.jpeg"  # The image URL

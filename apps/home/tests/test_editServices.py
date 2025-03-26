@@ -7,7 +7,7 @@ import time
 # run tests with python manage.py test home.tests.test_editServices
 
 # Configuration
-ADMIN_URL = "http://127.0.0.1:8000/adminlogin/?next=/admin"  # Change as needed
+ADMIN_URL = "http://127.0.0.1:8000/admin/login/"  # Change as needed
 ADMIN_USERNAME = "akadmin"
 ADMIN_PASSWORD = "Carmaker8DivisiveCinema"
 
@@ -21,7 +21,7 @@ INVALID_SERVICE_COST = "Hammer"
 INVALID_SERVICE_TIME_TO_COMPLETE = "String"
 
 # Initialize WebDriver 
-driver = webdriver.Edge()  #I use edge, you can use any browser you want
+driver = webdriver.Chrome()  #I use edge, you can use any browser you want
 
 def login(username, password):
     """ Logs into Django admin """
@@ -40,7 +40,7 @@ def login(username, password):
 def add_service():
     """Creates a new Service via Django admin"""
     
-    driver.get("http://127.0.0.1:8000/adminhome/service/add/")  
+    driver.get("http://127.0.0.1:8000/admin/home/service/add/")  
     time.sleep(2)
 
     # Fill in the Service fields (Without Description)
@@ -66,7 +66,7 @@ def edit_service():
     """Edits a created Service via Django admin"""
 
     # Search for the created service
-    driver.get("http://127.0.0.1:8000/adminhome/service/")
+    driver.get("http://127.0.0.1:8000/admin/home/service/")
     time.sleep(2)
 
     search_box = driver.find_element(By.NAME, "q")
@@ -98,7 +98,7 @@ def edit_service():
 
 def delete_service():
     """ Deletes the created user via Django admin """
-    driver.get("http://127.0.0.1:8000/adminhome/service/")
+    driver.get("http://127.0.0.1:8000/admin/home/service/")
     time.sleep(2)
 
     # Find and select the service's checkbox
@@ -131,7 +131,7 @@ def verify_service_creation_failure(username, password):
     testFailed = False
     """Attempts to create an invalid Service via Django admin"""
     
-    driver.get("http://127.0.0.1:8000/adminhome/service/add/")  
+    driver.get("http://127.0.0.1:8000/admin/home/service/add/")  
     time.sleep(2)
 
     # First, attempt all blank fields test
@@ -228,22 +228,22 @@ def verify_service_creation_failure(username, password):
 try:
     login(ADMIN_USERNAME, ADMIN_PASSWORD)
     add_service()   # Create a new test service
-    driver.get("http://127.0.0.1:8000/adminlogout/")  # Logout user
+    driver.get("http://127.0.0.1:8000/admin/logout/")  # Logout user
     time.sleep(2)
 
     login(ADMIN_USERNAME, ADMIN_PASSWORD)  # Re-login as admin
     edit_service()  # Edit the test service
-    driver.get("http://127.0.0.1:8000/adminlogout/")  # Logout user
+    driver.get("http://127.0.0.1:8000/admin/logout/")  # Logout user
     time.sleep(2)
 
     login(ADMIN_USERNAME, ADMIN_PASSWORD)  # Re-login as admin
     delete_service()  # Delete the test service
-    driver.get("http://127.0.0.1:8000/adminlogout/")  # Logout user
+    driver.get("http://127.0.0.1:8000/admin/logout/")  # Logout user
     time.sleep(2)
 
     login(ADMIN_USERNAME, ADMIN_PASSWORD)  # Re-login as admin
     verify_service_creation_failure(ADMIN_USERNAME, ADMIN_PASSWORD)  # Attempt to create an invalid service
-    driver.get("http://127.0.0.1:8000/adminlogout/")  # Logout user
+    driver.get("http://127.0.0.1:8000/admin/logout/")  # Logout user
     time.sleep(2)
 
     print("COMPLETE: All Tests Passed Successfully.")
