@@ -5,7 +5,7 @@ from selenium.webdriver.support.ui import Select
 import time
 
 # Configuration
-ADMIN_URL = "http://127.0.0.1:8000/adminlogin/?next=/admin"  # Change as needed
+ADMIN_URL = "http://127.0.0.1:8000/admin/login/?next=/admin/"  # Change as needed
 ADMIN_USERNAME = "akadmin"
 ADMIN_PASSWORD = "Carmaker8DivisiveCinema"
 NEW_USER_USERNAME = "testuser"
@@ -34,7 +34,7 @@ def login(username, password):
 def create_user():
     """Creates a new user via Django admin and assigns staff status"""
     
-    driver.get("http://127.0.0.1:8000/adminauth/user/add/")  
+    driver.get("http://127.0.0.1:8000/admin/auth/user/add/")  
     time.sleep(2)
 
     # Fill in the username and password fields
@@ -47,7 +47,7 @@ def create_user():
     time.sleep(3)
 
     # Search for the newly created user
-    driver.get("http://127.0.0.1:8000/adminauth/user/")
+    driver.get("http://127.0.0.1:8000/admin/auth/user/")
     time.sleep(2)
 
     search_box = driver.find_element(By.NAME, "q")
@@ -74,7 +74,7 @@ def create_user():
 
 def delete_user():
     """ Deletes the created user via Django admin """
-    driver.get("http://127.0.0.1:8000/adminauth/user/")
+    driver.get("http://127.0.0.1:8000/admin/auth/user/")
     time.sleep(2)
 
     # Find and select the user checkbox
@@ -118,11 +118,11 @@ def verify_login_failure(username, password):
 try:
     login(ADMIN_USERNAME, ADMIN_PASSWORD)
     create_user()
-    driver.get("http://127.0.0.1:8000/adminlogout/")  # Logout admin
+    driver.get("http://127.0.0.1:8000/admin/logout/")  # Logout admin
     time.sleep(2)
 
     login(NEW_USER_USERNAME, NEW_USER_PASSWORD)  # Login with new user
-    driver.get("http://127.0.0.1:8000/adminlogout/")  # Logout new user
+    driver.get("http://127.0.0.1:8000/admin/logout/")  # Logout new user
     time.sleep(2)
 
     login(ADMIN_USERNAME, ADMIN_PASSWORD)  # Re-login as admin

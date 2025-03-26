@@ -10,9 +10,9 @@ class VideoUploadTests(unittest.TestCase):
 
     def setUp(self):
         """Setup the WebDriver and configuration."""
-        self.ADMIN_URL = "http://127.0.0.1:8000/adminlogin/?next=/admin"
-        self.VIDEO_ADD_URL = "http://127.0.0.1:8000/adminhome/transformationvideo/add/"
-        self.VIDEO_LIST_URL = "http://127.0.0.1:8000/adminhome/transformationvideo/"
+        self.ADMIN_URL = "http://127.0.0.1:8000/admin/login/?next=/admin/"
+        self.VIDEO_ADD_URL = "http://127.0.0.1:8000/admin/home/transformationvideo/add/"
+        self.VIDEO_LIST_URL = "http://127.0.0.1:8000/admin/home/transformationvideo/"
         self.GALLERY_URL = "http://127.0.0.1:8000/gallery/"
 
         self.ADMIN_USERNAME = "akadmin"

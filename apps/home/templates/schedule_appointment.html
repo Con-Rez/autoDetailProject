@@ -8,6 +8,7 @@
 <head>
   <!-- Link to your custom CSS file -->
   <link rel="stylesheet" href="{% static 'css/discountModal.css' %}">
+  <link rel="stylesheet" href="{% static 'css/scheduleAppt.css' %}">
 </head> 
 
 {% block content %}
@@ -305,7 +306,7 @@
 <script>
   window.activePromotion = {
       code: "{{ promotion.code|escapejs }}",
-      discount_percentage: {{ promotion.discount_percentage }},
+      discount_percentage: "{{ promotion.discount_percentage }}",
       name: "{{ promotion.name|escapejs }}",
       message: "{{ promotion.message|escapejs }}"
   };

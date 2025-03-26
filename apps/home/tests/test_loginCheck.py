@@ -5,7 +5,7 @@ from selenium.webdriver.support.ui import Select
 import time
 
 # Setup
-URL = "http://127.0.0.1:8000/adminlogin/?next=/admin"  
+URL = "http://127.0.0.1:8000/admin/login/?next=/admin/"  
 ValidUsername = "akadmin"
 ValidPassword = "Carmaker8DivisiveCinema"
 InvalidUsername = "wronguser"
@@ -66,7 +66,7 @@ def Invalid_Login(username, password):
 try:
     # Test Valid_Login
     valid_test_passed = Valid_Login(ValidUsername, ValidPassword)
-    driver.get("http://127.0.0.1:8000/adminlogout/")  
+    driver.get("http://127.0.0.1:8000/admin/logout/")  
     time.sleep(2)
 
     # Test Invalid_Login
