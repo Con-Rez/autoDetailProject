@@ -1,4 +1,3 @@
-
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 
 from selenium import webdriver
@@ -17,12 +16,6 @@ class cost_calc_test(StaticLiveServerTestCase):
     def test1(self):
         driver = self.driver
         driver.get(URL)
-
-        #driver.implicitly_wait(3)
-        #time.sleep(6)
-        #close = driver.find_element(by=By.CLASS_NAME, value="btn-close")
-        #close.click()
-        #time.sleep(2)
 
         expectedCost = 123.00
         expectedTime = 1.00
