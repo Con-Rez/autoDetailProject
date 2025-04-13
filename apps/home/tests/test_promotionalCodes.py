@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
+import re
 from datetime import datetime, timedelta
 
 # Basic configuration for admin login and appointments page
@@ -15,8 +16,8 @@ ADMIN_PASSWORD = "Carmaker8DivisiveCinema"
 
 # Generate promotion details
 PROMO_NAME = "Test Promotion"
-PROMO_CODE = f"testpromo{random.randint(1000, 9999)}"
-PROMO_DISCOUNT = "10.00"
+PROMO_CODE = "testpromo1234"
+PROMO_DISCOUNT = "10"
 PROMO_MESSAGE = "This is a test promotion for automated testing."
 today = datetime.today().strftime("%Y-%m-%d")
 tomorrow = (datetime.today() + timedelta(days=1)).strftime("%Y-%m-%d")
@@ -118,43 +119,65 @@ def test_invalid_promo_on_appointments():
     else:
         print("FAIL: Invalid promo code was not rejected as expected.")
 
-def test_select_single_service_and_apply_promo():
+def test_select_service_and_apply_promo():
     # Select first service, apply promo code, then verify cost
     driver.get(APPOINTMENTS_URL)
     wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, ".service-checkbox")))
     time.sleep(2)
+
     checkboxes = driver.find_elements(By.CSS_SELECTOR, ".service-checkbox")
     if not checkboxes:
         print("FAIL: No services found to select.")
         return
+
     first_checkbox = checkboxes[0]
     try:
+        # Parse the 'value' attribute, which is the numeric cost
         service_cost = float(first_checkbox.get_attribute("value"))
     except Exception as e:
         print(f"FAIL: Could not retrieve first service cost: {e}")
         return
+
+    # Select the service if not already selected
     if not first_checkbox.is_selected():
         first_checkbox.click()
     time.sleep(1)
+
+    # Enter the valid promo code
     promo_input = driver.find_element(By.ID, "promoCodeInputCalc")
     promo_input.clear()
     promo_input.send_keys(PROMO_CODE)
     driver.find_element(By.ID, "applyPromoBtnCalc").click()
-    time.sleep(3)
-    total_cost_text = driver.find_element(By.ID, "total-cost").text
+    time.sleep(1)
+
+    # Wait for #total-cost to become numeric
+    def cost_is_numeric(driver):
+        text = driver.find_element(By.ID, "total-cost").text.strip()
+        return bool(re.match(r'^\d+(\.\d+)?$', text))
+
+    try:
+        WebDriverWait(driver, 10).until(cost_is_numeric)
+    except:
+        print("FAIL: total-cost did not become a numeric string within 10 seconds.")
+        return
+
+    # Parse the cost
+    total_cost_text = driver.find_element(By.ID, "total-cost").text.strip()
     try:
         total_cost = float(total_cost_text)
-    except:
-        print("FAIL: Could not parse total cost after applying promo code.")
+    except Exception as e:
+        print(f"FAIL: Could not parse total cost after applying promo code: '{total_cost_text}' - {e}")
         return
+
+    # Compare against expected discount
     expected = service_cost * (1 - float(PROMO_DISCOUNT) / 100.0)
     if abs(total_cost - expected) < 0.01:
-        print(f"PASS: Single service + promo code = expected {expected:.2f}, got {total_cost:.2f}")
+        print(f"PASS: service + promo code = expected {expected:.2f}, got {total_cost:.2f}")
     else:
-        print(f"FAIL: Single service + promo code math error: expected {expected:.2f}, got {total_cost:.2f}")
+        print(f"FAIL: service + promo code math error: expected {expected:.2f}, got {total_cost:.2f}")
 
 try:
-    # 1) Admin logs in and adds a promotion
+    # Admin logs in and adds a promotion
     admin_login(ADMIN_USERNAME, ADMIN_PASSWORD)
     add_promotion()
 
@@ -162,22 +185,22 @@ try:
     driver.get("http://127.0.0.1:8000/adminlogout/")
     time.sleep(2)
 
-    # 2) Test valid and invalid promo codes on the appointments page
+    # Test valid and invalid promo codes on the appointments page
     test_valid_promo_on_appointments()
     test_invalid_promo_on_appointments()
 
-    # 3) Admin logs back in and edits the promotion
+    # Admin logs back in and edits the promotion
     admin_login(ADMIN_USERNAME, ADMIN_PASSWORD)
     edit_promotion()
 
-    # Log out, select single service, apply newly edited promo code
+    # Log out, select service, apply newly edited promo code
     driver.get("http://127.0.0.1:8000/adminlogout/")
     time.sleep(2)
     driver.get(APPOINTMENTS_URL)
     time.sleep(1)
-    test_select_single_service_and_apply_promo()
+    test_select_service_and_apply_promo()
 
-    # 4) Admin logs in again to delete the promotion
+    # Admin logs in again to delete the promotion
     driver.get("http://127.0.0.1:8000/adminlogout/")
     time.sleep(2)
     admin_login(ADMIN_USERNAME, ADMIN_PASSWORD)

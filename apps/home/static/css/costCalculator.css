@@ -1,0 +1,58 @@
+/* costCalculator.css */
+
+/* Card header with gradient and text shadow */
+.card-header {
+  background: linear-gradient(135deg, #ff6f00, #FF0000) !important;
+  font-size: 2rem !important;
+  font-weight: bold !important;
+  color: #ffffff!important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Alternating row colors for better readability */
+.table tbody tr:nth-child(even) {
+  background-color: #f9f9f9!important;
+}
+
+/* Hover effect on table rows */
+.table tbody tr:hover {
+  background-color: #ffe6e6!important;
+  transition: background-color 0.3s ease!important;
+}
+
+/* Button Styling */
+.btn.btn-dark {
+  display: inline-block!important;
+  max-width: 140px!important;
+  font-size: 0.9rem!important;
+  padding: 5px 10px!important;
+  margin-left: 5px!important;
+  background-color: #FF0000!important;
+  color: #fff!important;
+  border: none!important;
+  border-radius: 5px!important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2)!important;
+  transition: background-color 0.3s ease, transform 0.2s ease!important;
+}
+
+.btn.btn-dark:hover {
+  background-color: #e60000!important;
+  transform: scale(1.05)!important;
+}
+
+.input-group .form-control:focus {
+  border-color: #e60000!important;
+  box-shadow: none!important;
+}
+
+.input-group .btn.btn-secondary {
+  border: 2px solid #FF0000!important;
+  border-left: none!important;
+  border-radius: 0 5px 5px 0!important;
+  background-color: #FF0000!important;
+  transition: background-color 0.3s ease!important;
+}
+
+.input-group .btn.btn-secondary:hover {
+  background-color: #e60000!important;
+}
