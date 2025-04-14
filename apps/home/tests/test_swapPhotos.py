@@ -5,13 +5,14 @@ from selenium.webdriver.support.ui import Select
 import time
 import os
 import requests
+from decouple import config # This is used to read the .env file
 
 # Configuration
 ADMIN_URL = "http://127.0.0.1:8000/adminlogin/?next=/admin" 
 PHOTO_LIST_URL = "http://127.0.0.1:8000/adminhome/photo/"  # The page with clickable links
 PHOTO_CHANGE_URL = "http://127.0.0.1:8000/adminhome/photo/16/change/"  # Adjust this to the correct photo change URL
-ADMIN_USERNAME = "akadmin"
-ADMIN_PASSWORD = "Carmaker8DivisiveCinema"
+ADMIN_USERNAME = config('ADMIN_USERNAME')
+ADMIN_PASSWORD = config('ADMIN_PASSWORD')
 IMAGE_URL = "https://images.pexels.com/photos/1805053/pexels-photo-1805053.jpeg"  # The image URL
 IMAGE_PATH = "valid_image.jpg"  # Local path for saving the downloaded image
 RESET_IMAGE_PATH = "apps/home/static/imgs/BlackHyundai.jpg"  # Local path for the reset image

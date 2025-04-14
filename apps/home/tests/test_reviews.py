@@ -8,6 +8,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 import time
 
+from decouple import config # This is used to read the .env file
+
 class AdminReviewsTest(unittest.TestCase):
     """Test suite for testing admin panel functionality for reviews."""
     
@@ -18,8 +20,8 @@ class AdminReviewsTest(unittest.TestCase):
         self.driver.maximize_window()
         self.base_url = "http://127.0.0.1:8000"
         self.admin_url = f"{self.base_url}/admin"
-        self.admin_username = "akadmin"
-        self.admin_password = "Carmaker8DivisiveCinema"
+        self.admin_username = config('ADMIN_USERNAME')
+        self.admin_password = config('ADMIN_PASSWORD')
         self.login_to_admin()
 
     def tearDown(self):

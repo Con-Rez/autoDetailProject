@@ -25,6 +25,7 @@ pyasn1_modules==0.4.1
 pycparser==2.22
 pyOpenSSL==25.0.0
 PySocks==1.7.1
+python-decouple==3.8
 python-dotenv==1.0.1
 requests==2.32.3
 selenium==4.29.0

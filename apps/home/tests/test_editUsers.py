@@ -4,10 +4,12 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 import time
 
+from decouple import config # This is used to read the .env file
+
 # Configuration
 ADMIN_URL = "http://127.0.0.1:8000/adminlogin/?next=/admin"  # Change as needed
-ADMIN_USERNAME = "akadmin"
-ADMIN_PASSWORD = "Carmaker8DivisiveCinema"
+ADMIN_USERNAME = config('ADMIN_USERNAME')
+ADMIN_PASSWORD = config('ADMIN_PASSWORD')
 NEW_USER_USERNAME = "testuser"
 NEW_USER_PASSWORD = "Test@1234"
 NEW_USER_EMAIL = "testuser@example.com"
