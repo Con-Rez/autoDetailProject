@@ -37,7 +37,7 @@
 </div>
 
   <!-- Our Services Section -->
-  <div class="container my-0">
+  <div class="container my-0 ">
     <!-- Animated Welcome Message Section -->
     <div class="container my-5 text-center animated-welcome">
       <h2>
@@ -49,8 +49,8 @@
   </div>
 
 <!-- Who We Are Section -->
-<div class="container mx-auto px-3 my-0 p-4">
-  <div class="row w-100 justify-content-evenly rounded-3" style="background-color: #fa0000; min-height: 400px;">
+<div class="container mx-auto px-3 my-0 p-4 d-flex justify-content-center align-items-center">
+  <div class="row w-100 justify-content-evenly r</div>ounded-3" style="background-color: #fa0000; min-height: 400px;">
     <div class="col-md-12 text-white d-flex flex-wrap align-items-center justify-content-center px-4 py-5">
       <!-- Left Text Section -->
       <div class="col-md-6 text-center">
@@ -72,65 +72,66 @@
     </div>
   </div>
 </div>
-  <!-- Our Services Section -->
-  <div class="container">
-    <div class="row">
-      <!-- Section Header -->
-      <div class="text-center mb-4">
-        <h6 class="text-danger">Our Services</h6>
-        <h2 class="sub-title">What We Do</h2>
+
+<!-- Our Services Section -->
+<div class="container">
+  <div class="row mx-auto px-3 my-0 p-4 d-flex justify-content-center align-items-center">
+    <!-- Section Header -->
+    <div class="text-center mb-4">
+      <h6 class="text-danger">Our Services</h6>
+      <h2 class="sub-title">What We Do</h2>
+    </div>
+
+    <div class="row align-items-stretch justify-content-center">
+      <!-- Left Column: Interior and Exterior Services -->
+      <div class="col-md-3 d-flex flex-column justify-content-between">
+        <!-- Interior Service -->
+        <div class="card h-100 text-center p-4 mb-3 service-box" style="background-color: #f7f7f7;">
+          <img src="{% static 'imgs/CarSeat.png' %}" alt="Interior Icon" class="mb-3" style="width: 50px;">
+          <h5 class="font-weight-bold">Interior</h5>
+          <p class="card-text">
+            No matter the interior material, we can refresh and get rid of stains and debris to make the inside look and smell brand new.
+          </p>
+        </div>
+
+        <!-- Exterior Service -->
+        <div class="card h-100 text-center p-4 mt-3 service-box" style="background-color: #f7f7f7;">
+          <img src="{% static 'imgs/CarWash.png' %}" alt="Exterior Icon" class="mb-3" style="width: 50px;">
+          <h5 class="font-weight-bold">Exterior</h5>
+          <p class="card-text">
+            We can get rid of any dirt, hard water spots, and paint swirls. We will return your car with a shine you did not believe was possible.
+          </p>
+        </div>
       </div>
 
-      <div class="row align-items-stretch justify-content-center">
-        <!-- Left Column: Interior and Exterior Services -->
-        <div class="col-md-3 d-flex flex-column justify-content-between">
-          <!-- Interior Service -->
-          <div class="card h-100 text-center p-4 mb-3 service-box" style="background-color: #f7f7f7;">
-            <img src="{% static 'imgs/CarSeat.png' %}" alt="Interior Icon" class="mb-3" style="width: 50px;">
-            <h5 class="font-weight-bold">Interior</h5>
-            <p class="card-text">
-              No matter the interior material, we can refresh and get rid of stains and debris to make the inside look and smell brand new.
-            </p>
-          </div>
+      <!-- Center Image -->
+      <div class="col-md-6 d-flex align-items-center justify-content-center">
+        <img src="{% static 'imgs/CenterImage.jpg' %}" class="img-fluid rounded center-img" alt="Service Image">
+      </div>
 
-          <!-- Exterior Service -->
-          <div class="card h-100 text-center p-4 mt-3 service-box" style="background-color: #f7f7f7;">
-            <img src="{% static 'imgs/CarWash.png' %}" alt="Exterior Icon" class="mb-3" style="width: 50px;">
-            <h5 class="font-weight-bold">Exterior</h5>
-            <p class="card-text">
-              We can get rid of any dirt, hard water spots, and paint swirls. We will return your car with a shine you did not believe was possible.
-            </p>
-          </div>
+      <!-- Right Column: Engine and Headlights Services -->
+      <div class="col-md-3 d-flex flex-column justify-content-between">
+        <!-- Engine Service -->
+        <div class="card h-100 text-center p-4 mb-3 service-box" style="background-color: #f7f7f7;">
+          <img src="{% static 'imgs/Engine.png' %}" alt="Engine Icon" class="mb-3" style="width: 50px;">
+          <h5 class="font-weight-bold">Engine</h5>
+          <p class="card-text">
+            Engine is often the most overlooked service in auto detailing. We will refresh the engine and make it look shining like no other auto detailer.
+          </p>
         </div>
 
-        <!-- Center Image -->
-        <div class="col-md-6 d-flex align-items-center justify-content-center">
-          <img src="{% static 'imgs/CenterImage.jpg' %}" class="img-fluid rounded center-img" alt="Service Image">
-        </div>
-
-        <!-- Right Column: Engine and Headlights Services -->
-        <div class="col-md-3 d-flex flex-column justify-content-between">
-          <!-- Engine Service -->
-          <div class="card h-100 text-center p-4 mb-3 service-box" style="background-color: #f7f7f7;">
-            <img src="{% static 'imgs/Engine.png' %}" alt="Engine Icon" class="mb-3" style="width: 50px;">
-            <h5 class="font-weight-bold">Engine</h5>
-            <p class="card-text">
-              Engine is often the most overlooked service in auto detailing. We will refresh the engine and make it look shining like no other auto detailer.
-            </p>
-          </div>
-
-          <!-- Headlights Service -->
-          <div class="card h-100 text-center p-4 mt-3 service-box" style="background-color: #f7f7f7;">
-            <img src="{% static 'imgs/Headlight.png' %}" alt="Headlights Icon" class="mb-3" style="width: 50px;">
-            <h5 class="font-weight-bold">Headlights</h5>
-            <p class="card-text">
-              Yellow headlights? No problem! We can make your headlights look clear and new again.
-            </p>
-          </div>
+        <!-- Headlights Service -->
+        <div class="card h-100 text-center p-4 mt-3 service-box" style="background-color: #f7f7f7;">
+          <img src="{% static 'imgs/Headlight.png' %}" alt="Headlights Icon" class="mb-3" style="width: 50px;">
+          <h5 class="font-weight-bold">Headlights</h5>
+          <p class="card-text">
+            Yellow headlights? No problem! We can make your headlights look clear and new again.
+          </p>
         </div>
       </div>
     </div>
   </div>
+</div>
 
 <!-- Transformations Section -->
 <div class="container-fluid mx-auto px-3 my-5 text-center">
@@ -214,12 +215,12 @@
     </div>
 
     <!-- Dynamic Testimonials -->
-    <div class="container my-5">
-      <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+    <div class="container my-5 text-center d-flex justify-content-center align-items-center">
+      <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center align-items-center mx-auto">
         {% for review in reviews %}
         <div class="col-lg-4 d-flex justify-content-center">
           <div class="shadow card h-100 w-100 text-center">
-            <div class="card-body">
+            <div class="card-body shadow-lg">
               <h5 class="card-title">{{ review.title }}</h5>
               <p class="text-nowrap">{% for i in review.get_star_range %}
               &#11088;
@@ -239,7 +240,7 @@
     <div class="container text-center">
       <div class="row justify-content-center">
         <div class="col-lg-8">
-          <blockquote class="instagram-media w-100 mx-auto"
+          <blockquote class="instagram-media shadow-lg w-100 mx-auto"
             data-instgrm-permalink="https://www.instagram.com/akautodetail2/?utm_source=ig_embed&amp;utm_campaign=loading" 
             data-instgrm-version="14"
             style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); max-width: 600px; margin: auto;">

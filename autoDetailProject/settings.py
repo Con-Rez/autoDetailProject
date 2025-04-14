@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import os
 from pathlib import Path
 import sys
-
+from decouple import config # This is used to read the .env file
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -24,10 +24,11 @@ sys.path.insert(0, os.path.join(BASE_DIR, 'apps')) # All apps stored in apps fol
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-32fj7(9e7dvz-8^j2v773_($b$*o0mc-5bdv)_^9ls2hx+1qqp'
+# If .env file is not used, uncomment the line below and add your secret key
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['.herokuapp.com','0.0.0.0', '127.0.0.1','*']
 
@@ -82,6 +83,8 @@ WSGI_APPLICATION = 'autoDetailProject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+
+# Very basic database configuration for SQLite3, doesn't support multiple simultaneous user edits
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',

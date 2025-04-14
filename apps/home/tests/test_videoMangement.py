@@ -5,6 +5,7 @@ import time
 import os
 import requests
 from selenium.webdriver.chrome.options import Options
+from decouple import config # This is used to read the .env file
 
 class VideoUploadTests(unittest.TestCase):
 
@@ -15,8 +16,8 @@ class VideoUploadTests(unittest.TestCase):
         self.VIDEO_LIST_URL = "http://127.0.0.1:8000/adminhome/transformationvideo/"
         self.GALLERY_URL = "http://127.0.0.1:8000/gallery/"
 
-        self.ADMIN_USERNAME = "akadmin"
-        self.ADMIN_PASSWORD = "Carmaker8DivisiveCinema"
+        self.ADMIN_USERNAME = config('ADMIN_USERNAME')
+        self.ADMIN_PASSWORD = config('ADMIN_PASSWORD')
 
         self.VALID_VIDEO_URL = "https://www.w3schools.com/html/mov_bbb.mp4"
         self.VALID_VIDEO_PATH = "valid_video.mp4"

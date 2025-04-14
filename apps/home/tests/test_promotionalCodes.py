@@ -7,12 +7,14 @@ import time
 import re
 from datetime import datetime, timedelta
 
+from decouple import config # This is used to read the .env file
+
 # Basic configuration for admin login and appointments page
 ADMIN_LOGIN_URL = "http://127.0.0.1:8000/adminlogin/?next=/admin"
 APPOINTMENTS_URL = "http://127.0.0.1:8000/schedule_appointment/"
 
-ADMIN_USERNAME = "akadmin"
-ADMIN_PASSWORD = "Carmaker8DivisiveCinema"
+ADMIN_USERNAME = config('ADMIN_USERNAME')
+ADMIN_PASSWORD = config('ADMIN_PASSWORD')
 
 # Generate promotion details
 PROMO_NAME = "Test Promotion"

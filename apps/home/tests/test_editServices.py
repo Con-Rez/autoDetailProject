@@ -3,13 +3,15 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 import time
+from decouple import config # This is used to read the .env file
 
 # run tests with python manage.py test home.tests.test_editServices
+# Test may need to be written twice, as initial test may fail for unknown reasons
 
 # Configuration
 ADMIN_URL = "http://127.0.0.1:8000/adminlogin/?next=/admin"  # Change as needed
-ADMIN_USERNAME = "akadmin"
-ADMIN_PASSWORD = "Carmaker8DivisiveCinema"
+ADMIN_USERNAME = config('ADMIN_USERNAME')
+ADMIN_PASSWORD = config('ADMIN_PASSWORD')
 
 SERVICE_NAME = "TestService"
 SERVICE_COST = "123.45"
@@ -135,88 +137,128 @@ def verify_service_creation_failure(username, password):
     time.sleep(2)
 
     # First, attempt all blank fields test
-    driver.find_element(By.NAME, "_save").click() 
-    error_note = driver.find_element(By.CLASS_NAME, "errornote")
-    if not error_note.is_displayed():
-        print("ERROR: Something went wrong: Error note not displayed for blank fields.")
+    try:
+        driver.find_element(By.NAME, "_save").click() 
+        error_note = driver.find_element(By.CLASS_NAME, "errornote")
+        if not error_note.is_displayed():
+            print("ERROR: Something went wrong: Error note not displayed for blank fields.")
+            testFailed = True
+        time.sleep(2)
+    except Exception as e:
+        print("ERROR: Exception occurred while checking for blank fields:", e)
         testFailed = True
-    time.sleep(2)
     
-    # Clear the text fields
-    driver.find_element(By.NAME, "name").clear()
-    driver.find_element(By.NAME, "cost").clear()
-    driver.find_element(By.NAME, "time_to_complete").clear()
-    time.sleep(2)
-
-    # Next, attempt no name test
-    driver.find_element(By.NAME, "cost").send_keys(SERVICE_COST)
-    driver.find_element(By.NAME, "time_to_complete").send_keys(SERVICE_TIME_TO_COMPLETE)
-    driver.find_element(By.NAME, "_save").click() 
-    error_note = driver.find_element(By.CLASS_NAME, "errornote")
-    if not error_note.is_displayed():
-        print("ERROR: Something went wrong: Error note not displayed for no name test.")
+    try:
+        # Clear the text fields
+        driver.find_element(By.NAME, "name").clear()
+        driver.find_element(By.NAME, "cost").clear()
+        driver.find_element(By.NAME, "time_to_complete").clear()
+        time.sleep(2)
+    except Exception as e:
+        print("ERROR: Exception occurred while clearing fields after blank fields test:", e)
         testFailed = True
-    time.sleep(2)
 
-    # Clear the text fields
-    driver.find_element(By.NAME, "name").clear()
-    driver.find_element(By.NAME, "cost").clear()
-    driver.find_element(By.NAME, "time_to_complete").clear()
-    time.sleep(2)
-
-    # Next, attempt no cost test
-    driver.find_element(By.NAME, "name").send_keys(SERVICE_NAME)
-    driver.find_element(By.NAME, "time_to_complete").send_keys(SERVICE_TIME_TO_COMPLETE)
-    driver.find_element(By.NAME, "_save").click() 
-    error_note = driver.find_element(By.CLASS_NAME, "errornote")
-    if not error_note.is_displayed():
-        print("ERROR: Something went wrong: Error note not displayed for no cost test.")
+    try:
+        # Next, attempt no name test
+        driver.find_element(By.NAME, "cost").send_keys(SERVICE_COST)
+        driver.find_element(By.NAME, "time_to_complete").send_keys(SERVICE_TIME_TO_COMPLETE)
+        driver.find_element(By.NAME, "_save").click() 
+        error_note = driver.find_element(By.CLASS_NAME, "errornote")
+        if not error_note.is_displayed():
+            print("ERROR: Something went wrong: Error note not displayed for no name test.")
+            testFailed = True
+        time.sleep(2)
+    except Exception as e:
+        print("ERROR: Exception occurred while checking for no name test:", e)
         testFailed = True
-    time.sleep(2)
 
-    # Clear the text fields
-    driver.find_element(By.NAME, "name").clear()
-    driver.find_element(By.NAME, "cost").clear()
-    driver.find_element(By.NAME, "time_to_complete").clear()
-    time.sleep(2)
-
-    # Next, attempt invalid cost test
-    driver.find_element(By.NAME, "name").send_keys(SERVICE_NAME)
-    driver.find_element(By.NAME, "cost").send_keys(INVALID_SERVICE_COST)
-    driver.find_element(By.NAME, "time_to_complete").send_keys(SERVICE_TIME_TO_COMPLETE)
-    driver.find_element(By.NAME, "_save").click() 
-    error_note = driver.find_element(By.CLASS_NAME, "errornote")
-    if not error_note.is_displayed():
-        print("ERROR: Something went wrong: Error note not displayed for invalid cost test.")
+    try:
+        # Clear the text fields
+        driver.find_element(By.NAME, "name").clear()
+        driver.find_element(By.NAME, "cost").clear()
+        driver.find_element(By.NAME, "time_to_complete").clear()
+        time.sleep(2)
+    except Exception as e:
+        print("ERROR: Exception occurred while clearing fields after no name test:", e)
         testFailed = True
-    time.sleep(2)
 
-    # Clear the text fields
-    driver.find_element(By.NAME, "name").clear()
-    driver.find_element(By.NAME, "cost").clear()
-    driver.find_element(By.NAME, "time_to_complete").clear()
-    time.sleep(2)
-
-    # Next, attempt no time to complete test
-    driver.find_element(By.NAME, "name").send_keys(SERVICE_NAME)
-    driver.find_element(By.NAME, "cost").send_keys(SERVICE_COST)
-    driver.find_element(By.NAME, "_save").click() 
-    error_note = driver.find_element(By.CLASS_NAME, "errornote")
-    if not error_note.is_displayed():
-        print("ERROR: Something went wrong: Error note not displayed for empty time to complete test.")
+    try:
+        # Next, attempt no cost test
+        driver.find_element(By.NAME, "name").send_keys(SERVICE_NAME)
+        driver.find_element(By.NAME, "time_to_complete").send_keys(SERVICE_TIME_TO_COMPLETE)
+        driver.find_element(By.NAME, "_save").click() 
+        error_note = driver.find_element(By.CLASS_NAME, "errornote")
+        if not error_note.is_displayed():
+            print("ERROR: Something went wrong: Error note not displayed for no cost test.")
+            testFailed = True
+        time.sleep(2)
+    except Exception as e:
+        print("ERROR: Exception occurred while checking for no cost test:", e)
         testFailed = True
-    time.sleep(2)
 
-    # Next, attempt invalid time to complete test
-    driver.find_element(By.NAME, "name").send_keys(SERVICE_NAME)
-    driver.find_element(By.NAME, "cost").send_keys(SERVICE_COST)
-    driver.find_element(By.NAME, "time_to_complete").send_keys(INVALID_SERVICE_TIME_TO_COMPLETE)
-    driver.find_element(By.NAME, "_save").click() 
-    error_note = driver.find_element(By.CLASS_NAME, "errornote")
-    if not error_note.is_displayed():
-        print("ERROR: Something went wrong: Error note not displayed for invalid time to complete test.")
+    try:
+        # Clear the text fields
+        driver.find_element(By.NAME, "name").clear()
+        driver.find_element(By.NAME, "cost").clear()
+        driver.find_element(By.NAME, "time_to_complete").clear()
+        time.sleep(2)
+    except Exception as e:
+        print("ERROR: Exception occurred while clearing fields after no cost test:", e)
         testFailed = True
-    time.sleep(2)
+
+    try:
+        # Next, attempt invalid cost test
+        driver.find_element(By.NAME, "name").send_keys(SERVICE_NAME)
+        driver.find_element(By.NAME, "cost").send_keys(INVALID_SERVICE_COST)
+        driver.find_element(By.NAME, "time_to_complete").send_keys(SERVICE_TIME_TO_COMPLETE)
+        driver.find_element(By.NAME, "_save").click() 
+        error_note = driver.find_element(By.CLASS_NAME, "errornote")
+        if not error_note.is_displayed():
+            print("ERROR: Something went wrong: Error note not displayed for invalid cost test.")
+            testFailed = True
+        time.sleep(2)
+    except Exception as e:
+        print("ERROR: Exception occurred while checking for invalid cost test:", e)
+        testFailed = True
+
+    try:
+        # Clear the text fields
+        driver.find_element(By.NAME, "name").clear()
+        driver.find_element(By.NAME, "cost").clear()
+        driver.find_element(By.NAME, "time_to_complete").clear()
+        time.sleep(2)
+    except Exception as e:
+        print("ERROR: Exception occurred while clearing fields after invalid cost test:", e)
+        testFailed = True
+
+    try:
+        # Next, attempt no time to complete test
+        driver.find_element(By.NAME, "name").send_keys(SERVICE_NAME)
+        driver.find_element(By.NAME, "cost").send_keys(SERVICE_COST)
+        driver.find_element(By.NAME, "_save").click() 
+        error_note = driver.find_element(By.CLASS_NAME, "errornote")
+        if not error_note.is_displayed():
+            print("ERROR: Something went wrong: Error note not displayed for empty time to complete test.")
+            testFailed = True
+        time.sleep(2)
+    except Exception as e:
+        print("ERROR: Exception occurred while checking for empty time to complete test:", e)
+        testFailed = True
+
+    try:
+        # Next, attempt invalid time to complete test
+        driver.find_element(By.NAME, "name").send_keys(SERVICE_NAME)
+        driver.find_element(By.NAME, "cost").send_keys(SERVICE_COST)
+        driver.find_element(By.NAME, "time_to_complete").send_keys(INVALID_SERVICE_TIME_TO_COMPLETE)
+        driver.find_element(By.NAME, "_save").click() 
+        error_note = driver.find_element(By.CLASS_NAME, "errornote")
+        if not error_note.is_displayed():
+            print("ERROR: Something went wrong: Error note not displayed for invalid time to complete test.")
+            testFailed = True
+        time.sleep(2)
+    except Exception as e:
+        print("ERROR: Exception occurred while checking for invalid time to complete test:", e)
+        testFailed = True
 
     # Display if any tests failed
     if testFailed:
