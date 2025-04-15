@@ -49,88 +49,70 @@
   </div>
 
 <!-- Who We Are Section -->
-<div class="container mx-auto px-3 my-0 p-4">
-  <div class="row w-100 justify-content-evenly rounded-3" style="background-color: #fa0000; min-height: 400px;">
-    <div class="col-md-12 text-white d-flex flex-wrap align-items-center justify-content-center px-4 py-5">
-      <!-- Left Text Section -->
-      <div class="col-md-6 text-center">
-        <h1 class="fw-bold" style="padding-bottom: 2%; font-size: clamp(28px, 4vw, 50px);">Who We Are</h1>
-        <p style="font-size: clamp(16px, 2vw, 20px);">
-          We are a local auto detail shop servicing customers in the Sacramento region. We do a full auto detail from interior, exterior, and even the engine. We detail all kinds of cars, no matter how dirty, clean, old, or new.
-        </p>
-        <div class="d-flex flex-column flex-md-row justify-content-center gap-3 mt-4">
-          <a href="{% url 'schedule_appointment' %}" class="btn btn-light btn-lg rounded-pill w-100 w-md-auto">Schedule Appointment</a>
-          <a href="{% url 'about' %}" class="btn btn-dark btn-lg rounded-pill w-100 w-md-auto">Contact Us Today</a>
-        </div>
+<div class="container py-4 px-3">
+  <div class="row rounded-3 text-white align-items-center py-5 px-3 mx-0" style="background-color: #fa0000;">
+    <!-- Text Content -->
+    <div class="col-md-6 mb-4 mb-md-0 text-center">
+      <h1 class="fw-bold" style="font-size: clamp(28px, 4vw, 50px);">Who We Are</h1>
+      <p style="font-size: clamp(16px, 2vw, 20px);">
+        We are a local auto detail shop servicing customers in the Sacramento region. We do a full auto detail from interior, exterior, and even the engine. We detail all kinds of cars, no matter how dirty, clean, old, or new.
+      </p>
+      <div class="d-flex flex-column flex-md-row justify-content-center gap-3 mt-4">
+        <a href="{% url 'schedule_appointment' %}" class="btn btn-light btn-lg rounded-pill">Schedule Appointment</a>
+        <a href="{% url 'about' %}" class="btn btn-dark btn-lg rounded-pill">Contact Us Today</a>
       </div>
-      <!-- Right Logo Section -->
-      <div class="col-md-4 d-flex justify-content-center mt-4 mt-md-0">
-        <div class="rounded bg-white overflow-hidden" style="width: 250px; aspect-ratio: 1/1; border-radius: 20px;">
-          <img src="{% static 'imgs/logo.jpg' %}" alt="Logo" class="img-fluid" style="width: 100%; height: auto; object-fit: contain;">
-        </div>
+    </div>
+    <!-- Logo Content -->
+    <div class="col-md-6 d-flex justify-content-center">
+      <div class="bg-white rounded overflow-hidden" style="width: 250px; aspect-ratio: 1 / 1;">
+        <img src="{% static 'imgs/logo.jpg' %}" alt="Logo" class="img-fluid w-100 h-100 object-fit-contain">
       </div>
     </div>
   </div>
 </div>
-  <!-- Our Services Section -->
-  <div class="container">
-    <div class="row">
-      <!-- Section Header -->
-      <div class="text-center mb-4">
-        <h6 class="text-danger">Our Services</h6>
-        <h2 class="sub-title">What We Do</h2>
+
+<!-- Our Services Section -->
+<div class="container py-5 px-3">
+  <div class="text-center mb-4">
+    <h6 class="text-danger">Our Services</h6>
+    <h2 class="sub-title">What We Do</h2>
+  </div>
+
+  <div class="row justify-content-center align-items-stretch">
+    <!-- Left Column -->
+    <div class="col-md-4 mb-4">
+      <div class="card service-box text-center p-4 mb-4" style="background-color: #f7f7f7;">
+        <img src="{% static 'imgs/CarSeat.png' %}" alt="Interior" class="mb-3" style="width: 50px;">
+        <h5 class="fw-bold">Interior</h5>
+        <p>No matter the interior material, we refresh and remove stains and debris.</p>
       </div>
+      <div class="card service-box text-center p-4" style="background-color: #f7f7f7;">
+        <img src="{% static 'imgs/CarWash.png' %}" alt="Exterior" class="mb-3" style="width: 50px;">
+        <h5 class="fw-bold">Exterior</h5>
+        <p>Removing dirt, spots, and swirls to make your car shine brilliantly.</p>
+      </div>
+    </div>
 
-      <div class="row align-items-stretch justify-content-center">
-        <!-- Left Column: Interior and Exterior Services -->
-        <div class="col-md-3 d-flex flex-column justify-content-between">
-          <!-- Interior Service -->
-          <div class="card h-100 text-center p-4 mb-3 service-box" style="background-color: #f7f7f7;">
-            <img src="{% static 'imgs/CarSeat.png' %}" alt="Interior Icon" class="mb-3" style="width: 50px;">
-            <h5 class="font-weight-bold">Interior</h5>
-            <p class="card-text">
-              No matter the interior material, we can refresh and get rid of stains and debris to make the inside look and smell brand new.
-            </p>
-          </div>
+    <!-- Center Image -->
+    <div class="col-md-4 mb-4 d-flex align-items-center justify-content-center">
+      <img src="{% static 'imgs/CenterImage.jpg' %}" class="img-fluid rounded" alt="Service Image">
+    </div>
 
-          <!-- Exterior Service -->
-          <div class="card h-100 text-center p-4 mt-3 service-box" style="background-color: #f7f7f7;">
-            <img src="{% static 'imgs/CarWash.png' %}" alt="Exterior Icon" class="mb-3" style="width: 50px;">
-            <h5 class="font-weight-bold">Exterior</h5>
-            <p class="card-text">
-              We can get rid of any dirt, hard water spots, and paint swirls. We will return your car with a shine you did not believe was possible.
-            </p>
-          </div>
-        </div>
-
-        <!-- Center Image -->
-        <div class="col-md-6 d-flex align-items-center justify-content-center">
-          <img src="{% static 'imgs/CenterImage.jpg' %}" class="img-fluid rounded center-img" alt="Service Image">
-        </div>
-
-        <!-- Right Column: Engine and Headlights Services -->
-        <div class="col-md-3 d-flex flex-column justify-content-between">
-          <!-- Engine Service -->
-          <div class="card h-100 text-center p-4 mb-3 service-box" style="background-color: #f7f7f7;">
-            <img src="{% static 'imgs/Engine.png' %}" alt="Engine Icon" class="mb-3" style="width: 50px;">
-            <h5 class="font-weight-bold">Engine</h5>
-            <p class="card-text">
-              Engine is often the most overlooked service in auto detailing. We will refresh the engine and make it look shining like no other auto detailer.
-            </p>
-          </div>
-
-          <!-- Headlights Service -->
-          <div class="card h-100 text-center p-4 mt-3 service-box" style="background-color: #f7f7f7;">
-            <img src="{% static 'imgs/Headlight.png' %}" alt="Headlights Icon" class="mb-3" style="width: 50px;">
-            <h5 class="font-weight-bold">Headlights</h5>
-            <p class="card-text">
-              Yellow headlights? No problem! We can make your headlights look clear and new again.
-            </p>
-          </div>
-        </div>
+    <!-- Right Column -->
+    <div class="col-md-4 mb-4">
+      <div class="card service-box text-center p-4 mb-4" style="background-color: #f7f7f7;">
+        <img src="{% static 'imgs/Engine.png' %}" alt="Engine" class="mb-3" style="width: 50px;">
+        <h5 class="fw-bold">Engine</h5>
+        <p>Detailing and rejuvenating your car’s engine to shine brightly.</p>
+      </div>
+      <div class="card service-box text-center p-4" style="background-color: #f7f7f7;">
+        <img src="{% static 'imgs/Headlight.png' %}" alt="Headlights" class="mb-3" style="width: 50px;">
+        <h5 class="fw-bold">Headlights</h5>
+        <p>Restoring yellow headlights to crystal-clear condition.</p>
       </div>
     </div>
   </div>
+</div>
 
 <!-- Transformations Section -->
 <div class="container-fluid mx-auto px-3 my-5 text-center">
