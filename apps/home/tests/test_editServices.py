@@ -5,7 +5,7 @@ from selenium.webdriver.support.ui import Select
 import time
 from decouple import config # This is used to read the .env file
 
-# run tests with python manage.py test home.tests.test_editServices
+# run tests with ``python manage.py test home.tests.test_editServices``
 # Test may need to be written twice, as initial test may fail for unknown reasons
 
 # Configuration
