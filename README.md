@@ -23,7 +23,7 @@ This project's goal was to provide an appealing, functional, and user-friendly w
 ## Authors
 
 - [@Con-Rez](https://github.com/Con-Rez)
-- [@RebeccaFitzpatrick](https://github.com/RebeccaFitzpatrick)
+- [@RebeccaFitzpatrick](https://github.com/RebeccaFitzpatrick) Rebecca Fitzpatrick. contact: rebeccafitzpatrick@csus.edu.
 - [@Rodrigo-Guzman3](https://github.com/Rodrigo-Guzman3)
 - [@fanbrandon](https://github.com/fanbrandon)
 - [@Serefima](https://github.com/Serefima)
