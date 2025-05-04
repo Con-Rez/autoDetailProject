@@ -1,0 +1,123 @@
+INFO 2025-05-04 14:08:10,602 autoreload Watching for file changes with StatReloader
+INFO 2025-05-04 14:09:06,432 basehttp "GET / HTTP/1.1" 200 21998
+INFO 2025-05-04 14:09:06,463 basehttp "GET /static/css/costCalculator.css HTTP/1.1" 304 0
+INFO 2025-05-04 14:09:06,463 basehttp "GET /static/css/styles.css HTTP/1.1" 304 0
+INFO 2025-05-04 14:09:06,465 basehttp "GET /static/css/welcomemsg.css HTTP/1.1" 304 0
+INFO 2025-05-04 14:09:06,465 basehttp "GET /static/css/mobilefriendly.css HTTP/1.1" 304 0
+INFO 2025-05-04 14:09:06,480 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-05-04 14:09:06,483 basehttp "GET /static/js/welcomemsg.js HTTP/1.1" 304 0
+INFO 2025-05-04 14:09:06,568 basehttp "GET /static/fonts/roboto/roboto.css HTTP/1.1" 200 576
+INFO 2025-05-04 14:09:06,574 basehttp "GET /static/css/discountModal.css HTTP/1.1" 200 1379
+INFO 2025-05-04 14:09:06,578 basehttp "GET /static/css/carousel.css HTTP/1.1" 200 4505
+INFO 2025-05-04 14:09:06,580 basehttp "GET /static/imgs/Headlight.png HTTP/1.1" 304 0
+INFO 2025-05-04 14:09:06,580 basehttp "GET /static/imgs/home-tran-bmw.png HTTP/1.1" 304 0
+INFO 2025-05-04 14:09:06,580 basehttp "GET /static/imgs/home-tran-porsche.png HTTP/1.1" 304 0
+INFO 2025-05-04 14:09:06,580 basehttp "GET /static/imgs/home-tran-ford.png HTTP/1.1" 304 0
+INFO 2025-05-04 14:09:06,580 basehttp "GET /static/imgs/home-tran-gmc.png HTTP/1.1" 304 0
+INFO 2025-05-04 14:09:06,580 basehttp "GET /static/imgs/CenterImage.jpg HTTP/1.1" 304 0
+INFO 2025-05-04 14:09:06,606 basehttp "GET /static/fonts/roboto/Roboto-VariableFont_wdth,wght.ttf HTTP/1.1" 304 0
+WARNING 2025-05-04 14:09:06,785 log Not Found: /favicon.ico
+INFO 2025-05-04 14:09:06,786 basehttp - Broken pipe from ('127.0.0.1', 65373)
+INFO 2025-05-04 14:09:08,287 basehttp "GET / HTTP/1.1" 200 21998
+WARNING 2025-05-04 14:09:08,325 log Not Found: /favicon.ico
+INFO 2025-05-04 14:09:08,326 basehttp - Broken pipe from ('127.0.0.1', 65374)
+INFO 2025-05-04 14:09:08,620 basehttp "GET /about_us/ HTTP/1.1" 200 12233
+INFO 2025-05-04 14:09:08,934 basehttp "GET /gallery/ HTTP/1.1" 200 16214
+INFO 2025-05-04 14:09:08,996 basehttp "GET /static/imgs/galleryLeftBefore.jpg HTTP/1.1" 200 1757991
+INFO 2025-05-04 14:09:09,003 basehttp "GET /static/imgs/galleryRightAfter.jpg HTTP/1.1" 200 2284768
+INFO 2025-05-04 14:09:09,011 basehttp "GET /static/imgs/galleryLeftAfter.jpg HTTP/1.1" 200 2166369
+INFO 2025-05-04 14:09:09,015 basehttp "GET /static/js/imgSliders.js HTTP/1.1" 200 1678
+INFO 2025-05-04 14:09:09,019 basehttp "GET /static/js/imgTransition.js HTTP/1.1" 200 1575
+INFO 2025-05-04 14:09:09,030 basehttp "GET /static/imgs/galleryMiddleBefore.jpg HTTP/1.1" 200 2862507
+INFO 2025-05-04 14:09:09,045 basehttp "GET /static/imgs/galleryMiddleAfter.jpg HTTP/1.1" 200 3552183
+INFO 2025-05-04 14:09:09,051 basehttp "GET /static/imgs/galleryRightBefore.jpg HTTP/1.1" 200 3506624
+INFO 2025-05-04 14:09:09,221 basehttp - Broken pipe from ('127.0.0.1', 65377)
+INFO 2025-05-04 14:09:09,221 basehttp - Broken pipe from ('127.0.0.1', 65390)
+INFO 2025-05-04 14:09:09,221 basehttp - Broken pipe from ('127.0.0.1', 65376)
+INFO 2025-05-04 14:09:09,320 basehttp "GET /schedule_appointment/ HTTP/1.1" 200 19161
+INFO 2025-05-04 14:09:09,364 basehttp "GET /static/js/costCalculator.js HTTP/1.1" 304 0
+INFO 2025-05-04 14:09:09,375 basehttp "GET /static/js/discountModal.js HTTP/1.1" 200 386
+INFO 2025-05-04 14:09:09,498 basehttp "GET /captcha/image/66e3548fc4154765fd4ba964a488bab4f31cd964/ HTTP/1.1" 200 3960
+INFO 2025-05-04 14:09:09,576 basehttp "GET /contact_us/ HTTP/1.1" 200 12041
+INFO 2025-05-04 14:09:09,602 basehttp "GET /captcha/image/9cc9e8968b44a3c4e051f22602046c7c678bcc87/ HTTP/1.1" 200 4351
+INFO 2025-05-04 14:09:10,277 basehttp "GET /about_us/ HTTP/1.1" 200 12233
+INFO 2025-05-04 14:09:10,573 basehttp "GET /gallery/ HTTP/1.1" 200 16214
+INFO 2025-05-04 14:09:10,813 basehttp "GET /static/videos/transformation1.mp4 HTTP/1.1" 200 30866586
+INFO 2025-05-04 14:09:12,544 basehttp - Broken pipe from ('127.0.0.1', 65378)
+INFO 2025-05-04 14:09:12,545 basehttp - Broken pipe from ('127.0.0.1', 65375)
+INFO 2025-05-04 14:09:12,554 basehttp "GET /schedule_appointment/ HTTP/1.1" 200 19161
+INFO 2025-05-04 14:09:12,579 basehttp "GET /captcha/image/488990d43ffcca083362cb6b6527ed98a8beb5fb/ HTTP/1.1" 200 3798
+INFO 2025-05-04 14:09:22,574 basehttp "POST /schedule_appointment/ HTTP/1.1" 200 19161
+INFO 2025-05-04 14:09:22,594 basehttp "GET /captcha/image/a7da342abd645511c55ea7bb874ead9aa886d212/ HTTP/1.1" 200 4379
+WARNING 2025-05-04 14:09:22,611 log Not Found: /favicon.ico
+INFO 2025-05-04 14:09:22,611 basehttp - Broken pipe from ('127.0.0.1', 65391)
+INFO 2025-05-04 14:09:48,347 basehttp "GET / HTTP/1.1" 200 21823
+INFO 2025-05-04 14:09:48,381 basehttp - Broken pipe from ('127.0.0.1', 65428)
+INFO 2025-05-04 14:09:48,381 basehttp - Broken pipe from ('127.0.0.1', 65429)
+INFO 2025-05-04 14:09:49,354 basehttp "GET /about_us/ HTTP/1.1" 200 12233
+WARNING 2025-05-04 14:09:49,388 log Not Found: /favicon.ico
+INFO 2025-05-04 14:09:49,388 basehttp - Broken pipe from ('127.0.0.1', 65434)
+INFO 2025-05-04 14:09:51,341 basehttp "GET / HTTP/1.1" 200 21856
+INFO 2025-05-04 14:09:52,393 basehttp "GET /schedule_appointment/ HTTP/1.1" 200 19161
+INFO 2025-05-04 14:09:52,416 basehttp "GET /captcha/image/c5e277f72479c97e1d5dd4eae62c9a7d41c4faa2/ HTTP/1.1" 200 3648
+INFO 2025-05-04 14:09:53,341 basehttp "GET / HTTP/1.1" 200 21856
+INFO 2025-05-04 14:09:56,090 basehttp "GET /gallery/ HTTP/1.1" 200 16214
+INFO 2025-05-04 14:09:56,383 basehttp "GET /static/videos/transformation1.mp4 HTTP/1.1" 200 30866586
+INFO 2025-05-04 14:13:30,045 basehttp - Broken pipe from ('127.0.0.1', 65460)
+INFO 2025-05-04 14:13:30,045 basehttp - Broken pipe from ('127.0.0.1', 65459)
+INFO 2025-05-04 14:13:30,057 basehttp "GET /gallery/ HTTP/1.1" 200 16214
+INFO 2025-05-04 14:13:30,078 basehttp - Broken pipe from ('127.0.0.1', 49302)
+INFO 2025-05-04 14:13:31,282 basehttp - Broken pipe from ('127.0.0.1', 49303)
+INFO 2025-05-04 14:13:31,282 basehttp - Broken pipe from ('127.0.0.1', 49304)
+INFO 2025-05-04 14:13:31,292 basehttp "GET / HTTP/1.1" 200 21998
+INFO 2025-05-04 14:13:31,322 basehttp - Broken pipe from ('127.0.0.1', 49306)
+INFO 2025-05-04 14:30:17,712 basehttp "GET /about_us/ HTTP/1.1" 200 12233
+WARNING 2025-05-04 14:30:17,840 log Not Found: /favicon.ico
+INFO 2025-05-04 14:30:17,840 basehttp - Broken pipe from ('127.0.0.1', 50789)
+INFO 2025-05-04 14:30:19,568 basehttp "GET /gallery/ HTTP/1.1" 200 16214
+INFO 2025-05-04 14:30:27,986 basehttp "GET /static/videos/transformation2.mp4 HTTP/1.1" 200 55871891
+INFO 2025-05-04 14:30:43,562 basehttp - Broken pipe from ('127.0.0.1', 50791)
+INFO 2025-05-04 14:30:43,572 basehttp "GET /contact_us/ HTTP/1.1" 200 12041
+INFO 2025-05-04 14:30:43,597 basehttp "GET /captcha/image/aa0fbcaf26270b1ee5d9483a9a3511639966497d/ HTTP/1.1" 200 3884
+WARNING 2025-05-04 14:30:43,702 log Not Found: /favicon.ico
+INFO 2025-05-04 14:30:43,703 basehttp - Broken pipe from ('127.0.0.1', 50790)
+INFO 2025-05-04 14:30:47,652 basehttp "POST /contact_us/ HTTP/1.1" 200 11664
+INFO 2025-05-04 14:30:54,658 basehttp "GET /schedule_appointment/ HTTP/1.1" 200 19161
+INFO 2025-05-04 14:30:54,697 basehttp "GET /captcha/image/af80d0bbf5fe630f60b4957f2c0485810e24c24c/ HTTP/1.1" 200 4683
+INFO 2025-05-04 14:30:54,961 basehttp "GET /gallery/ HTTP/1.1" 200 16214
+INFO 2025-05-04 14:30:55,348 basehttp - Broken pipe from ('127.0.0.1', 50814)
+INFO 2025-05-04 14:30:55,354 basehttp "GET /about_us/ HTTP/1.1" 200 12233
+INFO 2025-05-04 14:30:56,501 basehttp "GET / HTTP/1.1" 200 21823
+INFO 2025-05-04 14:30:56,532 basehttp - Broken pipe from ('127.0.0.1', 50838)
+INFO 2025-05-04 14:30:58,783 basehttp "GET / HTTP/1.1" 200 21856
+WARNING 2025-05-04 14:30:58,811 log Not Found: /favicon.ico
+INFO 2025-05-04 14:30:58,811 basehttp - Broken pipe from ('127.0.0.1', 50844)
+INFO 2025-05-04 14:31:00,154 basehttp "GET / HTTP/1.1" 200 21838
+INFO 2025-05-04 14:31:00,453 basehttp "GET / HTTP/1.1" 200 21998
+INFO 2025-05-04 15:55:01,064 autoreload Watching for file changes with StatReloader
+INFO 2025-05-04 15:55:04,624 basehttp "GET / HTTP/1.1" 200 21999
+INFO 2025-05-04 15:55:04,887 basehttp - Broken pipe from ('127.0.0.1', 56361)
+INFO 2025-05-04 15:55:04,896 basehttp - Broken pipe from ('127.0.0.1', 56359)
+INFO 2025-05-04 15:55:04,906 basehttp - Broken pipe from ('127.0.0.1', 56358)
+INFO 2025-05-04 15:55:04,911 basehttp - Broken pipe from ('127.0.0.1', 56362)
+INFO 2025-05-04 15:55:04,918 basehttp - Broken pipe from ('127.0.0.1', 56360)
+INFO 2025-05-04 15:55:04,919 basehttp - Broken pipe from ('127.0.0.1', 56356)
+INFO 2025-05-04 15:55:07,131 basehttp "GET / HTTP/1.1" 200 21857
+WARNING 2025-05-04 15:55:07,177 log Not Found: /favicon.ico
+INFO 2025-05-04 15:55:07,177 basehttp - Broken pipe from ('127.0.0.1', 56370)
+INFO 2025-05-04 15:55:07,849 basehttp "GET /about_us/ HTTP/1.1" 200 12233
+INFO 2025-05-04 15:55:08,562 basehttp "GET /gallery/ HTTP/1.1" 200 16214
+INFO 2025-05-04 15:55:08,949 basehttp "GET /static/videos/transformation3.mp4 HTTP/1.1" 200 44942850
+INFO 2025-05-04 15:55:09,718 basehttp - Broken pipe from ('127.0.0.1', 56371)
+INFO 2025-05-04 15:55:09,764 basehttp "GET /schedule_appointment/ HTTP/1.1" 200 19161
+INFO 2025-05-04 15:55:09,802 basehttp "GET /captcha/image/dd72b7a83c6e95ffe7056dbfe87e93e07d78a46d/ HTTP/1.1" 200 4643
+INFO 2025-05-04 15:55:11,230 basehttp "GET /schedule_appointment/ HTTP/1.1" 200 19161
+INFO 2025-05-04 15:55:11,257 basehttp "GET /captcha/image/acc1c98721142908d2752a4a37545cf950817c81/ HTTP/1.1" 200 4187
+INFO 2025-05-04 15:55:12,936 basehttp "GET /contact_us/ HTTP/1.1" 200 12041
+INFO 2025-05-04 15:55:12,962 basehttp "GET /captcha/image/3944e508f4be334bb62f77a9bfa6ba4dfb273311/ HTTP/1.1" 200 3696
+INFO 2025-05-04 15:55:14,632 basehttp "GET / HTTP/1.1" 200 21999
+INFO 2025-05-04 15:55:20,185 basehttp "GET /schedule_appointment/ HTTP/1.1" 200 19161
+INFO 2025-05-04 15:55:20,214 basehttp "GET /captcha/image/6186fb379b41e265d09b2c54c01e34b401ce35ee/ HTTP/1.1" 200 4064
+INFO 2025-05-04 15:55:21,635 basehttp "GET /gallery/ HTTP/1.1" 200 16214
+WARNING 2025-05-04 15:55:21,682 log Not Found: /favicon.ico
+INFO 2025-05-04 15:55:21,682 basehttp - Broken pipe from ('127.0.0.1', 56372)
