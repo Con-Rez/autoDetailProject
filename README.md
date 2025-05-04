@@ -24,7 +24,7 @@ This project's goal was to provide an appealing, functional, and user-friendly w
 
 - [@Con-Rez](https://github.com/Con-Rez)
 - [@RebeccaFitzpatrick](https://github.com/RebeccaFitzpatrick) Rebecca Fitzpatrick. contact: rebeccafitzpatrick@csus.edu.
-- [@Rodrigo-Guzman3](https://github.com/Rodrigo-Guzman3)
+- [@Rodrigo-Guzman3](https://github.com/Rodrigo-Guzman3) Rodrigo Guzman. Contact: Rodrigoguzman@csus.edu
 - [@fanbrandon](https://github.com/fanbrandon)
 - [@Serefima](https://github.com/Serefima)
 - [@katerinacowan](https://github.com/katerinacowan)
