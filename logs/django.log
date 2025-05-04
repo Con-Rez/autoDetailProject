@@ -121,3 +121,5 @@ INFO 2025-05-04 15:55:20,214 basehttp "GET /captcha/image/6186fb379b41e265d09b2c
 INFO 2025-05-04 15:55:21,635 basehttp "GET /gallery/ HTTP/1.1" 200 16214
 WARNING 2025-05-04 15:55:21,682 log Not Found: /favicon.ico
 INFO 2025-05-04 15:55:21,682 basehttp - Broken pipe from ('127.0.0.1', 56372)
+INFO 2025-05-04 16:02:12,531 autoreload C:\Users\Rodrigo Guzman\Desktop\Classes\CSCI 190\AKAutoDetail\autoDetailProject\autoDetailProject\settings.py changed, reloading.
+INFO 2025-05-04 16:04:11,293 autoreload Watching for file changes with StatReloader

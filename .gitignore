@@ -10,3 +10,4 @@ keys.py
 
 # Heroku environment variables
 .env
+/logs
