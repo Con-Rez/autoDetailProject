@@ -1,9 +1,9 @@
 {% extends 'navbar.html' %}
 {% load bootstrap5 %} <!-- Load the bootstrap5 template tag library -->
-{% bootstrap_css %} <!-- Load the Bootstrap CSS img folder -->
-{% bootstrap_javascript %} <!-- Load the Bootstrap JavaScript img folder -->
-{% bootstrap_messages %} <!-- Optional: Display django.contrib.messages as Bootstrap alerts -->
-{% load static %} <!-- Load files stored in static folder in app folder -->
+{% bootstrap_css %} <!-- Load the Bootstrap CSS -->
+{% bootstrap_javascript %} <!-- Load the Bootstrap JavaScript -->
+{% bootstrap_messages %} <!-- Display django.contrib.messages as Bootstrap alerts -->
+{% load static %} <!-- Load static files -->
 
 {% block content %}
 <style>
@@ -21,11 +21,25 @@
     border: none;
   }
 
+  /* Responsive wrapper for iframe */
+  .embed-responsive-container {
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 3 / 4;
+    margin: auto;
+  }
+
+  .embed-responsive-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
   /* Captcha Image Size and Scaling */
   .captcha {
-    width: 150px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
-    image-rendering: pixelated; /* Scale using nearest neighbor */
+    width: 150px;
+    height: auto;
+    image-rendering: pixelated;
   }
 </style>
 
@@ -40,22 +54,26 @@
       <p style="color: red; margin-top: 10px;">Please complete the captcha to proceed. There's four letters, and they're all capitals.</p>
     {% else %}
       <p style="color: green; margin-top: 10px;">Captcha validation succeeded. Please proceed to fill out the form.</p>
-      <iframe class="no-dark-mode" src="https://docs.google.com/forms/d/e/1FAIpQLSdrQ_HO78qT6GZTmMtY6X52iOegtiOO1dFKA_9S4T8J1ZrKgQ/viewform?embedded=true"
-              width="640" height="850" frameborder="0" marginheight="0" marginwidth="0">
-        Loading…
-      </iframe>
+      <div class="embed-responsive-container">
+        <iframe class="no-dark-mode"
+                src="https://docs.google.com/forms/d/e/1FAIpQLSdrQ_HO78qT6GZTmMtY6X52iOegtiOO1dFKA_9S4T8J1ZrKgQ/viewform?embedded=true"
+                allowfullscreen
+                loading="lazy">
+        </iframe>
+      </div>
     {% endif %}
   </div>
 {% else %}
   <div class="captcha-container no-dark-mode" style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin: 20px 0;">
-    <iframe class="no-dark-mode" src="https://docs.google.com/forms/d/e/1FAIpQLSdrQ_HO78qT6GZTmMtY6X52iOegtiOO1dFKA_9S4T8J1ZrKgQ/viewform?embedded=true"
-            width="640" height="850" frameborder="0" marginheight="0" marginwidth="0">
-      Loading…
-    </iframe>
+    <div class="embed-responsive-container">
+      <iframe class="no-dark-mode"
+              src="https://docs.google.com/forms/d/e/1FAIpQLSdrQ_HO78qT6GZTmMtY6X52iOegtiOO1dFKA_9S4T8J1ZrKgQ/viewform?embedded=true"
+              allowfullscreen
+              loading="lazy">
+      </iframe>
+    </div>
   </div>
 {% endif %}
-
-
 
 {% include 'footer.html' %}
 {% endblock %}

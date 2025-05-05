@@ -121,3 +121,180 @@ INFO 2025-05-04 15:55:20,214 basehttp "GET /captcha/image/6186fb379b41e265d09b2c
 INFO 2025-05-04 15:55:21,635 basehttp "GET /gallery/ HTTP/1.1" 200 16214
 WARNING 2025-05-04 15:55:21,682 log Not Found: /favicon.ico
 INFO 2025-05-04 15:55:21,682 basehttp - Broken pipe from ('127.0.0.1', 56372)
+INFO 2025-05-04 16:02:12,531 autoreload C:\Users\Rodrigo Guzman\Desktop\Classes\CSCI 190\AKAutoDetail\autoDetailProject\autoDetailProject\settings.py changed, reloading.
+INFO 2025-05-04 16:04:11,293 autoreload Watching for file changes with StatReloader
+INFO 2025-05-04 18:13:55,574 autoreload Watching for file changes with StatReloader
+INFO 2025-05-04 18:13:57,502 basehttp "GET /gallery/ HTTP/1.1" 200 15742
+INFO 2025-05-04 18:13:57,558 basehttp "GET /static/css/styles.css HTTP/1.1" 200 17945
+INFO 2025-05-04 18:13:57,795 basehttp "GET /static/videos/transformation1.mp4 HTTP/1.1" 200 30866586
+WARNING 2025-05-04 18:13:58,220 log Not Found: /favicon.ico
+WARNING 2025-05-04 18:13:58,220 basehttp "GET /favicon.ico HTTP/1.1" 404 3773
+INFO 2025-05-04 18:14:05,813 basehttp - Broken pipe from ('127.0.0.1', 65151)
+INFO 2025-05-04 18:14:05,814 basehttp - Broken pipe from ('127.0.0.1', 65150)
+INFO 2025-05-04 18:14:05,820 basehttp "GET / HTTP/1.1" 200 21839
+WARNING 2025-05-04 18:14:06,258 log Not Found: /favicon.ico
+WARNING 2025-05-04 18:14:06,258 basehttp "GET /favicon.ico HTTP/1.1" 404 3773
+INFO 2025-05-04 18:14:08,263 basehttp "GET / HTTP/1.1" 200 21999
+INFO 2025-05-04 18:14:08,274 basehttp "GET /static/css/styles.css HTTP/1.1" 200 17945
+WARNING 2025-05-04 18:14:08,685 log Not Found: /favicon.ico
+WARNING 2025-05-04 18:14:08,685 basehttp "GET /favicon.ico HTTP/1.1" 404 3773
+INFO 2025-05-04 18:14:10,489 basehttp "GET /gallery/ HTTP/1.1" 200 15742
+INFO 2025-05-04 18:14:10,521 basehttp "GET /static/css/welcomemsg.css HTTP/1.1" 200 1360
+INFO 2025-05-04 18:14:10,521 basehttp "GET /static/fonts/roboto/roboto.css HTTP/1.1" 200 576
+INFO 2025-05-04 18:14:10,521 basehttp "GET /static/css/carousel.css HTTP/1.1" 200 4505
+INFO 2025-05-04 18:14:10,521 basehttp "GET /static/css/discountModal.css HTTP/1.1" 200 1379
+INFO 2025-05-04 18:14:10,526 basehttp "GET /static/css/mobilefriendly.css HTTP/1.1" 200 3877
+INFO 2025-05-04 18:14:10,528 basehttp "GET /static/css/costCalculator.css HTTP/1.1" 200 1608
+INFO 2025-05-04 18:14:10,528 basehttp "GET /static/css/styles.css HTTP/1.1" 200 17945
+INFO 2025-05-04 18:14:10,538 basehttp "GET /static/js/imgTransition.js HTTP/1.1" 200 1575
+INFO 2025-05-04 18:14:10,539 basehttp "GET /static/js/imgSliders.js HTTP/1.1" 200 1678
+INFO 2025-05-04 18:14:10,550 basehttp "GET /static/imgs/logo.jpg HTTP/1.1" 200 6945
+INFO 2025-05-04 18:14:10,560 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 200 140942
+INFO 2025-05-04 18:14:10,749 basehttp "GET /static/imgs/galleryLeftBefore.jpg HTTP/1.1" 200 1757991
+INFO 2025-05-04 18:14:10,761 basehttp "GET /static/imgs/galleryLeftAfter.jpg HTTP/1.1" 200 2166369
+INFO 2025-05-04 18:14:11,052 basehttp "GET /static/imgs/galleryMiddleAfter.jpg HTTP/1.1" 200 3552183
+INFO 2025-05-04 18:14:11,189 basehttp "GET /static/imgs/galleryMiddleBefore.jpg HTTP/1.1" 200 2862507
+INFO 2025-05-04 18:14:11,258 basehttp "GET /static/imgs/galleryRightAfter.jpg HTTP/1.1" 200 2284768
+INFO 2025-05-04 18:14:11,563 basehttp "GET /static/imgs/galleryRightBefore.jpg HTTP/1.1" 200 3506624
+INFO 2025-05-04 18:14:11,782 basehttp "GET /static/imgs/home-tran-ford.png HTTP/1.1" 200 861901
+INFO 2025-05-04 18:14:11,996 basehttp "GET /static/imgs/home-tran-bmw.png HTTP/1.1" 200 2077428
+INFO 2025-05-04 18:14:12,128 basehttp "GET /static/imgs/home-tran-gmc.png HTTP/1.1" 200 2777990
+INFO 2025-05-04 18:14:13,049 basehttp "GET /static/imgs/home-tran-porsche.png HTTP/1.1" 200 2516750
+INFO 2025-05-04 18:14:14,543 basehttp "GET /static/videos/transformation1.mp4 HTTP/1.1" 200 30866586
+INFO 2025-05-04 18:14:16,321 basehttp "GET /static/videos/transformation2.mp4 HTTP/1.1" 200 55871891
+INFO 2025-05-04 18:14:17,114 basehttp "GET /static/videos/transformation3.mp4 HTTP/1.1" 200 44942850
+INFO 2025-05-04 18:14:37,632 basehttp - Broken pipe from ('10.0.0.172', 64581)
+INFO 2025-05-04 18:14:37,632 basehttp - Broken pipe from ('10.0.0.172', 64583)
+INFO 2025-05-04 18:14:37,632 basehttp - Broken pipe from ('10.0.0.172', 64586)
+INFO 2025-05-04 18:14:37,632 basehttp - Broken pipe from ('10.0.0.172', 64585)
+INFO 2025-05-04 18:14:37,632 basehttp - Broken pipe from ('10.0.0.172', 64582)
+INFO 2025-05-04 18:14:37,633 basehttp - Broken pipe from ('10.0.0.172', 64584)
+INFO 2025-05-04 18:18:12,895 basehttp "GET /gallery/ HTTP/1.1" 200 15742
+INFO 2025-05-04 18:18:12,917 basehttp "GET /static/css/styles.css HTTP/1.1" 200 17945
+INFO 2025-05-04 18:18:12,943 basehttp "GET /static/imgs/galleryLeftBefore.jpg HTTP/1.1" 200 1757991
+INFO 2025-05-04 18:18:12,947 basehttp "GET /static/imgs/galleryLeftAfter.jpg HTTP/1.1" 200 2166369
+INFO 2025-05-04 18:18:12,964 basehttp "GET /static/imgs/galleryRightAfter.jpg HTTP/1.1" 200 2284768
+INFO 2025-05-04 18:18:12,972 basehttp "GET /static/imgs/galleryMiddleBefore.jpg HTTP/1.1" 200 2862507
+INFO 2025-05-04 18:18:12,983 basehttp "GET /static/imgs/galleryMiddleAfter.jpg HTTP/1.1" 200 3552183
+INFO 2025-05-04 18:18:12,985 basehttp "GET /static/imgs/galleryRightBefore.jpg HTTP/1.1" 200 3506624
+INFO 2025-05-04 18:18:13,214 basehttp "GET /static/videos/transformation1.mp4 HTTP/1.1" 200 30866586
+WARNING 2025-05-04 18:18:13,421 log Not Found: /favicon.ico
+WARNING 2025-05-04 18:18:13,421 basehttp "GET /favicon.ico HTTP/1.1" 404 3773
+INFO 2025-05-04 18:18:17,664 basehttp - Broken pipe from ('127.0.0.1', 65434)
+INFO 2025-05-04 18:18:17,665 basehttp - Broken pipe from ('127.0.0.1', 65432)
+INFO 2025-05-04 18:18:17,669 basehttp "GET /about_us/ HTTP/1.1" 200 12233
+WARNING 2025-05-04 18:18:17,882 log Not Found: /favicon.ico
+WARNING 2025-05-04 18:18:17,882 basehttp "GET /favicon.ico HTTP/1.1" 404 3773
+INFO 2025-05-04 18:18:32,220 basehttp "GET /gallery/ HTTP/1.1" 200 15742
+INFO 2025-05-04 18:18:32,250 basehttp "GET /static/fonts/roboto/roboto.css HTTP/1.1" 200 576
+INFO 2025-05-04 18:18:32,276 basehttp "GET /static/css/mobilefriendly.css HTTP/1.1" 200 3877
+INFO 2025-05-04 18:18:32,276 basehttp "GET /static/css/discountModal.css HTTP/1.1" 200 1379
+INFO 2025-05-04 18:18:32,278 basehttp "GET /static/css/carousel.css HTTP/1.1" 200 4505
+INFO 2025-05-04 18:18:32,278 basehttp "GET /static/css/costCalculator.css HTTP/1.1" 200 1608
+INFO 2025-05-04 18:18:32,278 basehttp "GET /static/css/welcomemsg.css HTTP/1.1" 200 1360
+INFO 2025-05-04 18:18:32,278 basehttp "GET /static/css/styles.css HTTP/1.1" 200 17945
+INFO 2025-05-04 18:18:32,285 basehttp "GET /static/js/imgSliders.js HTTP/1.1" 200 1678
+INFO 2025-05-04 18:18:32,300 basehttp "GET /static/js/imgTransition.js HTTP/1.1" 200 1575
+INFO 2025-05-04 18:18:32,309 basehttp "GET /static/imgs/logo.jpg HTTP/1.1" 200 6945
+INFO 2025-05-04 18:18:32,328 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 200 140942
+INFO 2025-05-04 18:18:32,473 basehttp "GET /static/imgs/galleryLeftBefore.jpg HTTP/1.1" 200 1757991
+INFO 2025-05-04 18:18:32,527 basehttp "GET /static/imgs/galleryLeftAfter.jpg HTTP/1.1" 200 2166369
+INFO 2025-05-04 18:18:32,756 basehttp "GET /static/imgs/galleryMiddleBefore.jpg HTTP/1.1" 200 2862507
+INFO 2025-05-04 18:18:32,873 basehttp "GET /static/imgs/galleryMiddleAfter.jpg HTTP/1.1" 200 3552183
+INFO 2025-05-04 18:18:33,066 basehttp "GET /static/imgs/galleryRightAfter.jpg HTTP/1.1" 200 2284768
+INFO 2025-05-04 18:18:33,086 basehttp "GET /static/imgs/galleryRightBefore.jpg HTTP/1.1" 200 3506624
+INFO 2025-05-04 18:18:38,846 basehttp "GET /static/imgs/home-tran-ford.png HTTP/1.1" 200 861901
+INFO 2025-05-04 18:18:38,940 basehttp "GET /static/imgs/home-tran-bmw.png HTTP/1.1" 200 2077428
+INFO 2025-05-04 18:18:39,008 basehttp "GET /static/imgs/home-tran-gmc.png HTTP/1.1" 200 2777990
+INFO 2025-05-04 18:18:39,724 basehttp "GET /static/imgs/home-tran-porsche.png HTTP/1.1" 200 2516750
+INFO 2025-05-04 18:18:42,549 basehttp "GET /static/videos/transformation3.mp4 HTTP/1.1" 200 44942850
+INFO 2025-05-04 18:18:45,507 basehttp "GET /static/videos/transformation2.mp4 HTTP/1.1" 200 55871891
+INFO 2025-05-04 18:18:45,930 basehttp "GET /static/videos/transformation1.mp4 HTTP/1.1" 200 30866586
+INFO 2025-05-04 18:18:56,077 basehttp "GET /static/fonts/roboto/Roboto-VariableFont_wdth,wght.ttf HTTP/1.1" 200 468308
+INFO 2025-05-04 18:18:56,914 basehttp "GET /about_us/ HTTP/1.1" 200 12233
+INFO 2025-05-04 18:19:01,415 basehttp "GET /schedule_appointment/ HTTP/1.1" 200 19161
+INFO 2025-05-04 18:19:01,461 basehttp "GET /static/js/costCalculator.js HTTP/1.1" 200 3134
+INFO 2025-05-04 18:19:01,476 basehttp "GET /captcha/image/7887d1b343b0586c6cf035942eb064b1877659fd/ HTTP/1.1" 200 4294
+INFO 2025-05-04 18:19:01,519 basehttp "GET /static/js/discountModal.js HTTP/1.1" 200 386
+INFO 2025-05-04 18:19:08,218 basehttp "GET /contact_us/ HTTP/1.1" 200 12041
+INFO 2025-05-04 18:19:08,266 basehttp "GET /captcha/image/50f9a55241b522a5db4126e9d1930a696c28a189/ HTTP/1.1" 200 3699
+INFO 2025-05-04 18:19:14,455 basehttp "POST /contact_us/ HTTP/1.1" 200 11664
+INFO 2025-05-04 18:19:14,483 basehttp "GET /static/css/styles.css HTTP/1.1" 304 0
+INFO 2025-05-04 18:21:43,749 autoreload Watching for file changes with StatReloader
+INFO 2025-05-04 18:21:46,698 basehttp "GET /contact_us/ HTTP/1.1" 200 12197
+INFO 2025-05-04 18:21:46,790 basehttp "GET /static/fonts/roboto/roboto.css HTTP/1.1" 200 576
+INFO 2025-05-04 18:21:46,805 basehttp "GET /static/css/mobilefriendly.css HTTP/1.1" 200 3877
+INFO 2025-05-04 18:21:46,839 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 200 140942
+INFO 2025-05-04 18:21:46,890 basehttp "GET /static/css/discountModal.css HTTP/1.1" 200 1379
+INFO 2025-05-04 18:21:46,898 basehttp "GET /static/css/costCalculator.css HTTP/1.1" 200 1608
+INFO 2025-05-04 18:21:46,904 basehttp "GET /static/css/welcomemsg.css HTTP/1.1" 200 1360
+INFO 2025-05-04 18:21:46,917 basehttp "GET /static/css/carousel.css HTTP/1.1" 200 4505
+INFO 2025-05-04 18:21:46,918 basehttp "GET /static/css/styles.css HTTP/1.1" 200 17945
+INFO 2025-05-04 18:21:46,933 basehttp "GET /static/imgs/logo.jpg HTTP/1.1" 200 6945
+INFO 2025-05-04 18:21:46,952 basehttp "GET /captcha/image/4f12efe8ee00d83ba0ddc9860b6504f9731fc5ae/ HTTP/1.1" 200 4477
+INFO 2025-05-04 18:21:51,242 basehttp "POST /contact_us/ HTTP/1.1" 200 11856
+INFO 2025-05-04 18:22:02,586 basehttp "GET /about_us/ HTTP/1.1" 200 12233
+INFO 2025-05-04 18:22:02,604 basehttp "GET /static/css/styles.css HTTP/1.1" 200 17945
+INFO 2025-05-04 18:22:02,605 basehttp "GET /static/css/mobilefriendly.css HTTP/1.1" 200 3877
+WARNING 2025-05-04 18:22:02,704 log Not Found: /favicon.ico
+WARNING 2025-05-04 18:22:02,704 basehttp "GET /favicon.ico HTTP/1.1" 404 3773
+INFO 2025-05-04 18:22:06,394 basehttp "GET /contact_us/ HTTP/1.1" 200 12197
+INFO 2025-05-04 18:22:06,412 basehttp "GET /captcha/image/74006074d7310409dcc8083490d53742f01d5d96/ HTTP/1.1" 200 4044
+INFO 2025-05-04 18:22:11,106 basehttp "POST /contact_us/ HTTP/1.1" 200 11856
+INFO 2025-05-04 18:22:21,134 basehttp "GET /schedule_appointment/ HTTP/1.1" 200 19161
+INFO 2025-05-04 18:22:21,152 basehttp "GET /captcha/image/22150b062a4b82abee3b3d68083c289659a218c7/ HTTP/1.1" 200 4220
+WARNING 2025-05-04 18:22:21,161 log Not Found: /favicon.ico
+WARNING 2025-05-04 18:22:21,161 basehttp "GET /favicon.ico HTTP/1.1" 404 3773
+INFO 2025-05-04 18:22:26,769 basehttp "GET /static/fonts/roboto/Roboto-VariableFont_wdth,wght.ttf HTTP/1.1" 200 468308
+INFO 2025-05-04 18:22:28,253 basehttp "GET /schedule_appointment/ HTTP/1.1" 200 19161
+INFO 2025-05-04 18:22:28,293 basehttp "GET /captcha/image/3f1865dc417bcae653ad59da06f44aabbff38b30/ HTTP/1.1" 200 3698
+INFO 2025-05-04 18:22:28,303 basehttp "GET /static/js/discountModal.js HTTP/1.1" 200 386
+INFO 2025-05-04 18:22:28,303 basehttp "GET /static/js/costCalculator.js HTTP/1.1" 200 3134
+INFO 2025-05-04 18:22:35,746 basehttp "POST /schedule_appointment/ HTTP/1.1" 200 19069
+INFO 2025-05-04 18:24:08,524 basehttp "GET /contact_us/ HTTP/1.1" 200 12197
+INFO 2025-05-04 18:24:08,542 basehttp "GET /static/css/styles.css HTTP/1.1" 200 17945
+INFO 2025-05-04 18:24:08,547 basehttp "GET /captcha/image/ab46247d5364c211e0dc4b762ac48c9f6112e7af/ HTTP/1.1" 200 4063
+WARNING 2025-05-04 18:24:08,558 log Not Found: /favicon.ico
+WARNING 2025-05-04 18:24:08,559 basehttp "GET /favicon.ico HTTP/1.1" 404 3773
+INFO 2025-05-04 18:24:09,009 basehttp "GET /schedule_appointment/ HTTP/1.1" 200 19161
+INFO 2025-05-04 18:24:09,035 basehttp "GET /captcha/image/e9759ff9d2d0e5b7f7d167d51955229e0eedd3e1/ HTTP/1.1" 200 4049
+INFO 2025-05-04 18:24:09,573 basehttp "GET /gallery/ HTTP/1.1" 200 15742
+INFO 2025-05-04 18:24:09,616 basehttp "GET /static/imgs/galleryLeftBefore.jpg HTTP/1.1" 200 1757991
+INFO 2025-05-04 18:24:09,620 basehttp "GET /static/imgs/galleryLeftAfter.jpg HTTP/1.1" 200 2166369
+INFO 2025-05-04 18:24:09,635 basehttp "GET /static/imgs/galleryMiddleBefore.jpg HTTP/1.1" 200 2862507
+INFO 2025-05-04 18:24:09,640 basehttp "GET /static/imgs/galleryMiddleAfter.jpg HTTP/1.1" 200 3552183
+INFO 2025-05-04 18:24:09,656 basehttp "GET /static/imgs/galleryRightAfter.jpg HTTP/1.1" 200 2284768
+INFO 2025-05-04 18:24:09,668 basehttp "GET /static/imgs/galleryRightBefore.jpg HTTP/1.1" 200 3506624
+INFO 2025-05-04 18:24:09,922 basehttp "GET /static/videos/transformation1.mp4 HTTP/1.1" 200 30866586
+INFO 2025-05-04 18:24:10,009 basehttp - Broken pipe from ('127.0.0.1', 49459)
+INFO 2025-05-04 18:24:10,011 basehttp - Broken pipe from ('127.0.0.1', 49460)
+INFO 2025-05-04 18:24:10,014 basehttp "GET /about_us/ HTTP/1.1" 200 12233
+INFO 2025-05-04 18:24:11,012 basehttp "GET / HTTP/1.1" 200 21999
+INFO 2025-05-04 18:24:11,033 basehttp "GET /static/imgs/CarSeat.png HTTP/1.1" 200 1840
+INFO 2025-05-04 18:24:11,033 basehttp "GET /static/imgs/CarWash.png HTTP/1.1" 200 2516
+INFO 2025-05-04 18:24:11,033 basehttp "GET /static/imgs/Engine.png HTTP/1.1" 200 1002
+INFO 2025-05-04 18:24:11,034 basehttp "GET /static/imgs/Headlight.png HTTP/1.1" 200 6272
+INFO 2025-05-04 18:24:11,037 basehttp "GET /static/imgs/banner.png HTTP/1.1" 200 1047325
+INFO 2025-05-04 18:24:11,062 basehttp "GET /static/imgs/CenterImage.jpg HTTP/1.1" 200 4193612
+WARNING 2025-05-04 18:24:11,134 log Not Found: /favicon.ico
+WARNING 2025-05-04 18:24:11,134 basehttp "GET /favicon.ico HTTP/1.1" 404 3773
+INFO 2025-05-04 18:24:11,945 basehttp "GET /schedule_appointment/ HTTP/1.1" 200 19161
+INFO 2025-05-04 18:24:11,964 basehttp "GET /captcha/image/2b36664c4ea104ffc0dcb66f840653c2bd7e82f7/ HTTP/1.1" 200 4453
+INFO 2025-05-04 18:25:07,406 basehttp "GET /static/css/styles.css HTTP/1.1" 200 17945
+INFO 2025-05-04 18:25:07,408 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 200 140942
+INFO 2025-05-04 18:25:07,523 basehttp "GET /static/css/costCalculator.css HTTP/1.1" 200 1608
+INFO 2025-05-04 18:25:07,528 basehttp "GET /schedule_appointment/ HTTP/1.1" 200 19161
+WARNING 2025-05-04 18:25:07,751 basehttp "GET /static/css/bootstrap.min.css.map HTTP/1.1" 404 1935
+INFO 2025-05-04 18:32:14,596 basehttp "GET /schedule_appointment/ HTTP/1.1" 200 19161
+INFO 2025-05-04 18:32:14,626 basehttp "GET /static/fonts/roboto/roboto.css HTTP/1.1" 200 576
+INFO 2025-05-04 18:32:14,626 basehttp "GET /static/css/welcomemsg.css HTTP/1.1" 200 1360
+INFO 2025-05-04 18:32:14,634 basehttp "GET /static/css/costCalculator.css HTTP/1.1" 200 1608
+INFO 2025-05-04 18:32:14,636 basehttp "GET /static/css/carousel.css HTTP/1.1" 200 4505
+INFO 2025-05-04 18:32:14,636 basehttp "GET /static/css/discountModal.css HTTP/1.1" 200 1379
+INFO 2025-05-04 18:32:14,636 basehttp "GET /static/css/styles.css HTTP/1.1" 200 17945
+INFO 2025-05-04 18:32:14,646 basehttp "GET /static/css/mobilefriendly.css HTTP/1.1" 200 3877
+INFO 2025-05-04 18:32:14,648 basehttp "GET /static/js/discountModal.js HTTP/1.1" 200 386
+INFO 2025-05-04 18:32:14,648 basehttp "GET /static/js/costCalculator.js HTTP/1.1" 200 3134
+INFO 2025-05-04 18:32:14,679 basehttp "GET /static/imgs/logo.jpg HTTP/1.1" 200 6945
+INFO 2025-05-04 18:32:14,692 basehttp "GET /captcha/image/03039c9e7fb682b2908774dc365924b324642487/ HTTP/1.1" 200 3913
+INFO 2025-05-04 18:32:14,697 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 200 140942

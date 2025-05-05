@@ -351,13 +351,21 @@ body {
 }
 
 .slider-container {
-  display: flex; /* Arrange sliders in a horizontal row */
-  justify-content: center; /* Center the group of sliders horizontally */
-  align-items: center; /* Center sliders vertically */
-  gap: 5rem; /* Add spacing between sliders */
-  width: 100%;
-  padding: 1rem 0;
-}
+    display: flex;
+    flex-wrap: nowrap; /* prevent wrapping on desktop */
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    width: 100%;
+    padding: 1rem 0;
+    box-sizing: border-box;
+  }
+  
+  @media (max-width: 1024px) {
+    .slider-container {
+      flex-wrap: wrap; /* allow wrapping only on smaller screens */
+    }
+  }
 
 .image-comparison-slider {
   position: relative;
@@ -459,6 +467,12 @@ position: absolute;
   justify-content: space-evenly;
   /* background-color: rgba(0,0,0,0.5); */
 }
+
+.gallery-title {
+    font-size: clamp(2.4rem, 5vw, 5rem); /* Automatically scales between mobile and desktop */
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
 
 #videoCarousel {
     max-width: 800px;
@@ -624,3 +638,18 @@ h1, h2, h3, h4, h5, h6, p, .lead, .text-center {
     100%;
 }
 }
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
