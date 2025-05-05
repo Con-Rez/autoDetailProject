@@ -123,3 +123,49 @@ WARNING 2025-05-04 15:55:21,682 log Not Found: /favicon.ico
 INFO 2025-05-04 15:55:21,682 basehttp - Broken pipe from ('127.0.0.1', 56372)
 INFO 2025-05-04 16:02:12,531 autoreload C:\Users\Rodrigo Guzman\Desktop\Classes\CSCI 190\AKAutoDetail\autoDetailProject\autoDetailProject\settings.py changed, reloading.
 INFO 2025-05-04 16:04:11,293 autoreload Watching for file changes with StatReloader
+INFO 2025-05-04 18:13:55,574 autoreload Watching for file changes with StatReloader
+INFO 2025-05-04 18:13:57,502 basehttp "GET /gallery/ HTTP/1.1" 200 15742
+INFO 2025-05-04 18:13:57,558 basehttp "GET /static/css/styles.css HTTP/1.1" 200 17945
+INFO 2025-05-04 18:13:57,795 basehttp "GET /static/videos/transformation1.mp4 HTTP/1.1" 200 30866586
+WARNING 2025-05-04 18:13:58,220 log Not Found: /favicon.ico
+WARNING 2025-05-04 18:13:58,220 basehttp "GET /favicon.ico HTTP/1.1" 404 3773
+INFO 2025-05-04 18:14:05,813 basehttp - Broken pipe from ('127.0.0.1', 65151)
+INFO 2025-05-04 18:14:05,814 basehttp - Broken pipe from ('127.0.0.1', 65150)
+INFO 2025-05-04 18:14:05,820 basehttp "GET / HTTP/1.1" 200 21839
+WARNING 2025-05-04 18:14:06,258 log Not Found: /favicon.ico
+WARNING 2025-05-04 18:14:06,258 basehttp "GET /favicon.ico HTTP/1.1" 404 3773
+INFO 2025-05-04 18:14:08,263 basehttp "GET / HTTP/1.1" 200 21999
+INFO 2025-05-04 18:14:08,274 basehttp "GET /static/css/styles.css HTTP/1.1" 200 17945
+WARNING 2025-05-04 18:14:08,685 log Not Found: /favicon.ico
+WARNING 2025-05-04 18:14:08,685 basehttp "GET /favicon.ico HTTP/1.1" 404 3773
+INFO 2025-05-04 18:14:10,489 basehttp "GET /gallery/ HTTP/1.1" 200 15742
+INFO 2025-05-04 18:14:10,521 basehttp "GET /static/css/welcomemsg.css HTTP/1.1" 200 1360
+INFO 2025-05-04 18:14:10,521 basehttp "GET /static/fonts/roboto/roboto.css HTTP/1.1" 200 576
+INFO 2025-05-04 18:14:10,521 basehttp "GET /static/css/carousel.css HTTP/1.1" 200 4505
+INFO 2025-05-04 18:14:10,521 basehttp "GET /static/css/discountModal.css HTTP/1.1" 200 1379
+INFO 2025-05-04 18:14:10,526 basehttp "GET /static/css/mobilefriendly.css HTTP/1.1" 200 3877
+INFO 2025-05-04 18:14:10,528 basehttp "GET /static/css/costCalculator.css HTTP/1.1" 200 1608
+INFO 2025-05-04 18:14:10,528 basehttp "GET /static/css/styles.css HTTP/1.1" 200 17945
+INFO 2025-05-04 18:14:10,538 basehttp "GET /static/js/imgTransition.js HTTP/1.1" 200 1575
+INFO 2025-05-04 18:14:10,539 basehttp "GET /static/js/imgSliders.js HTTP/1.1" 200 1678
+INFO 2025-05-04 18:14:10,550 basehttp "GET /static/imgs/logo.jpg HTTP/1.1" 200 6945
+INFO 2025-05-04 18:14:10,560 basehttp "GET /static/css/bootstrap.min.css HTTP/1.1" 200 140942
+INFO 2025-05-04 18:14:10,749 basehttp "GET /static/imgs/galleryLeftBefore.jpg HTTP/1.1" 200 1757991
+INFO 2025-05-04 18:14:10,761 basehttp "GET /static/imgs/galleryLeftAfter.jpg HTTP/1.1" 200 2166369
+INFO 2025-05-04 18:14:11,052 basehttp "GET /static/imgs/galleryMiddleAfter.jpg HTTP/1.1" 200 3552183
+INFO 2025-05-04 18:14:11,189 basehttp "GET /static/imgs/galleryMiddleBefore.jpg HTTP/1.1" 200 2862507
+INFO 2025-05-04 18:14:11,258 basehttp "GET /static/imgs/galleryRightAfter.jpg HTTP/1.1" 200 2284768
+INFO 2025-05-04 18:14:11,563 basehttp "GET /static/imgs/galleryRightBefore.jpg HTTP/1.1" 200 3506624
+INFO 2025-05-04 18:14:11,782 basehttp "GET /static/imgs/home-tran-ford.png HTTP/1.1" 200 861901
+INFO 2025-05-04 18:14:11,996 basehttp "GET /static/imgs/home-tran-bmw.png HTTP/1.1" 200 2077428
+INFO 2025-05-04 18:14:12,128 basehttp "GET /static/imgs/home-tran-gmc.png HTTP/1.1" 200 2777990
+INFO 2025-05-04 18:14:13,049 basehttp "GET /static/imgs/home-tran-porsche.png HTTP/1.1" 200 2516750
+INFO 2025-05-04 18:14:14,543 basehttp "GET /static/videos/transformation1.mp4 HTTP/1.1" 200 30866586
+INFO 2025-05-04 18:14:16,321 basehttp "GET /static/videos/transformation2.mp4 HTTP/1.1" 200 55871891
+INFO 2025-05-04 18:14:17,114 basehttp "GET /static/videos/transformation3.mp4 HTTP/1.1" 200 44942850
+INFO 2025-05-04 18:14:37,632 basehttp - Broken pipe from ('10.0.0.172', 64581)
+INFO 2025-05-04 18:14:37,632 basehttp - Broken pipe from ('10.0.0.172', 64583)
+INFO 2025-05-04 18:14:37,632 basehttp - Broken pipe from ('10.0.0.172', 64586)
+INFO 2025-05-04 18:14:37,632 basehttp - Broken pipe from ('10.0.0.172', 64585)
+INFO 2025-05-04 18:14:37,632 basehttp - Broken pipe from ('10.0.0.172', 64582)
+INFO 2025-05-04 18:14:37,633 basehttp - Broken pipe from ('10.0.0.172', 64584)
