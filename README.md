@@ -97,7 +97,7 @@ Additional information and developer resources are available in the [Project Wik
 ## Screenshots
 
 ### Home Page
-![homeScreenshot](https://github.com/Con-Rez/autoDetailProject/blob/main/docs/images/homeScreenshot.png?raw=true)
+![homeScreenshot](https://github.com/Con-Rez/autoDetailProject/blob/main/docs/images/homeScreenshotv2.png?raw=true)
 
 ### About Us
 ![aboutUsScreenshot](https://github.com/Con-Rez/autoDetailProject/blob/main/docs/images/aboutUsScreenshot.png?raw=true)
@@ -109,4 +109,4 @@ Additional information and developer resources are available in the [Project Wik
 ![appointmentsScreenshot](https://github.com/Con-Rez/autoDetailProject/blob/main/docs/images/appointmentsScreenshot.png?raw=true)
 
 ### Contact Us
-![contactUsScreenshot](https://github.com/Con-Rez/autoDetailProject/blob/main/docs/images/contactUsScreenshot.png?raw=true)
+![contactUsScreenshot](https://github.com/user-attachments/assets/5c6c7c44-42e3-49a7-bd30-9f4a0f8e2971)
