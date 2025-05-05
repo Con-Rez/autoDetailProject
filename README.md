@@ -22,15 +22,15 @@ This project's goal was to provide an appealing, functional, and user-friendly w
 
 ## Authors
 
-- [@Con-Rez](https://github.com/Con-Rez)
-- [@RebeccaFitzpatrick](https://github.com/RebeccaFitzpatrick) Rebecca Fitzpatrick. contact: rebeccafitzpatrick@csus.edu.
+- [@Con-Rez](https://github.com/Con-Rez) Connor Puckett. Contact: cpuckett@csus.edu
+- [@RebeccaFitzpatrick](https://github.com/RebeccaFitzpatrick) Rebecca Fitzpatrick. Contact: rebeccafitzpatrick@csus.edu.
 - [@Rodrigo-Guzman3](https://github.com/Rodrigo-Guzman3) Rodrigo Guzman. Contact: Rodrigoguzman@csus.edu
-- [@fanbrandon](https://github.com/fanbrandon)
-- [@Serefima](https://github.com/Serefima)
-- [@katerinacowan](https://github.com/katerinacowan)
-- [@Pencilsharp333](https://github.com/Pencilsharp333)
-- [@un90](https://github.com/un90) Uzma Naz. contact: uzmanaz@csus.edu
-- [@tonymai9](https://github.com/tonymai9)
+- [@fanbrandon](https://github.com/fanbrandon) Brandon Fan. Contact: bfan@csus.edu
+- [@Serefima](https://github.com/Serefima) Odalis Torres. Contact: otorres@csus.edu
+- [@katerinacowan](https://github.com/katerinacowan) Katerina Cowan. Contact: katerinacowan@csus.edu
+- [@Pencilsharp333](https://github.com/Pencilsharp333) Matthew Pabon. Contact: matthewpabon3@csus.edu
+- [@un90](https://github.com/un90) Uzma Naz. Contact: uzmanaz@csus.edu
+- [@tonymai9](https://github.com/tonymai9) Tony Mai. Contact: tonymai@csus.edu
 
 ---
 
