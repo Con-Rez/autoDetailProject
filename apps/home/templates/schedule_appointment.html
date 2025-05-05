@@ -71,6 +71,24 @@
     margin-left: 5px;
   }
 
+    /* Default: show desktop version, hide mobile text */
+  .btn-text-desktop {
+    display: inline;
+  }
+  .btn-text-mobile {
+    display: none;
+  }
+
+  /* On mobile: hide full text, show arrow only */
+  @media (max-width: 576px) {
+    .btn-text-desktop {
+      display: none;
+    }
+    .btn-text-mobile {
+      display: inline;
+    }
+  }
+
   /* Fix button alignment and adjust column width on smaller screens */
   @media (max-width: 768px) {
     .btn.btn-dark {
@@ -185,7 +203,8 @@
                   <td>
                     <div class="text-left">
                       <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ service.id }}" aria-expanded="false" aria-controls="collapse{{ service.id }}" {% if not service.description %}disabled{% endif %}>
-                        &#10597; Click for Description &#10597;
+                        <span class="btn-text-desktop">&#10597; Click for &#10597; Description</span>
+                        <span class="btn-text-mobile">&#10597;</span>
                       </button>
                     </div>
                   </td>
