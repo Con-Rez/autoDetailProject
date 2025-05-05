@@ -1,6 +1,9 @@
 # AK Auto Detail Website
 
+### Website Logo
 ![Logo](https://github.com/Con-Rez/autoDetailProject/blob/main/apps/home/static/imgs/logo.jpg?raw=true)
+### Team Logo
+<img src="https://github.com/Con-Rez/autoDetailProject/blob/main/docs/images/aklogo.PNG?raw=true" width="200" />
 
 ## Project Overview
 
