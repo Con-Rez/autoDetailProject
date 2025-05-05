@@ -6,155 +6,147 @@
 {% load static %}
 
 <head>
-  <!-- Link to your custom CSS files -->
   <link rel="stylesheet" href="{% static '/styles.css' %}">
 </head>
 
 {% block content %}
-<!-- Main container for the gallery -->
-<div class="container gallery-container">
-  <!-- Gallery title -->
+
+<!-- Main container -->
+<div class="container py-5 px-3 text-center">
   <h1 class="gallery-title">before/after</h1>
-  
-  <!-- Container for image comparison sliders -->
-  <div class="container">
-    <div class="slider-container">
-      <!-- Image comparison slider: First example -->
-      <div class="image-comparison-slider">
-        <!-- Static before image -->
-        <img src="{% static before_image1 %}" alt="before">
-        <!-- Wrapper containing the after image -->
-        <div class="img-wrapper">
-          <img src="{% static after_image1 %}" alt="after">
-        </div>
-        <!-- Labels for "Before" and "After" images -->
-        <span class="label label-before">Before</span>
-        <span class="label label-after">After</span>
-        <!-- Draggable handle -->
-        <div class="handle">
-          <div class="handle-line"></div>
-          <div class="handle-circle">
-            <i class="fas fa-chevron-left"></i>
-            <i class="fas fa-chevron-right"></i>
-          </div>
-          <div class="handle-line"></div>
-        </div>
-      </div>
 
-      <!-- Repeated image comparison slider -->
-      <div class="image-comparison-slider">
-        <img src="{% static before_image2 %}" alt="before">
-        <div class="img-wrapper">
-          <img src="{% static after_image2 %}" alt="after">
-        </div>
-        <span class="label label-before">Before</span>
-        <span class="label label-after">After</span>
-        <div class="handle">
-          <div class="handle-line"></div>
-          <div class="handle-circle">
-            <i class="fas fa-chevron-left"></i>
-            <i class="fas fa-chevron-right"></i>
-          </div>
-          <div class="handle-line"></div>
-        </div>
+  <!-- Image Comparison Sliders -->
+  <div class="slider-container mx-auto">
+    <!-- Slider 1 -->
+    <div class="image-comparison-slider">
+      <img class="img-fluid" src="{% static before_image1 %}" alt="before">
+      <div class="img-wrapper">
+        <img class="img-fluid" src="{% static after_image1 %}" alt="after">
       </div>
+      <span class="label label-before">Before</span>
+      <span class="label label-after">After</span>
+      <div class="handle">
+        <div class="handle-line"></div>
+        <div class="handle-circle">
+          <i class="fas fa-chevron-left"></i>
+          <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="handle-line"></div>
+      </div>
+    </div>
 
-      <!-- Another image comparison slider -->
-      <div class="image-comparison-slider">
-        <img src="{% static before_image3 %}" alt="before">
-        <div class="img-wrapper">
-          <img src="{% static after_image3 %}" alt="after">
+    <!-- Slider 2 -->
+    <div class="image-comparison-slider">
+      <img class="img-fluid" src="{% static before_image2 %}" alt="before">
+      <div class="img-wrapper">
+        <img class="img-fluid" src="{% static after_image2 %}" alt="after">
+      </div>
+      <span class="label label-before">Before</span>
+      <span class="label label-after">After</span>
+      <div class="handle">
+        <div class="handle-line"></div>
+        <div class="handle-circle">
+          <i class="fas fa-chevron-left"></i>
+          <i class="fas fa-chevron-right"></i>
         </div>
-        <span class="label label-before">Before</span>
-        <span class="label label-after">After</span>
-        <div class="handle">
-          <div class="handle-line"></div>
-          <div class="handle-circle">
-            <i class="fas fa-chevron-left"></i>
-            <i class="fas fa-chevron-right"></i>
-          </div>
-          <div class="handle-line"></div>
+        <div class="handle-line"></div>
+      </div>
+    </div>
+
+    <!-- Slider 3 -->
+    <div class="image-comparison-slider">
+      <img class="img-fluid" src="{% static before_image3 %}" alt="before">
+      <div class="img-wrapper">
+        <img class="img-fluid" src="{% static after_image3 %}" alt="after">
+      </div>
+      <span class="label label-before">Before</span>
+      <span class="label label-after">After</span>
+      <div class="handle">
+        <div class="handle-line"></div>
+        <div class="handle-circle">
+          <i class="fas fa-chevron-left"></i>
+          <i class="fas fa-chevron-right"></i>
         </div>
+        <div class="handle-line"></div>
       </div>
     </div>
   </div>
+</div>
 
-
-    <!-- Video Transformation Section -->
-    <h1 class="gallery-title">Transformation Videos</h1>
-    <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        {% for video in transformation_videos %}
-          <div class="carousel-item {% if forloop.first %}active{% endif %}">
-            <div class="video-container text-center">
-              <video class="d-block w-100" controls {% if forloop.first %}autoplay{% endif %} muted loop>
-                <source src="{% static 'videos/'|add:video.video.name|cut:'apps/home/static/videos/' %}" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-              {% if video.description %}
-                <p class="video-description mt-2">{{ video.description }}</p>
-              {% endif %}
-            </div>
-          </div>
-        {% empty %}
-          <!-- Fallback content if no videos in database -->
-          <div class="carousel-item active">
-            <video class="d-block w-100" controls autoplay muted loop>
-              <source src="{% static 'videos/transformation1.mp4' %}" type="video/mp4">
+<!-- Transformation Videos -->
+<div class="container py-5 px-3 text-center">
+  <h1 class="gallery-title">Transformation Videos</h1>
+  <div id="videoCarousel" class="carousel slide mx-auto" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      {% for video in transformation_videos %}
+        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+          <div class="video-container">
+            <video class="d-block w-100" controls {% if forloop.first %}autoplay{% endif %} muted loop>
+              <source src="{% static 'videos/'|add:video.video.name|cut:'apps/home/static/videos/' %}" type="video/mp4">
               Your browser does not support the video tag.
             </video>
+            {% if video.description %}
+              <p class="video-description mt-2">{{ video.description }}</p>
+            {% endif %}
           </div>
-          <div class="carousel-item">
-            <video class="d-block w-100" controls autoplay muted loop>
-              <source src="{% static 'videos/transformation2.mp4' %}" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div class="carousel-item">
-            <video class="d-block w-100" controls autoplay muted loop>
-              <source src="{% static 'videos/transformation3.mp4' %}" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        {% endfor %}
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+        </div>
+      {% empty %}
+        <div class="carousel-item active">
+          <video class="d-block w-100" controls autoplay muted loop>
+            <source src="{% static 'videos/transformation1.mp4' %}" type="video/mp4">
+          </video>
+        </div>
+        <div class="carousel-item">
+          <video class="d-block w-100" controls autoplay muted loop>
+            <source src="{% static 'videos/transformation2.mp4' %}" type="video/mp4">
+          </video>
+        </div>
+        <div class="carousel-item">
+          <video class="d-block w-100" controls autoplay muted loop>
+            <source src="{% static 'videos/transformation3.mp4' %}" type="video/mp4">
+          </video>
+        </div>
+      {% endfor %}
     </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
 
-  <!-- Carousel section for displaying additional transformations -->
+<!-- More Transformations -->
+<div class="container py-5 px-3 text-center">
   <h1 class="gallery-title">More Transformations</h1>
   <div class="row justify-content-center">
     <div class="col-lg-10">
-      <section id="slider">
+      <section id="slider" class="mx-auto">
         <input type="radio" name="slider" id="s1" checked>
         <input type="radio" name="slider" id="s2">
         <input type="radio" name="slider" id="s3">
         <input type="radio" name="slider" id="s4">
         <input type="radio" name="slider" id="s5">
-  
+
         <label for="s1" id="slide1"></label>
         <label for="s2" id="slide2"></label>
         <label for="s3" id="slide3"></label>
         <label for="s4" id="slide4"></label>
         <label for="s5" id="slide5"></label>
-  
-        <!-- Navigation Buttons -->
+
         <button class="nav-button prev" onclick="changeSlide(-1)">&#10094;</button>
         <button class="nav-button next" onclick="changeSlide(1)">&#10095;</button>
       </section>
     </div>
   </div>
+</div>
 
-  <!-- Include image transitions and image sliders JavaScript -->
-  <script src="{% static 'js/imgSliders.js' %}"></script>
-  <script src="{% static 'js/imgTransition.js' %}"></script>
+<!-- JS -->
+<script src="{% static 'js/imgSliders.js' %}"></script>
+<script src="{% static 'js/imgTransition.js' %}"></script>
 
-  {% include 'footer.html' %}
+{% include 'footer.html' %}
 {% endblock %}
