@@ -97,7 +97,7 @@ Additional information and developer resources are available in the [Project Wik
 ## Screenshots
 
 ### Home Page
-![homeScreenshot](https://github.com/Con-Rez/autoDetailProject/blob/main/docs/images/homeScreenshotv2.png?raw=true)
+![homeScreenshot](https://github.com/Con-Rez/autoDetailProject/blob/main/docs/images/homeScreenshotv2Long.png?raw=true)
 
 ### About Us
 ![aboutUsScreenshot](https://github.com/Con-Rez/autoDetailProject/blob/main/docs/images/aboutUsScreenshot.png?raw=true)
